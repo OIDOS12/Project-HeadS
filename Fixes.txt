@@ -1,0 +1,5 @@
+Score
+Jump in the air gameobjects
+quit steam
+jump force
+respawns

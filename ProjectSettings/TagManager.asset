@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 3
+  tags:
+  - Ball
+  - FirstGoal
+  - SecondGoal
+  - Player1
+  - Player2
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Player
+  - Water
+  - UI
+  - Ball2
+  - 
+  - 
+  - Ball
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: background
+    uniqueID: 3257381599
+    locked: 0
+  - name: FootballGoal1
+    uniqueID: 920772217
+    locked: 0
+  - name: Ball
+    uniqueID: 842277359
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: FootballGoal2
+    uniqueID: 2710386507
+    locked: 0
+  - name: Player
+    uniqueID: 3179120323
+    locked: 0
+  - name: foreground
+    uniqueID: 4112417269
+    locked: 0
+  m_RenderingLayers:
+  - Default

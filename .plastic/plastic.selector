@@ -1,0 +1,3 @@
+repository "My project/HeadS@7972430336978@cloud"
+  path "/"
+    smartbranch "/main/networking/GameAndNetworkFixes"
