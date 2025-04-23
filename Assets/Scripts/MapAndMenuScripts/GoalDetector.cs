@@ -22,15 +22,6 @@ public class GoalDetector : NetworkBehaviour
     {
         players = playerMethods.GetPlayers();
         ballPos = GameObject.FindWithTag("Ball").transform.position;
-
-        Vector2 player1Pos = new Vector2(6.3F, -3.7F);
-        Vector2 player2Pos = new Vector2(-5.6F, -3.7F);
-        
-        respawns = new Vector2[]
-        {
-            player1Pos,
-            player2Pos
-        };
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -55,9 +46,9 @@ public class GoalDetector : NetworkBehaviour
 
     private void ResetPosition()
     {
+        playerMethods.SetStandartPosition();
         GameObject.FindWithTag("Ball").transform.position = ballPos;
         ballRb.linearVelocity = Vector2.zero;
-        playerMethods.SetStandartPosition();
 
         if (whoScored == "Player1")
             ballRb.AddForce(new Vector2(100f, 0f));
@@ -68,7 +59,6 @@ public class GoalDetector : NetworkBehaviour
     private async void Goal()
     {
         OnGoalScored?.Invoke();
-//        StartCoroutine(ResetGoalScored());
         if (whoScored == "Player1") { goalTextObejctManager?.PlayerScored("Player1"); }
         if (whoScored == "Player2") { goalTextObejctManager?.PlayerScored("Player2"); }
         await Task.Delay(2000);

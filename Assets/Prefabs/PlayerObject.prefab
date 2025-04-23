@@ -17,7 +17,6 @@ GameObject:
   - component: {fileID: 7109288698427657722}
   - component: {fileID: 6743585732708408142}
   - component: {fileID: 292526983283692016}
-  - component: {fileID: 171408385696298192}
   m_Layer: 3
   m_Name: PlayerObject
   m_TagString: Player
@@ -34,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 457316528561290191}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 55, y: -2, z: 0}
+  m_LocalPosition: {x: 2, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -55,7 +54,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncDirection: 0
   syncMode: 0
-  syncInterval: 0.1
+  syncInterval: 0
   ConnectionID: 0
   PlayerID: 0
   PlayerSteamID: 0
@@ -92,7 +91,7 @@ MonoBehaviour:
   KickKey: Kick
   animator: {fileID: 5742343290424649334}
   networkAnimator: {fileID: 9105946857962539163}
-  playerMethods: {fileID: 171408385696298192}
+  playerMethods: {fileID: 0}
 --- !u!50 &5213766979433125681
 Rigidbody2D:
   serializedVersion: 5
@@ -287,18 +286,6 @@ MonoBehaviour:
   serverOnly: 0
   visibility: 0
   hasSpawned: 0
---- !u!114 &171408385696298192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 457316528561290191}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02e3bb7835b8e994fa387bb8de306bf1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &8008756278429822622
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -307,6 +294,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7411375784560147106}
     m_Modifications:
+    - target: {fileID: 1613145408253224380, guid: b25beca1c0d0dad468bad62c179b4766, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1613145408253224380, guid: b25beca1c0d0dad468bad62c179b4766, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1613145408253224380, guid: b25beca1c0d0dad468bad62c179b4766, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1613145408253224380, guid: b25beca1c0d0dad468bad62c179b4766, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 1641429855396177727, guid: b25beca1c0d0dad468bad62c179b4766, type: 3}
       propertyPath: m_Name
       value: Player2

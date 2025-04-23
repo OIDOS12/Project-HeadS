@@ -19,7 +19,10 @@ public class PlayerMovementController : NetworkBehaviour
     
     private Vector3 groundCheckMinusHeight = new Vector3(0, 0.1f, 0);
     private Vector3 groundCheckminusSize = new Vector3(0.03f, 0.2f, 0);
-    private Vector3 areaSettings = new Vector3(0.8f, -0.8f, 0);
+
+    private Vector3 positiveAreaSettings = new Vector3(0.8f, -0.8f, 0);
+    private Vector3 negativeAreaSettings = new Vector3(-0.8f, -0.8f, 0);
+    [SerializeField] private Vector3 areaSettings;
 
     //Player movement variables    
     public string HorizontalAxis = "Horizontal"; // Name of the horizontal input axis
@@ -31,11 +34,23 @@ public class PlayerMovementController : NetworkBehaviour
     private bool isGrounded;
     [SerializeField] private Animator animator; // Reference to the Animator component
     [SerializeField] private NetworkAnimator networkAnimator; // Reference to the Animator component
-    [SerializeField] PlayerMethods playerMethods; // Reference to the PlayerMethods script
     
+    private void SetAreaSettings()
+    {
+
+        if (netId == 1)
+        {
+            transform.rotation = Quaternion.Euler(0, -180, 0); // Set the rotation of each player to (0, 0, 0)
+            areaSettings = negativeAreaSettings; // Set the area settings for the kick
+        }
+        else
+        {
+            areaSettings = positiveAreaSettings; // Set the area settings for the kick
+        }
+    }
+
     private void Start()
     {
-        
         PlayerModel.SetActive(false); // Deactivate the player model at the start
         rb = GetComponent<Rigidbody2D>(); // Get the Rigidbody2D component
     }
@@ -46,12 +61,12 @@ public class PlayerMovementController : NetworkBehaviour
         {
             if(PlayerModel.activeSelf == false)
             {
+                SetAreaSettings();
                 PlayerModel.SetActive(true); // Activate the player model
                 boxCollider = GetComponent<BoxCollider2D>();
-                playerMethods.SetStandartPosition(); // Set the player's position
             }
         }
-
+        if (!isLocalPlayer) return;
         if(Input.GetButtonDown(jumpKey))
         {
             jump = true; // Check if the jump key is pressed

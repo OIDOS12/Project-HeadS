@@ -57,17 +57,14 @@ public class NetworkGameUI : NetworkBehaviour
     private void UpdateScoreboard(string score)
     {
         Debug.Log("regular update scoreboard");
-        ScoreText.text = score;
+        
     }
 
     [ClientRpc]
     private void RpcUpdateScoreboard(string score)
     {
-        if (!isServer)
-        {
-            Debug.Log("RPC update scoreboard");
-            ScoreText.text = score;
-        }
+        Debug.Log("RPC update scoreboard");
+        ScoreText.text = score;
     }
 
     private void PauseMenu()
