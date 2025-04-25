@@ -86,12 +86,13 @@ MonoBehaviour:
     m_Bits: 633
   GroundCheck: {fileID: 7519461944796146642}
   CeilingCheck: {fileID: 6288332923253067077}
+  areaSettings: {x: 0, y: 0, z: 0}
   HorizontalAxis: Horizontal
   jumpKey: Jump
   KickKey: Kick
   animator: {fileID: 5742343290424649334}
   networkAnimator: {fileID: 9105946857962539163}
-  playerMethods: {fileID: 0}
+  kickSoundClip: {fileID: 8300000, guid: 1893efc16e8581e40b6f39b63d250a1d, type: 3}
 --- !u!50 &5213766979433125681
 Rigidbody2D:
   serializedVersion: 5

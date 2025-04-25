@@ -11,17 +11,15 @@ public class GoalDetector : NetworkBehaviour
     [SerializeField] private UnityEngine.Events.UnityEvent OnGoalScored;
 
     private bool goalScored = false;
-    private Vector2 ballPos;
-    private Vector2[] respawns;
-    [SerializeField] private GameObject[] players;
+    private Vector2 ballPos = new(0f, -1.27f);
+    private GameObject ballObject;
+
     [SerializeField] private NetworkGameUI goalTextObejctManager;
     private Rigidbody2D ballRb;
-    [SerializeField] PlayerMethods playerMethods;
 
     void Start()
     {
-        players = playerMethods.GetPlayers();
-        ballPos = GameObject.FindWithTag("Ball").transform.position;
+        ballObject = GameObject.FindWithTag("Ball");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -44,10 +42,11 @@ public class GoalDetector : NetworkBehaviour
         }
     }
 
-    private void ResetPosition()
+    private async void ResetPosition()
     {
-        playerMethods.SetStandartPosition();
-        GameObject.FindWithTag("Ball").transform.position = ballPos;
+        PlayerMethods.Instance.SetStandartPosition();
+        await Task.Delay(100);
+        ballObject.transform.position = ballPos;
         ballRb.linearVelocity = Vector2.zero;
 
         if (whoScored == "Player1")

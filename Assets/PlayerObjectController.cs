@@ -22,6 +22,7 @@ public class PlayerObjectController : NetworkBehaviour
             return manager = CustomNetworkManager.singleton as CustomNetworkManager;
         }
     }
+    
     void Start()
     {
         DontDestroyOnLoad(this.gameObject);

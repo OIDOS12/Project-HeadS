@@ -34,6 +34,9 @@ public class PlayerMovementController : NetworkBehaviour
     private bool isGrounded;
     [SerializeField] private Animator animator; // Reference to the Animator component
     [SerializeField] private NetworkAnimator networkAnimator; // Reference to the Animator component
+
+    //Sounds
+    [SerializeField] private AudioClip kickSoundClip; // Reference to the jump sound effect
     
     private void SetAreaSettings()
     {
@@ -134,6 +137,7 @@ public class PlayerMovementController : NetworkBehaviour
 
                     ballRb.AddForce(kickDirection * kickForce, ForceMode2D.Impulse);
                     Debug.Log("Regular kick");
+                    SoundFXManager.instance.PlaySoundFX(kickSoundClip, transform, 1f); // Play the kick sound effect
                 }
             }
         }

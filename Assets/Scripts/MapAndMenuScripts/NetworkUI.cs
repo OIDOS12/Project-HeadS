@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using Mirror;
 using System;
+using System.Threading.Tasks;
 
 public class NetworkGameUI : NetworkBehaviour
 {
@@ -14,6 +15,7 @@ public class NetworkGameUI : NetworkBehaviour
     private int player2Goals = 0;
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject confirmQuit;
+    [SerializeField] private GameObject goalText;
 
     private string score;
 
@@ -21,6 +23,7 @@ public class NetworkGameUI : NetworkBehaviour
     {
 
         PauseSetup();
+        goalText.SetActive(false);
 
     }
     void Start()
@@ -64,7 +67,15 @@ public class NetworkGameUI : NetworkBehaviour
     private void RpcUpdateScoreboard(string score)
     {
         Debug.Log("RPC update scoreboard");
+        ShowGoalText();
         ScoreText.text = score;
+    }
+
+    private async void ShowGoalText()
+    {
+        goalText.SetActive(true);
+        await Task.Delay(2000);
+        goalText.SetActive(false);
     }
 
     private void PauseMenu()
