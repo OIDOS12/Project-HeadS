@@ -16,7 +16,7 @@ public class NetworkGameUI : NetworkBehaviour
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject confirmQuit;
     [SerializeField] private GameObject goalText;
-
+    [SerializeField] private AudioClip refereeWhistle;
     private string score;
 
     void Awake()
@@ -29,14 +29,14 @@ public class NetworkGameUI : NetworkBehaviour
     void Start()
     {
         score = player1Goals.ToString() + "|" + player2Goals.ToString();
-        UpdateScoreboard(score);
+        SoundFXManager.instance.PlaySoundFX(refereeWhistle, transform);
     }
     void Update()
     {
         PauseMenu();
     }
 
-    public void PlayerScored(string whoScored)
+    public async void PlayerScored(string whoScored)
     {
         if (whoScored == "Player1")
         {
@@ -48,19 +48,14 @@ public class NetworkGameUI : NetworkBehaviour
         }
 
         SummonUpdateScoreboard(player1Goals, player2Goals);
+        await Task.Delay(2000);
+        SoundFXManager.instance.PlaySoundFX(refereeWhistle, transform);
     }
 
     public void SummonUpdateScoreboard(int player1Goals, int player2Goals)
     {
         score = player1Goals.ToString() + "|" + player2Goals.ToString();
-        UpdateScoreboard(score);
         RpcUpdateScoreboard(score); // Update all clients
-    }
-
-    private void UpdateScoreboard(string score)
-    {
-        Debug.Log("regular update scoreboard");
-        
     }
 
     [ClientRpc]
