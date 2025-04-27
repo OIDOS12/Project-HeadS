@@ -31,6 +31,7 @@ public class NetworkGameUI : NetworkBehaviour
         score = player1Goals.ToString() + "|" + player2Goals.ToString();
         SoundFXManager.instance.PlaySoundFX(refereeWhistle, transform);
     }
+
     void Update()
     {
         PauseMenu();
@@ -52,6 +53,7 @@ public class NetworkGameUI : NetworkBehaviour
         SoundFXManager.instance.PlaySoundFX(refereeWhistle, transform);
     }
 
+    [Server]
     public void SummonUpdateScoreboard(int player1Goals, int player2Goals)
     {
         score = player1Goals.ToString() + "|" + player2Goals.ToString();
@@ -99,7 +101,7 @@ public class NetworkGameUI : NetworkBehaviour
     {
         SteamLobby.Instance.LeaveLobby();
     }
-    public void NoButton()
+    public void DontQuitButton()
     {
         confirmQuit.SetActive(false);
     }
@@ -109,4 +111,3 @@ public class NetworkGameUI : NetworkBehaviour
         confirmQuit.SetActive(false);
     }
 }
-

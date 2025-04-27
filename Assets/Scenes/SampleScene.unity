@@ -391,7 +391,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 306199524}
         m_TargetAssemblyTypeName: NetworkGameUI, Assembly-CSharp
         m_MethodName: MainMenuButton
         m_Mode: 1
@@ -524,7 +524,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 306199524}
         m_TargetAssemblyTypeName: NetworkGameUI, Assembly-CSharp
         m_MethodName: QuitButton
         m_Mode: 1
@@ -743,9 +743,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 306199524}
         m_TargetAssemblyTypeName: NetworkGameUI, Assembly-CSharp
-        m_MethodName: NoButton
+        m_MethodName: DontQuitButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2011,7 +2011,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 306199524}
         m_TargetAssemblyTypeName: NetworkGameUI, Assembly-CSharp
         m_MethodName: ResumeButton
         m_Mode: 1
@@ -3368,15 +3368,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncDirection: 1
   syncMode: 0
-  syncInterval: 0.1
+  syncInterval: 0
   target: {fileID: 1751126492}
   syncPosition: 1
   syncRotation: 1
   syncScale: 0
   onlySyncOnChange: 1
   compressRotation: 1
-  interpolatePosition: 1
-  interpolateRotation: 1
+  interpolatePosition: 0
+  interpolateRotation: 0
   interpolateScale: 1
   coordinateSpace: 0
   timelineOffset: 1
@@ -3560,9 +3560,8 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0
   ballTag: Ball
-  firstGoal: FirstGoal
-  secondGoal: SecondGoal
-  whoScored: 
+  firstGoalTag: FirstGoal
+  secondGoalTag: SecondGoal
   OnGoalScored:
     m_PersistentCalls:
       m_Calls: []
@@ -3729,9 +3728,8 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0
   ballTag: Ball
-  firstGoal: FirstGoal
-  secondGoal: SecondGoal
-  whoScored: 
+  firstGoalTag: FirstGoal
+  secondGoalTag: SecondGoal
   OnGoalScored:
     m_PersistentCalls:
       m_Calls: []

@@ -177,15 +177,4 @@ public class PlayerMovementController : NetworkBehaviour
     {
         animator.SetBool("IsKicking", false);
     }
-
-    void OnDrawGizmos()
-    {
-        if (boxCollider == null) return;
-
-        Vector3 overlapCenter = boxCollider.bounds.center - groundCheckMinusHeight;
-        Vector3 overlapSize = boxCollider.bounds.size - groundCheckminusSize;
-
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireCube(overlapCenter, overlapSize);
-    }
 }
