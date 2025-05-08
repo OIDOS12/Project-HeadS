@@ -80,12 +80,17 @@ public class GoalDetector : NetworkBehaviour
         }
     }
 
-    [Server]
     private async void ResetBallAndPlayers()
     {
-        PlayerMethods.Instance.SetStandartPosition();
+        RpcResetPlayerPositions();
         await Task.Delay(100);
         ResetBallPosition();
+    }
+
+    [ClientRpc]
+    private void RpcResetPlayerPositions()
+    {
+        PlayerMethods.Instance.SetStandartPosition();
     }
 
     [Server]
