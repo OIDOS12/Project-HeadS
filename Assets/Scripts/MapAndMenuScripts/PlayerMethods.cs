@@ -34,8 +34,22 @@ public class PlayerMethods : NetworkBehaviour
 
     public GameObject[] GetPlayers()
     {
-        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        players = GameObject.FindGameObjectsWithTag("Player");
         return players;
+    }
+
+    public string[] GetPlayerNames()
+    {
+        string[] names = new string[2] { "Player 1", "Player 2" };
+        var playerControllers = FindObjectsByType<PlayerObjectController>(FindObjectsSortMode.None);
+        foreach (var player in playerControllers)
+        {
+            if (player.PlayerID == 1)
+                names[0] = player.PlayerName;
+            else if (player.PlayerID == 2)
+                names[1] = player.PlayerName;
+        }
+        return names;
     }
 
     public void SetStandartPosition()

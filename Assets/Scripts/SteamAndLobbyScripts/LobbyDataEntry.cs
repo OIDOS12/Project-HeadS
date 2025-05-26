@@ -12,15 +12,7 @@ public class LobbyDataEntry : MonoBehaviour
 
     public void SetLobbyData()
     {
-        if (LobbyName == "")
-        {
-            LobbyNameText.text = "Empty Name";
-        }
-        else
-        {
-            LobbyNameText.text = LobbyName;
-        }
-
+        LobbyNameText.text = LobbyName;
     }
     
     public void JoinLobbby()

@@ -38,7 +38,7 @@ public class MusicManager : MonoBehaviour
     
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "SampleScene") // Replace with your game scene name
+        if (scene.name == "OnlineGameScene") // Replace with your game scene name
         {
             GetComponent<AudioSource>().Stop(); // Stop the music when entering the game scene
         }

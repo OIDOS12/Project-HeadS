@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7411375784560147106}
   - component: {fileID: -7067092900655996763}
+  - component: {fileID: 4233015509354603154}
   - component: {fileID: 4883645889602384622}
   - component: {fileID: 5213766979433125681}
   - component: {fileID: 7806332329557923135}
@@ -60,6 +61,24 @@ MonoBehaviour:
   PlayerSteamID: 0
   PlayerName: 
   isReady: 0
+--- !u!114 &4233015509354603154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457316528561290191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 888ceafe1c8695a47b97bb2485bc91be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  horizontalAxis: Horizontal
+  jumpKey: Jump
+  kickKey: Kick
 --- !u!114 &4883645889602384622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,21 +94,16 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
-  Speed: 5
-  JumpForce: 10
+  speed: 5
+  jumpForce: 10
   kickForce: 10
   upwardForce: 0.9
-  PlayerModel: {fileID: 8782958971731380641}
-  rb: {fileID: 0}
-  WhatIsGround:
+  playerModel: {fileID: 8782958971731380641}
+  rb: {fileID: 5213766979433125681}
+  whatIsGround:
     serializedVersion: 2
-    m_Bits: 633
-  GroundCheck: {fileID: 7519461944796146642}
-  CeilingCheck: {fileID: 6288332923253067077}
-  areaSettings: {x: 0, y: 0, z: 0}
-  HorizontalAxis: Horizontal
-  jumpKey: Jump
-  KickKey: Kick
+    m_Bits: 601
+  boxCollider: {fileID: 682977573399367797}
   animator: {fileID: 5742343290424649334}
   networkAnimator: {fileID: 9105946857962539163}
   kickSoundClip: {fileID: 8300000, guid: 1893efc16e8581e40b6f39b63d250a1d, type: 3}
@@ -221,10 +235,10 @@ MonoBehaviour:
   syncPosition: 1
   syncRotation: 1
   syncScale: 0
-  onlySyncOnChange: 0
+  onlySyncOnChange: 1
   compressRotation: 0
-  interpolatePosition: 0
-  interpolateRotation: 0
+  interpolatePosition: 1
+  interpolateRotation: 1
   interpolateScale: 1
   coordinateSpace: 0
   timelineOffset: 1
@@ -232,7 +246,7 @@ MonoBehaviour:
   showOverlay: 0
   overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
   onlySyncOnChangeCorrectionMultiplier: 2
-  useFixedUpdate: 1
+  useFixedUpdate: 0
   rotationSensitivity: 0.01
   positionPrecision: 0.01
   scalePrecision: 0.01
@@ -257,16 +271,16 @@ MonoBehaviour:
   syncScale: 0
   onlySyncOnChange: 1
   compressRotation: 0
-  interpolatePosition: 0
-  interpolateRotation: 0
+  interpolatePosition: 1
+  interpolateRotation: 1
   interpolateScale: 1
   coordinateSpace: 0
   timelineOffset: 1
-  showGizmos: 0
+  showGizmos: 1
   showOverlay: 0
   overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
   onlySyncOnChangeCorrectionMultiplier: 2
-  useFixedUpdate: 1
+  useFixedUpdate: 0
   rotationSensitivity: 0.01
   positionPrecision: 0.01
   scalePrecision: 0.01
@@ -386,16 +400,6 @@ Animator:
 --- !u!4 &6262211928910277758 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4162181429407777504, guid: b25beca1c0d0dad468bad62c179b4766, type: 3}
-  m_PrefabInstance: {fileID: 8008756278429822622}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &6288332923253067077 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4062374532522550235, guid: b25beca1c0d0dad468bad62c179b4766, type: 3}
-  m_PrefabInstance: {fileID: 8008756278429822622}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &7519461944796146642 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 540062157087786316, guid: b25beca1c0d0dad468bad62c179b4766, type: 3}
   m_PrefabInstance: {fileID: 8008756278429822622}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &8782958971731380641 stripped

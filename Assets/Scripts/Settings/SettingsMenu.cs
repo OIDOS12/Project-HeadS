@@ -1,15 +1,11 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 using UnityEngine.SceneManagement;
 using System.Linq;
 
 public class SettingsMenu : MonoBehaviour
-{
-    HashSet<float> validRefreshRates = new HashSet<float>() {60f, 120f, 144f, 240f, 360f};
-    
+{    
     public TMPro.TMP_Dropdown resolutionDropdown;
     Resolution[] resolutions;
     Resolution[] filtredResolutionsArray;
@@ -19,16 +15,25 @@ public class SettingsMenu : MonoBehaviour
 
     void Awake()
     {
+        if (PlayerPrefs.HasKey("selectedResolutionIndex"))
+        {
+            int savedIndex = PlayerPrefs.GetInt("selectedResolutionIndex");
+            if (savedIndex >= 0 && savedIndex < resolutionDropdown.options.Count)
+            {
+                resolutionDropdown.value = savedIndex;
+            }
+        }
+        
         resolutions = Screen.resolutions;
         var filtredResolutions = resolutions
-            .Where(res => res.width >= 1024 && res.height >= 768) // Фільтруємо за розміром
-            .GroupBy(res => new { res.width, res.height }) // Групуємо за розширенням
-            .Select(group => group.OrderByDescending(res => res.refreshRateRatio).FirstOrDefault()); // Вибираємо найбільшу частоту для кожного розширення
+            .Where(res => res.width >= 1024 && res.height >= 768) 
+            .GroupBy(res => new { res.width, res.height }) 
+            .Select(group => group.OrderByDescending(res => res.refreshRateRatio).FirstOrDefault()); 
 
         filtredResolutionsArray = filtredResolutions.ToArray();
 
         resolutionDropdown.ClearOptions();
-        List<string> options = new List<string>();
+        List<string> options = new();
 
         int currentResolutionIndex = 0;
         for (int i = 0; i < filtredResolutionsArray.Length; i++)
@@ -58,10 +63,6 @@ public class SettingsMenu : MonoBehaviour
         PlayerPrefs.SetInt(toggleFullscreenKey, isFullscreen ? 1 : 0);
     }
 
-    public void Save()
-    {
-        //User.Settings
-    }
     public void BackToMenu()
     {
         SceneManager.LoadScene("MainMenu");

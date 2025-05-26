@@ -658,7 +658,9 @@ MonoBehaviour:
   ScoreText: {fileID: 657599314}
   pauseMenu: {fileID: 784279964}
   confirmQuit: {fileID: 1475546971}
-  goalText: {fileID: 1924927437}
+  winnerTextGameObject: {fileID: 703098158}
+  winnerText: {fileID: 1924927439}
+  goalLimit: 2
   refereeWhistle: {fileID: 8300000, guid: 89ad79b78c822974394b170b8552a3a2, type: 3}
 --- !u!1 &399359476
 GameObject:
@@ -1228,8 +1230,8 @@ RectTransform:
   m_Children:
   - {fileID: 718609712}
   - {fileID: 657599312}
+  - {fileID: 703098159}
   - {fileID: 784279965}
-  - {fileID: 1924927438}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1578,6 +1580,42 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1921289723}
   m_SourcePrefab: {fileID: 100100000, guid: 28fde0c7d04db734fae347baecaa7553, type: 3}
+--- !u!1 &703098158
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 703098159}
+  m_Layer: 0
+  m_Name: WinnerTextGameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &703098159
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703098158}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1924927438}
+  m_Father: {fileID: 555944282}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 22.5, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &718609711
 GameObject:
   m_ObjectHideFlags: 0
@@ -3746,12 +3784,12 @@ GameObject:
   - component: {fileID: 1924927440}
   - component: {fileID: 1924927439}
   m_Layer: 0
-  m_Name: GoalText
+  m_Name: WinnerText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1924927438
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3759,17 +3797,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1924927437}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 555944282}
+  m_Father: {fileID: 703098159}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 22.5, y: 0}
-  m_SizeDelta: {x: -45, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1109.0137, y: 741}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1924927439
 MonoBehaviour:
@@ -3791,7 +3829,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: GOOOOAL!
+  m_text: WinnerText
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}

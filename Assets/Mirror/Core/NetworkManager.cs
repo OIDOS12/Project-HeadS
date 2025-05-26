@@ -230,7 +230,6 @@ namespace Mirror
             //
             // Auto-starting in Editor is useful for debugging, so that can
             // be enabled with editorAutoStart. 
-            DontDestroyOnLoad(this.gameObject);
             if (Utils.IsHeadless())
             {
                 if (!Application.isEditor || editorAutoStart)

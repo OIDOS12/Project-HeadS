@@ -414,7 +414,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 555944283}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LocalGameUI, Assembly-CSharp
         m_MethodName: MainMenuButton
         m_Mode: 1
@@ -547,7 +547,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 555944283}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LocalGameUI, Assembly-CSharp
         m_MethodName: QuitButton
         m_Mode: 1
@@ -867,16 +867,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 346211320}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd91f348ce309d04a9f18979ed6cb698, type: 3}
+  m_Script: {fileID: 11500000, guid: 06996b23c3b0c404f992cb401b77d591, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSp: 16
-  kickKey: 271
-  controller: {fileID: 346211333}
-  usePositiveArea: 0
-  HorizontalInput: HorizontalPlayer2
-  JumpKeyInput: JumpPlayer2
-  areaSettings: {x: 0, y: 0, z: 0}
+  speed: 5
+  jumpForce: 10
+  kickForce: 10
+  upwardForce: 0.9
+  playerModel: {fileID: 346211320}
+  rb: {fileID: 346211329}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 601
+  boxCollider: {fileID: 346211327}
+  animator: {fileID: 346211323}
+  kickSoundClip: {fileID: 8300000, guid: 1893efc16e8581e40b6f39b63d250a1d, type: 3}
+  inputHandler: {fileID: 346211333}
 --- !u!114 &346211333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -886,25 +892,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 346211320}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9eb3e856078c6534f8a85a5c12b8feda, type: 3}
+  m_Script: {fileID: 11500000, guid: 8287a766cd257084aac2c0dddca69116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 500
-  m_MovementSmoothing: 0.05
-  kickForce: 10
-  upwardForce: 0.9
-  m_AirControl: 1
-  m_WhatIsGround:
-    serializedVersion: 2
-    m_Bits: 633
-  m_GroundCheck: {fileID: 2049678472}
-  m_CeilingCheck: {fileID: 102885303}
-  OnLandEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnCrouchEvent:
-    m_PersistentCalls:
-      m_Calls: []
+  horizontalAxis: HorizontalPlayer2
+  jumpKey: JumpPlayer2
+  kickKey: KickPlayer2
 --- !u!1 &399359476
 GameObject:
   m_ObjectHideFlags: 0
@@ -988,7 +981,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 555944283}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LocalGameUI, Assembly-CSharp
         m_MethodName: NoButton
         m_Mode: 1
@@ -1354,7 +1347,6 @@ GameObject:
   - component: {fileID: 555944281}
   - component: {fileID: 555944280}
   - component: {fileID: 555944279}
-  - component: {fileID: 555944283}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -1439,6 +1431,7 @@ RectTransform:
   m_Children:
   - {fileID: 1945903499}
   - {fileID: 657599312}
+  - {fileID: 1612793653}
   - {fileID: 784279965}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1447,21 +1440,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.013, y: 0.46749973}
   m_SizeDelta: {x: 1254.0137, y: 841}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &555944283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 555944278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37d55cb3a2aab7648a808318c8fa4a04, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ScoreText: {fileID: 657599314}
-  pauseMenu: {fileID: 784279964}
-  confirmQuit: {fileID: 1475546971}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1566,12 +1544,7 @@ MonoBehaviour:
   ballTag: Ball
   firstGoal: FirstGoal
   secondGoal: SecondGoal
-  whoScored: 
-  OnGoalScored:
-    m_PersistentCalls:
-      m_Calls: []
-  players: []
-  goalTextObejctManager: {fileID: 555944283}
+  goalTextObjectManager: {fileID: 2092228858}
 --- !u!1 &657599311
 GameObject:
   m_ObjectHideFlags: 0
@@ -1967,7 +1940,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 555944283}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LocalGameUI, Assembly-CSharp
         m_MethodName: ResumeButton
         m_Mode: 1
@@ -2017,6 +1990,142 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 840188034}
   m_CullTransparentMesh: 1
+--- !u!1 &917533067
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 917533070}
+  - component: {fileID: 917533069}
+  - component: {fileID: 917533068}
+  m_Layer: 0
+  m_Name: WinnerText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &917533068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917533067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: WinnerText
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4283256235
+  m_fontColor: {r: 0.6698113, g: 0.3001513, b: 0.3001513, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 82
+  m_fontSizeBase: 82
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &917533069
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917533067}
+  m_CullTransparentMesh: 1
+--- !u!224 &917533070
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917533067}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1612793653}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1109.0137, y: 741}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &995406693 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7208406597665150375, guid: 9932bd5003c212049a426dce0d11ff84, type: 3}
@@ -2372,16 +2481,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1217802337}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd91f348ce309d04a9f18979ed6cb698, type: 3}
+  m_Script: {fileID: 11500000, guid: 06996b23c3b0c404f992cb401b77d591, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSp: 16
-  kickKey: 32
-  controller: {fileID: 1217802352}
-  usePositiveArea: 0
-  HorizontalInput: Horizontal
-  JumpKeyInput: Jump
-  areaSettings: {x: 0, y: 0, z: 0}
+  speed: 5
+  jumpForce: 10
+  kickForce: 10
+  upwardForce: 0.9
+  playerModel: {fileID: 1217802337}
+  rb: {fileID: 1217802340}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 601
+  boxCollider: {fileID: 1217802347}
+  animator: {fileID: 1217802348}
+  kickSoundClip: {fileID: 8300000, guid: 1893efc16e8581e40b6f39b63d250a1d, type: 3}
+  inputHandler: {fileID: 1217802352}
 --- !u!114 &1217802352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2391,25 +2506,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1217802337}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9eb3e856078c6534f8a85a5c12b8feda, type: 3}
+  m_Script: {fileID: 11500000, guid: 8287a766cd257084aac2c0dddca69116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 500
-  m_MovementSmoothing: 0.05
-  kickForce: 10
-  upwardForce: 0.9
-  m_AirControl: 1
-  m_WhatIsGround:
-    serializedVersion: 2
-    m_Bits: 633
-  m_GroundCheck: {fileID: 1545342491}
-  m_CeilingCheck: {fileID: 410383912}
-  OnLandEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnCrouchEvent:
-    m_PersistentCalls:
-      m_Calls: []
+  horizontalAxis: Horizontal
+  jumpKey: Jump
+  kickKey: Kick
 --- !u!1 &1244024172
 GameObject:
   m_ObjectHideFlags: 0
@@ -3286,12 +3388,43 @@ MonoBehaviour:
   ballTag: Ball
   firstGoal: FirstGoal
   secondGoal: SecondGoal
-  whoScored: 
-  OnGoalScored:
-    m_PersistentCalls:
-      m_Calls: []
-  players: []
-  goalTextObejctManager: {fileID: 555944283}
+  goalTextObjectManager: {fileID: 2092228858}
+--- !u!1 &1612793652
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1612793653}
+  m_Layer: 0
+  m_Name: WinnerTextGameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1612793653
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612793652}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0001892, y: 1.0001892, z: 1.0001892}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 917533070}
+  m_Father: {fileID: 555944282}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 23.28093, y: -0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1633315906
 GameObject:
   m_ObjectHideFlags: 0
@@ -4026,6 +4159,61 @@ Transform:
   m_Children: []
   m_Father: {fileID: 346211331}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2092228857
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2092228859}
+  - component: {fileID: 2092228858}
+  m_Layer: 0
+  m_Name: LocalSceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2092228858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092228857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37d55cb3a2aab7648a808318c8fa4a04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScoreText: {fileID: 657599314}
+  pauseMenu: {fileID: 784279964}
+  confirmQuit: {fileID: 1475546971}
+  winnerTextGameObject: {fileID: 1612793652}
+  winnerText: {fileID: 917533068}
+  goalLimit: 10
+  refereeWhistle: {fileID: 8300000, guid: 89ad79b78c822974394b170b8552a3a2, type: 3}
+--- !u!224 &2092228859
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092228857}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 90}
+  m_LocalScale: {x: 0.016646849, y: 0.016646849, z: 0.016646849}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.7809286, y: 28.083378}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2102530468
 GameObject:
   m_ObjectHideFlags: 0
@@ -4213,7 +4401,7 @@ PrefabInstance:
     - target: {fileID: 5391721186942124368, guid: 28fde0c7d04db734fae347baecaa7553, type: 3}
       propertyPath: goalTextObejctManager
       value: 
-      objectReference: {fileID: 555944283}
+      objectReference: {fileID: 0}
     - target: {fileID: 8643733813718488925, guid: 28fde0c7d04db734fae347baecaa7553, type: 3}
       propertyPath: m_Name
       value: FootballGoal1_0 (1)
@@ -4277,7 +4465,7 @@ PrefabInstance:
     - target: {fileID: 2784714549707641901, guid: e7ccbd326d78a8640a124b0b7027a50b, type: 3}
       propertyPath: goalTextObejctManager
       value: 
-      objectReference: {fileID: 555944283}
+      objectReference: {fileID: 0}
     - target: {fileID: 6814999323342597662, guid: e7ccbd326d78a8640a124b0b7027a50b, type: 3}
       propertyPath: m_Name
       value: FootballGoal1_0
@@ -4417,3 +4605,4 @@ SceneRoots:
   - {fileID: 1757440280}
   - {fileID: 555944282}
   - {fileID: 1633315909}
+  - {fileID: 2092228859}
