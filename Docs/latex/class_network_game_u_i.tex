@@ -1,0 +1,172 @@
+\doxysection{Network\+Game\+UI Class Reference}
+\hypertarget{class_network_game_u_i}{}\label{class_network_game_u_i}\index{NetworkGameUI@{NetworkGameUI}}
+
+
+Handles displaying score, goal messages, and game-\/over UI in a networked game.  
+
+
+Inheritance diagram for Network\+Game\+UI\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_network_game_u_i}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_network_game_u_i_ad74e19301a8a3592a514c838746903d9}{Rpc\+Update\+Scoreboard\+Text}} (string text)
+\begin{DoxyCompactList}\small\item\em Updates the scoreboard with the latest goal counts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_network_game_u_i_a0db4ea507507c78202210be07b71a3c1}{Rpc\+Show\+Winner}} (string winner)
+\begin{DoxyCompactList}\small\item\em Displays the winning message on game over. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_network_game_u_i_a1dfd29363e8ee6a5dc357c234a0f8f88}{Pause\+Menu}} ()
+\item 
+void \mbox{\hyperlink{class_network_game_u_i_a834796d7365cb4323658cf43c4ee4a00}{Resume\+Button}} ()
+\begin{DoxyCompactList}\small\item\em Called when the player presses the resume button. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_network_game_u_i_ad6e4cdb6fee969ea449db0d301a00e92}{Main\+Menu\+Button}} ()
+\begin{DoxyCompactList}\small\item\em Opens the quit confirmation dialog. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_network_game_u_i_a69610451f26ca397ffc4a11d24c16805}{Quit\+Button}} ()
+\begin{DoxyCompactList}\small\item\em Leaves the lobby and ends the game session. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_network_game_u_i_ab5b5c6bddbe4e187eeffe293d49860e6}{Dont\+Quit\+Button}} ()
+\begin{DoxyCompactList}\small\item\em Hides the quit confirmation dialog. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_network_game_u_i_a062ca82de9422b78609498874943fabb}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Checks for input to toggle the pause menu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Game\+Object \mbox{\hyperlink{class_network_game_u_i_a6c4298d7c09ec40741a85f4de35f6778}{pause\+Menu}}
+\item 
+Game\+Object \mbox{\hyperlink{class_network_game_u_i_a278df4a9b268608af71d4d2551cf1d5a}{confirm\+Quit}}
+\item 
+Game\+Object \mbox{\hyperlink{class_network_game_u_i_aa9404177bdcd12759e85e62d45e672dd}{winner\+Text\+Game\+Object}}
+\item 
+Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_network_game_u_i_adb1d0110d8334c2511409fb5527a2729}{winner\+Text}}
+\item 
+Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_network_game_u_i_aaf441fbc68983452c45ce1dbd5c0b8f6}{Scoreboard\+Text}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles displaying score, goal messages, and game-\/over UI in a networked game. 
+
+\label{doc-func-members}
+\Hypertarget{class_network_game_u_i_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_network_game_u_i_ab5b5c6bddbe4e187eeffe293d49860e6}\index{NetworkGameUI@{NetworkGameUI}!DontQuitButton@{DontQuitButton}}
+\index{DontQuitButton@{DontQuitButton}!NetworkGameUI@{NetworkGameUI}}
+\doxysubsubsection{\texorpdfstring{DontQuitButton()}{DontQuitButton()}}
+{\footnotesize\ttfamily \label{class_network_game_u_i_ab5b5c6bddbe4e187eeffe293d49860e6} 
+void Network\+Game\+UI.\+Dont\+Quit\+Button (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Hides the quit confirmation dialog. 
+
+\Hypertarget{class_network_game_u_i_ad6e4cdb6fee969ea449db0d301a00e92}\index{NetworkGameUI@{NetworkGameUI}!MainMenuButton@{MainMenuButton}}
+\index{MainMenuButton@{MainMenuButton}!NetworkGameUI@{NetworkGameUI}}
+\doxysubsubsection{\texorpdfstring{MainMenuButton()}{MainMenuButton()}}
+{\footnotesize\ttfamily \label{class_network_game_u_i_ad6e4cdb6fee969ea449db0d301a00e92} 
+void Network\+Game\+UI.\+Main\+Menu\+Button (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Opens the quit confirmation dialog. 
+
+\Hypertarget{class_network_game_u_i_a1dfd29363e8ee6a5dc357c234a0f8f88}\index{NetworkGameUI@{NetworkGameUI}!PauseMenu@{PauseMenu}}
+\index{PauseMenu@{PauseMenu}!NetworkGameUI@{NetworkGameUI}}
+\doxysubsubsection{\texorpdfstring{PauseMenu()}{PauseMenu()}}
+{\footnotesize\ttfamily \label{class_network_game_u_i_a1dfd29363e8ee6a5dc357c234a0f8f88} 
+void Network\+Game\+UI.\+Pause\+Menu (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_network_game_u_i_a69610451f26ca397ffc4a11d24c16805}\index{NetworkGameUI@{NetworkGameUI}!QuitButton@{QuitButton}}
+\index{QuitButton@{QuitButton}!NetworkGameUI@{NetworkGameUI}}
+\doxysubsubsection{\texorpdfstring{QuitButton()}{QuitButton()}}
+{\footnotesize\ttfamily \label{class_network_game_u_i_a69610451f26ca397ffc4a11d24c16805} 
+void Network\+Game\+UI.\+Quit\+Button (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Leaves the lobby and ends the game session. 
+
+\Hypertarget{class_network_game_u_i_a834796d7365cb4323658cf43c4ee4a00}\index{NetworkGameUI@{NetworkGameUI}!ResumeButton@{ResumeButton}}
+\index{ResumeButton@{ResumeButton}!NetworkGameUI@{NetworkGameUI}}
+\doxysubsubsection{\texorpdfstring{ResumeButton()}{ResumeButton()}}
+{\footnotesize\ttfamily \label{class_network_game_u_i_a834796d7365cb4323658cf43c4ee4a00} 
+void Network\+Game\+UI.\+Resume\+Button (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Called when the player presses the resume button. 
+
+\Hypertarget{class_network_game_u_i_a0db4ea507507c78202210be07b71a3c1}\index{NetworkGameUI@{NetworkGameUI}!RpcShowWinner@{RpcShowWinner}}
+\index{RpcShowWinner@{RpcShowWinner}!NetworkGameUI@{NetworkGameUI}}
+\doxysubsubsection{\texorpdfstring{RpcShowWinner()}{RpcShowWinner()}}
+{\footnotesize\ttfamily \label{class_network_game_u_i_a0db4ea507507c78202210be07b71a3c1} 
+void Network\+Game\+UI.\+Rpc\+Show\+Winner (\begin{DoxyParamCaption}\item[{string}]{winner}{}\end{DoxyParamCaption})}
+
+
+
+Displays the winning message on game over. 
+
+\Hypertarget{class_network_game_u_i_ad74e19301a8a3592a514c838746903d9}\index{NetworkGameUI@{NetworkGameUI}!RpcUpdateScoreboardText@{RpcUpdateScoreboardText}}
+\index{RpcUpdateScoreboardText@{RpcUpdateScoreboardText}!NetworkGameUI@{NetworkGameUI}}
+\doxysubsubsection{\texorpdfstring{RpcUpdateScoreboardText()}{RpcUpdateScoreboardText()}}
+{\footnotesize\ttfamily \label{class_network_game_u_i_ad74e19301a8a3592a514c838746903d9} 
+void Network\+Game\+UI.\+Rpc\+Update\+Scoreboard\+Text (\begin{DoxyParamCaption}\item[{string}]{text}{}\end{DoxyParamCaption})}
+
+
+
+Updates the scoreboard with the latest goal counts. 
+
+\Hypertarget{class_network_game_u_i_a062ca82de9422b78609498874943fabb}\index{NetworkGameUI@{NetworkGameUI}!Update@{Update}}
+\index{Update@{Update}!NetworkGameUI@{NetworkGameUI}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_network_game_u_i_a062ca82de9422b78609498874943fabb} 
+void Network\+Game\+UI.\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Checks for input to toggle the pause menu. 
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_network_game_u_i_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_network_game_u_i_a278df4a9b268608af71d4d2551cf1d5a}\index{NetworkGameUI@{NetworkGameUI}!confirmQuit@{confirmQuit}}
+\index{confirmQuit@{confirmQuit}!NetworkGameUI@{NetworkGameUI}}
+\doxysubsubsection{\texorpdfstring{confirmQuit}{confirmQuit}}
+{\footnotesize\ttfamily \label{class_network_game_u_i_a278df4a9b268608af71d4d2551cf1d5a} 
+Game\+Object Network\+Game\+UI.\+confirm\+Quit\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_network_game_u_i_a6c4298d7c09ec40741a85f4de35f6778}\index{NetworkGameUI@{NetworkGameUI}!pauseMenu@{pauseMenu}}
+\index{pauseMenu@{pauseMenu}!NetworkGameUI@{NetworkGameUI}}
+\doxysubsubsection{\texorpdfstring{pauseMenu}{pauseMenu}}
+{\footnotesize\ttfamily \label{class_network_game_u_i_a6c4298d7c09ec40741a85f4de35f6778} 
+Game\+Object Network\+Game\+UI.\+pause\+Menu\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_network_game_u_i_aaf441fbc68983452c45ce1dbd5c0b8f6}\index{NetworkGameUI@{NetworkGameUI}!ScoreboardText@{ScoreboardText}}
+\index{ScoreboardText@{ScoreboardText}!NetworkGameUI@{NetworkGameUI}}
+\doxysubsubsection{\texorpdfstring{ScoreboardText}{ScoreboardText}}
+{\footnotesize\ttfamily \label{class_network_game_u_i_aaf441fbc68983452c45ce1dbd5c0b8f6} 
+Text\+Mesh\+Pro\+UGUI Network\+Game\+UI.\+Scoreboard\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_network_game_u_i_adb1d0110d8334c2511409fb5527a2729}\index{NetworkGameUI@{NetworkGameUI}!winnerText@{winnerText}}
+\index{winnerText@{winnerText}!NetworkGameUI@{NetworkGameUI}}
+\doxysubsubsection{\texorpdfstring{winnerText}{winnerText}}
+{\footnotesize\ttfamily \label{class_network_game_u_i_adb1d0110d8334c2511409fb5527a2729} 
+Text\+Mesh\+Pro\+UGUI Network\+Game\+UI.\+winner\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_network_game_u_i_aa9404177bdcd12759e85e62d45e672dd}\index{NetworkGameUI@{NetworkGameUI}!winnerTextGameObject@{winnerTextGameObject}}
+\index{winnerTextGameObject@{winnerTextGameObject}!NetworkGameUI@{NetworkGameUI}}
+\doxysubsubsection{\texorpdfstring{winnerTextGameObject}{winnerTextGameObject}}
+{\footnotesize\ttfamily \label{class_network_game_u_i_aa9404177bdcd12759e85e62d45e672dd} 
+Game\+Object Network\+Game\+UI.\+winner\+Text\+Game\+Object\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Map\+And\+Menu\+Scripts/\mbox{\hyperlink{_network_u_i_8cs}{Network\+UI.\+cs}}\end{DoxyCompactItemize}

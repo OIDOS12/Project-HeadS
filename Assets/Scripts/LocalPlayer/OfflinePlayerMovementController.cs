@@ -176,9 +176,9 @@ public class OfflinePlayerMovementController : MonoBehaviour
                     kickDirection = new Vector2(kickDirection.x, upwardForce).normalized;
                 }
                 ballRb.AddForce(kickDirection * kickForce, ForceMode2D.Impulse);
-                if (SoundFXManager.instance != null && kickSoundClip != null)
+                if (SoundFXManager.Instance != null && kickSoundClip != null)
                 {
-                    SoundFXManager.instance.PlaySoundFX(kickSoundClip, transform);
+                    SoundFXManager.Instance.PlaySoundFX(kickSoundClip, transform);
                 }
                 break;
             }

@@ -1,0 +1,112 @@
+\doxysection{Local\+Goal\+Detector Class Reference}
+\hypertarget{class_local_goal_detector}{}\label{class_local_goal_detector}\index{LocalGoalDetector@{LocalGoalDetector}}
+
+
+Detects when a goal has been scored and triggers the goal sequence via the \doxylink{class_goal_manager}{Goal\+Manager}.  
+
+
+Inheritance diagram for Local\+Goal\+Detector\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_local_goal_detector}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_local_goal_detector_a2c694c06360df3429e06cf4cfcc23605}{Start}} ()
+\begin{DoxyCompactList}\small\item\em Initializes references to the ball\textquotesingle{}s Rigidbody2D on the server. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_local_goal_detector_ad6da1c42e39bbda208c9a9ba21334071}{On\+Trigger\+Enter2D}} (Collider2D collision)
+\begin{DoxyCompactList}\small\item\em Triggered when the ball enters the goal. Notifies \doxylink{class_goal_manager}{Goal\+Manager}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_local_goal_detector_a145a93727a702ebf61b748e47063154d}{ball\+Tag}} = "{}Ball"{}
+\item 
+string \mbox{\hyperlink{class_local_goal_detector_aa02b8adab3c2ff00fdef7197b96ce727}{first\+Goal\+Tag}} = "{}First\+Goal"{}
+\item 
+string \mbox{\hyperlink{class_local_goal_detector_aa201f5904d1a4b15afa6a0e6fb9ebcd0}{second\+Goal\+Tag}} = "{}Second\+Goal"{}
+\item 
+\mbox{\hyperlink{class_local_goal_manager}{Local\+Goal\+Manager}} \mbox{\hyperlink{class_local_goal_detector_a5e6ef9d48521ea81a6721804f39cd0ef}{goal\+Manager}}
+\item 
+bool \mbox{\hyperlink{class_local_goal_detector_a42ace7d98a8892998183eda1fffb509a}{goal\+Scored}} = false
+\item 
+Rigidbody2D \mbox{\hyperlink{class_local_goal_detector_a1402613b0a682686b8c007e8c16c6669}{ball\+Rb}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Detects when a goal has been scored and triggers the goal sequence via the \doxylink{class_goal_manager}{Goal\+Manager}. 
+
+\label{doc-func-members}
+\Hypertarget{class_local_goal_detector_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_local_goal_detector_ad6da1c42e39bbda208c9a9ba21334071}\index{LocalGoalDetector@{LocalGoalDetector}!OnTriggerEnter2D@{OnTriggerEnter2D}}
+\index{OnTriggerEnter2D@{OnTriggerEnter2D}!LocalGoalDetector@{LocalGoalDetector}}
+\doxysubsubsection{\texorpdfstring{OnTriggerEnter2D()}{OnTriggerEnter2D()}}
+{\footnotesize\ttfamily \label{class_local_goal_detector_ad6da1c42e39bbda208c9a9ba21334071} 
+void Local\+Goal\+Detector.\+On\+Trigger\+Enter2D (\begin{DoxyParamCaption}\item[{Collider2D}]{collision}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Triggered when the ball enters the goal. Notifies \doxylink{class_goal_manager}{Goal\+Manager}. 
+
+\Hypertarget{class_local_goal_detector_a2c694c06360df3429e06cf4cfcc23605}\index{LocalGoalDetector@{LocalGoalDetector}!Start@{Start}}
+\index{Start@{Start}!LocalGoalDetector@{LocalGoalDetector}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily \label{class_local_goal_detector_a2c694c06360df3429e06cf4cfcc23605} 
+void Local\+Goal\+Detector.\+Start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initializes references to the ball\textquotesingle{}s Rigidbody2D on the server. 
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_local_goal_detector_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_local_goal_detector_a1402613b0a682686b8c007e8c16c6669}\index{LocalGoalDetector@{LocalGoalDetector}!ballRb@{ballRb}}
+\index{ballRb@{ballRb}!LocalGoalDetector@{LocalGoalDetector}}
+\doxysubsubsection{\texorpdfstring{ballRb}{ballRb}}
+{\footnotesize\ttfamily \label{class_local_goal_detector_a1402613b0a682686b8c007e8c16c6669} 
+Rigidbody2D Local\+Goal\+Detector.\+ball\+Rb\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_local_goal_detector_a145a93727a702ebf61b748e47063154d}\index{LocalGoalDetector@{LocalGoalDetector}!ballTag@{ballTag}}
+\index{ballTag@{ballTag}!LocalGoalDetector@{LocalGoalDetector}}
+\doxysubsubsection{\texorpdfstring{ballTag}{ballTag}}
+{\footnotesize\ttfamily \label{class_local_goal_detector_a145a93727a702ebf61b748e47063154d} 
+string Local\+Goal\+Detector.\+ball\+Tag = "{}Ball"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_local_goal_detector_aa02b8adab3c2ff00fdef7197b96ce727}\index{LocalGoalDetector@{LocalGoalDetector}!firstGoalTag@{firstGoalTag}}
+\index{firstGoalTag@{firstGoalTag}!LocalGoalDetector@{LocalGoalDetector}}
+\doxysubsubsection{\texorpdfstring{firstGoalTag}{firstGoalTag}}
+{\footnotesize\ttfamily \label{class_local_goal_detector_aa02b8adab3c2ff00fdef7197b96ce727} 
+string Local\+Goal\+Detector.\+first\+Goal\+Tag = "{}First\+Goal"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_local_goal_detector_a5e6ef9d48521ea81a6721804f39cd0ef}\index{LocalGoalDetector@{LocalGoalDetector}!goalManager@{goalManager}}
+\index{goalManager@{goalManager}!LocalGoalDetector@{LocalGoalDetector}}
+\doxysubsubsection{\texorpdfstring{goalManager}{goalManager}}
+{\footnotesize\ttfamily \label{class_local_goal_detector_a5e6ef9d48521ea81a6721804f39cd0ef} 
+\mbox{\hyperlink{class_local_goal_manager}{Local\+Goal\+Manager}} Local\+Goal\+Detector.\+goal\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_local_goal_detector_a42ace7d98a8892998183eda1fffb509a}\index{LocalGoalDetector@{LocalGoalDetector}!goalScored@{goalScored}}
+\index{goalScored@{goalScored}!LocalGoalDetector@{LocalGoalDetector}}
+\doxysubsubsection{\texorpdfstring{goalScored}{goalScored}}
+{\footnotesize\ttfamily \label{class_local_goal_detector_a42ace7d98a8892998183eda1fffb509a} 
+bool Local\+Goal\+Detector.\+goal\+Scored = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_local_goal_detector_aa201f5904d1a4b15afa6a0e6fb9ebcd0}\index{LocalGoalDetector@{LocalGoalDetector}!secondGoalTag@{secondGoalTag}}
+\index{secondGoalTag@{secondGoalTag}!LocalGoalDetector@{LocalGoalDetector}}
+\doxysubsubsection{\texorpdfstring{secondGoalTag}{secondGoalTag}}
+{\footnotesize\ttfamily \label{class_local_goal_detector_aa201f5904d1a4b15afa6a0e6fb9ebcd0} 
+string Local\+Goal\+Detector.\+second\+Goal\+Tag = "{}Second\+Goal"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Local\+Player/\mbox{\hyperlink{_local_goal_detector_8cs}{Local\+Goal\+Detector.\+cs}}\end{DoxyCompactItemize}

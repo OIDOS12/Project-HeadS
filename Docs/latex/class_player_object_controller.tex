@@ -1,0 +1,272 @@
+\doxysection{Player\+Object\+Controller Class Reference}
+\hypertarget{class_player_object_controller}{}\label{class_player_object_controller}\index{PlayerObjectController@{PlayerObjectController}}
+
+
+Controls the player object in the multiplayer game, managing player data and interactions.  
+
+
+Inheritance diagram for Player\+Object\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_player_object_controller}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_player_object_controller_a5e214f11d8f2ae26430cb3af40c302ee}{Cmd\+Set\+Player\+Ready}} ()
+\begin{DoxyCompactList}\small\item\em Command to set the player\textquotesingle{}s ready state. This is called by the client and executed on the server. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_object_controller_abe5587a001839978f51adaa35b7afc16}{Change\+Ready\+State}} ()
+\begin{DoxyCompactList}\small\item\em Changes the player\textquotesingle{}s ready state by calling the command to set it. This is typically called when the player clicks a "{}\+Ready"{} button. \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_player_object_controller_aa1954ebb5d40bf86d0f56e33b4c257e6}{On\+Start\+Authority}} ()
+\begin{DoxyCompactList}\small\item\em Called when the player object gains authority on the client. It sets the player\textquotesingle{}s name and updates the lobby. \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_player_object_controller_aab7eacc68b2bd05c115b449c6fe3eab2}{On\+Start\+Client}} ()
+\begin{DoxyCompactList}\small\item\em Called when the player object is started on the client. It adds the player to the player list and updates the lobby name and player list. \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_player_object_controller_a3a05ba8c03affe66f5a0ae8031de84fc}{On\+Stop\+Client}} ()
+\begin{DoxyCompactList}\small\item\em Called when the player object stops being a client. It removes the player from the player list and updates the lobby. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_object_controller_a81b894e504a6b5ddc2194fc0d51c3be0}{Player\+Name\+Update}} (string old\+Name, string new\+Name)
+\begin{DoxyCompactList}\small\item\em Updates the player\textquotesingle{}s name and notifies clients of the change. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_object_controller_a5fd375e5733d3dc7d433eaa7040a601a}{Can\+Start\+Game}} (string scene\+Name)
+\begin{DoxyCompactList}\small\item\em Checks if the player can start the game. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_object_controller_a1d06bbfba4b577ba91ecf0ed2918e285}{Cmd\+Can\+Start\+Game}} (string scene\+Name)
+\begin{DoxyCompactList}\small\item\em Command to start the game by changing the scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_player_object_controller_ae2d9d08e502a454d89d71d9fa02cd762}{Connection\+ID}}
+\item 
+int \mbox{\hyperlink{class_player_object_controller_aaa8f1dca71c4046e3190ece5d8ebf1af}{Player\+ID}}
+\item 
+ulong \mbox{\hyperlink{class_player_object_controller_a08a3daff11b1137c3a9b9c9cdc6d27dd}{Player\+Steam\+ID}}
+\item 
+string \mbox{\hyperlink{class_player_object_controller_a7fff7d8e32adf8b3580bb2c7c626d112}{Player\+Name}}
+\item 
+bool \mbox{\hyperlink{class_player_object_controller_ab7e3aab1d37ee75886d8b5aeb0337b91}{is\+Ready}} = false
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_custom_network_manager}{Custom\+Network\+Manager}} \mbox{\hyperlink{class_player_object_controller_aeefdb04e28dea485f26453be0b9c08c2}{Manager}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the \doxylink{class_custom_network_manager}{Custom\+Network\+Manager} instance, ensuring it is initialized. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_player_object_controller_ac4ade16b79bd4c7703e1f9fd413d19c8}{Start}} ()
+\begin{DoxyCompactList}\small\item\em Don\textquotesingle{}t destroy this object on scene load, allowing it to persist across scenes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_object_controller_a27f54d2b79c8cdae67b057e37603b559}{Player\+Ready\+Update}} (bool old\+Ready, bool new\+Ready)
+\begin{DoxyCompactList}\small\item\em Updates the player\textquotesingle{}s ready state and notifies clients of the change. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_object_controller_ad5d1ed3d679ea7e06628ba7749d022dd}{Cmd\+Set\+Player\+Name}} (string name)
+\begin{DoxyCompactList}\small\item\em Command to set the player\textquotesingle{}s name. This is called by the client and executed on the server. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_custom_network_manager}{Custom\+Network\+Manager}} \mbox{\hyperlink{class_player_object_controller_aef590340fcf7c6cff2e3db59cce2d5fc}{manager}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Controls the player object in the multiplayer game, managing player data and interactions. 
+
+\label{doc-func-members}
+\Hypertarget{class_player_object_controller_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_player_object_controller_a5fd375e5733d3dc7d433eaa7040a601a}\index{PlayerObjectController@{PlayerObjectController}!CanStartGame@{CanStartGame}}
+\index{CanStartGame@{CanStartGame}!PlayerObjectController@{PlayerObjectController}}
+\doxysubsubsection{\texorpdfstring{CanStartGame()}{CanStartGame()}}
+{\footnotesize\ttfamily \label{class_player_object_controller_a5fd375e5733d3dc7d433eaa7040a601a} 
+void Player\+Object\+Controller.\+Can\+Start\+Game (\begin{DoxyParamCaption}\item[{string}]{scene\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Checks if the player can start the game. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene\+Name} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_player_object_controller_abe5587a001839978f51adaa35b7afc16}\index{PlayerObjectController@{PlayerObjectController}!ChangeReadyState@{ChangeReadyState}}
+\index{ChangeReadyState@{ChangeReadyState}!PlayerObjectController@{PlayerObjectController}}
+\doxysubsubsection{\texorpdfstring{ChangeReadyState()}{ChangeReadyState()}}
+{\footnotesize\ttfamily \label{class_player_object_controller_abe5587a001839978f51adaa35b7afc16} 
+void Player\+Object\+Controller.\+Change\+Ready\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Changes the player\textquotesingle{}s ready state by calling the command to set it. This is typically called when the player clicks a "{}\+Ready"{} button. 
+
+\Hypertarget{class_player_object_controller_a1d06bbfba4b577ba91ecf0ed2918e285}\index{PlayerObjectController@{PlayerObjectController}!CmdCanStartGame@{CmdCanStartGame}}
+\index{CmdCanStartGame@{CmdCanStartGame}!PlayerObjectController@{PlayerObjectController}}
+\doxysubsubsection{\texorpdfstring{CmdCanStartGame()}{CmdCanStartGame()}}
+{\footnotesize\ttfamily \label{class_player_object_controller_a1d06bbfba4b577ba91ecf0ed2918e285} 
+void Player\+Object\+Controller.\+Cmd\+Can\+Start\+Game (\begin{DoxyParamCaption}\item[{string}]{scene\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Command to start the game by changing the scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene\+Name} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_player_object_controller_ad5d1ed3d679ea7e06628ba7749d022dd}\index{PlayerObjectController@{PlayerObjectController}!CmdSetPlayerName@{CmdSetPlayerName}}
+\index{CmdSetPlayerName@{CmdSetPlayerName}!PlayerObjectController@{PlayerObjectController}}
+\doxysubsubsection{\texorpdfstring{CmdSetPlayerName()}{CmdSetPlayerName()}}
+{\footnotesize\ttfamily \label{class_player_object_controller_ad5d1ed3d679ea7e06628ba7749d022dd} 
+void Player\+Object\+Controller.\+Cmd\+Set\+Player\+Name (\begin{DoxyParamCaption}\item[{string}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Command to set the player\textquotesingle{}s name. This is called by the client and executed on the server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_player_object_controller_a5e214f11d8f2ae26430cb3af40c302ee}\index{PlayerObjectController@{PlayerObjectController}!CmdSetPlayerReady@{CmdSetPlayerReady}}
+\index{CmdSetPlayerReady@{CmdSetPlayerReady}!PlayerObjectController@{PlayerObjectController}}
+\doxysubsubsection{\texorpdfstring{CmdSetPlayerReady()}{CmdSetPlayerReady()}}
+{\footnotesize\ttfamily \label{class_player_object_controller_a5e214f11d8f2ae26430cb3af40c302ee} 
+void Player\+Object\+Controller.\+Cmd\+Set\+Player\+Ready (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Command to set the player\textquotesingle{}s ready state. This is called by the client and executed on the server. 
+
+\Hypertarget{class_player_object_controller_aa1954ebb5d40bf86d0f56e33b4c257e6}\index{PlayerObjectController@{PlayerObjectController}!OnStartAuthority@{OnStartAuthority}}
+\index{OnStartAuthority@{OnStartAuthority}!PlayerObjectController@{PlayerObjectController}}
+\doxysubsubsection{\texorpdfstring{OnStartAuthority()}{OnStartAuthority()}}
+{\footnotesize\ttfamily \label{class_player_object_controller_aa1954ebb5d40bf86d0f56e33b4c257e6} 
+override void Player\+Object\+Controller.\+On\+Start\+Authority (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Called when the player object gains authority on the client. It sets the player\textquotesingle{}s name and updates the lobby. 
+
+\Hypertarget{class_player_object_controller_aab7eacc68b2bd05c115b449c6fe3eab2}\index{PlayerObjectController@{PlayerObjectController}!OnStartClient@{OnStartClient}}
+\index{OnStartClient@{OnStartClient}!PlayerObjectController@{PlayerObjectController}}
+\doxysubsubsection{\texorpdfstring{OnStartClient()}{OnStartClient()}}
+{\footnotesize\ttfamily \label{class_player_object_controller_aab7eacc68b2bd05c115b449c6fe3eab2} 
+override void Player\+Object\+Controller.\+On\+Start\+Client (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Called when the player object is started on the client. It adds the player to the player list and updates the lobby name and player list. 
+
+\Hypertarget{class_player_object_controller_a3a05ba8c03affe66f5a0ae8031de84fc}\index{PlayerObjectController@{PlayerObjectController}!OnStopClient@{OnStopClient}}
+\index{OnStopClient@{OnStopClient}!PlayerObjectController@{PlayerObjectController}}
+\doxysubsubsection{\texorpdfstring{OnStopClient()}{OnStopClient()}}
+{\footnotesize\ttfamily \label{class_player_object_controller_a3a05ba8c03affe66f5a0ae8031de84fc} 
+override void Player\+Object\+Controller.\+On\+Stop\+Client (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Called when the player object stops being a client. It removes the player from the player list and updates the lobby. 
+
+\Hypertarget{class_player_object_controller_a81b894e504a6b5ddc2194fc0d51c3be0}\index{PlayerObjectController@{PlayerObjectController}!PlayerNameUpdate@{PlayerNameUpdate}}
+\index{PlayerNameUpdate@{PlayerNameUpdate}!PlayerObjectController@{PlayerObjectController}}
+\doxysubsubsection{\texorpdfstring{PlayerNameUpdate()}{PlayerNameUpdate()}}
+{\footnotesize\ttfamily \label{class_player_object_controller_a81b894e504a6b5ddc2194fc0d51c3be0} 
+void Player\+Object\+Controller.\+Player\+Name\+Update (\begin{DoxyParamCaption}\item[{string}]{old\+Name}{, }\item[{string}]{new\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Updates the player\textquotesingle{}s name and notifies clients of the change. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\+Name} & \\
+\hline
+{\em new\+Name} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_player_object_controller_a27f54d2b79c8cdae67b057e37603b559}\index{PlayerObjectController@{PlayerObjectController}!PlayerReadyUpdate@{PlayerReadyUpdate}}
+\index{PlayerReadyUpdate@{PlayerReadyUpdate}!PlayerObjectController@{PlayerObjectController}}
+\doxysubsubsection{\texorpdfstring{PlayerReadyUpdate()}{PlayerReadyUpdate()}}
+{\footnotesize\ttfamily \label{class_player_object_controller_a27f54d2b79c8cdae67b057e37603b559} 
+void Player\+Object\+Controller.\+Player\+Ready\+Update (\begin{DoxyParamCaption}\item[{bool}]{old\+Ready}{, }\item[{bool}]{new\+Ready}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Updates the player\textquotesingle{}s ready state and notifies clients of the change. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\+Ready} & \\
+\hline
+{\em new\+Ready} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_player_object_controller_ac4ade16b79bd4c7703e1f9fd413d19c8}\index{PlayerObjectController@{PlayerObjectController}!Start@{Start}}
+\index{Start@{Start}!PlayerObjectController@{PlayerObjectController}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily \label{class_player_object_controller_ac4ade16b79bd4c7703e1f9fd413d19c8} 
+void Player\+Object\+Controller.\+Start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Don\textquotesingle{}t destroy this object on scene load, allowing it to persist across scenes. 
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_player_object_controller_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_player_object_controller_ae2d9d08e502a454d89d71d9fa02cd762}\index{PlayerObjectController@{PlayerObjectController}!ConnectionID@{ConnectionID}}
+\index{ConnectionID@{ConnectionID}!PlayerObjectController@{PlayerObjectController}}
+\doxysubsubsection{\texorpdfstring{ConnectionID}{ConnectionID}}
+{\footnotesize\ttfamily \label{class_player_object_controller_ae2d9d08e502a454d89d71d9fa02cd762} 
+int Player\+Object\+Controller.\+Connection\+ID}
+
+\Hypertarget{class_player_object_controller_ab7e3aab1d37ee75886d8b5aeb0337b91}\index{PlayerObjectController@{PlayerObjectController}!isReady@{isReady}}
+\index{isReady@{isReady}!PlayerObjectController@{PlayerObjectController}}
+\doxysubsubsection{\texorpdfstring{isReady}{isReady}}
+{\footnotesize\ttfamily \label{class_player_object_controller_ab7e3aab1d37ee75886d8b5aeb0337b91} 
+bool Player\+Object\+Controller.\+is\+Ready = false}
+
+\Hypertarget{class_player_object_controller_aef590340fcf7c6cff2e3db59cce2d5fc}\index{PlayerObjectController@{PlayerObjectController}!manager@{manager}}
+\index{manager@{manager}!PlayerObjectController@{PlayerObjectController}}
+\doxysubsubsection{\texorpdfstring{manager}{manager}}
+{\footnotesize\ttfamily \label{class_player_object_controller_aef590340fcf7c6cff2e3db59cce2d5fc} 
+\mbox{\hyperlink{class_custom_network_manager}{Custom\+Network\+Manager}} Player\+Object\+Controller.\+manager\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_object_controller_aaa8f1dca71c4046e3190ece5d8ebf1af}\index{PlayerObjectController@{PlayerObjectController}!PlayerID@{PlayerID}}
+\index{PlayerID@{PlayerID}!PlayerObjectController@{PlayerObjectController}}
+\doxysubsubsection{\texorpdfstring{PlayerID}{PlayerID}}
+{\footnotesize\ttfamily \label{class_player_object_controller_aaa8f1dca71c4046e3190ece5d8ebf1af} 
+int Player\+Object\+Controller.\+Player\+ID}
+
+\Hypertarget{class_player_object_controller_a7fff7d8e32adf8b3580bb2c7c626d112}\index{PlayerObjectController@{PlayerObjectController}!PlayerName@{PlayerName}}
+\index{PlayerName@{PlayerName}!PlayerObjectController@{PlayerObjectController}}
+\doxysubsubsection{\texorpdfstring{PlayerName}{PlayerName}}
+{\footnotesize\ttfamily \label{class_player_object_controller_a7fff7d8e32adf8b3580bb2c7c626d112} 
+string Player\+Object\+Controller.\+Player\+Name}
+
+\Hypertarget{class_player_object_controller_a08a3daff11b1137c3a9b9c9cdc6d27dd}\index{PlayerObjectController@{PlayerObjectController}!PlayerSteamID@{PlayerSteamID}}
+\index{PlayerSteamID@{PlayerSteamID}!PlayerObjectController@{PlayerObjectController}}
+\doxysubsubsection{\texorpdfstring{PlayerSteamID}{PlayerSteamID}}
+{\footnotesize\ttfamily \label{class_player_object_controller_a08a3daff11b1137c3a9b9c9cdc6d27dd} 
+ulong Player\+Object\+Controller.\+Player\+Steam\+ID}
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_player_object_controller_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_player_object_controller_aeefdb04e28dea485f26453be0b9c08c2}\index{PlayerObjectController@{PlayerObjectController}!Manager@{Manager}}
+\index{Manager@{Manager}!PlayerObjectController@{PlayerObjectController}}
+\doxysubsubsection{\texorpdfstring{Manager}{Manager}}
+{\footnotesize\ttfamily \label{class_player_object_controller_aeefdb04e28dea485f26453be0b9c08c2} 
+\mbox{\hyperlink{class_custom_network_manager}{Custom\+Network\+Manager}} Player\+Object\+Controller.\+Manager\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [private]}}
+
+
+
+Gets the \doxylink{class_custom_network_manager}{Custom\+Network\+Manager} instance, ensuring it is initialized. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Multiplayer\+Player/\mbox{\hyperlink{_player_object_controller_8cs}{Player\+Object\+Controller.\+cs}}\end{DoxyCompactItemize}

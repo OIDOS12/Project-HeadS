@@ -1,0 +1,112 @@
+\doxysection{Goal\+Detector Class Reference}
+\hypertarget{class_goal_detector}{}\label{class_goal_detector}\index{GoalDetector@{GoalDetector}}
+
+
+Detects when a goal has been scored and triggers the goal sequence via the \doxylink{class_goal_manager}{Goal\+Manager}.  
+
+
+Inheritance diagram for Goal\+Detector\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_goal_detector}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_goal_detector_a77e276d822d03092723af659a2b3b328}{On\+Start\+Server}} ()
+\begin{DoxyCompactList}\small\item\em Initializes references to the ball\textquotesingle{}s Rigidbody2D on the server. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_goal_detector_a2c979c267d9e8ed8ec7ca09a97a89c1e}{On\+Trigger\+Enter2D}} (Collider2D collision)
+\begin{DoxyCompactList}\small\item\em Triggered when the ball enters the goal. Notifies \doxylink{class_goal_manager}{Goal\+Manager}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_goal_detector_acedc7ce95e250efeb1ef8b4f5d236092}{ball\+Tag}} = "{}Ball"{}
+\item 
+string \mbox{\hyperlink{class_goal_detector_ae247b92188f23c5cc42c5ebaeeb2b93c}{first\+Goal\+Tag}} = "{}First\+Goal"{}
+\item 
+string \mbox{\hyperlink{class_goal_detector_ab5eb885b645b91586ead41ad0fcbf396}{second\+Goal\+Tag}} = "{}Second\+Goal"{}
+\item 
+\mbox{\hyperlink{class_goal_manager}{Goal\+Manager}} \mbox{\hyperlink{class_goal_detector_aca5c62dc25ed21a81eb3da59e408d40b}{goal\+Manager}}
+\item 
+bool \mbox{\hyperlink{class_goal_detector_aa277d05f4e95173f565768555551ec4a}{goal\+Scored}} = false
+\item 
+Rigidbody2D \mbox{\hyperlink{class_goal_detector_a1d8c84e937a1896e383428f0e3f0798e}{ball\+Rb}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Detects when a goal has been scored and triggers the goal sequence via the \doxylink{class_goal_manager}{Goal\+Manager}. 
+
+\label{doc-func-members}
+\Hypertarget{class_goal_detector_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_goal_detector_a77e276d822d03092723af659a2b3b328}\index{GoalDetector@{GoalDetector}!OnStartServer@{OnStartServer}}
+\index{OnStartServer@{OnStartServer}!GoalDetector@{GoalDetector}}
+\doxysubsubsection{\texorpdfstring{OnStartServer()}{OnStartServer()}}
+{\footnotesize\ttfamily \label{class_goal_detector_a77e276d822d03092723af659a2b3b328} 
+override void Goal\+Detector.\+On\+Start\+Server (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initializes references to the ball\textquotesingle{}s Rigidbody2D on the server. 
+
+\Hypertarget{class_goal_detector_a2c979c267d9e8ed8ec7ca09a97a89c1e}\index{GoalDetector@{GoalDetector}!OnTriggerEnter2D@{OnTriggerEnter2D}}
+\index{OnTriggerEnter2D@{OnTriggerEnter2D}!GoalDetector@{GoalDetector}}
+\doxysubsubsection{\texorpdfstring{OnTriggerEnter2D()}{OnTriggerEnter2D()}}
+{\footnotesize\ttfamily \label{class_goal_detector_a2c979c267d9e8ed8ec7ca09a97a89c1e} 
+void Goal\+Detector.\+On\+Trigger\+Enter2D (\begin{DoxyParamCaption}\item[{Collider2D}]{collision}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Triggered when the ball enters the goal. Notifies \doxylink{class_goal_manager}{Goal\+Manager}. 
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_goal_detector_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_goal_detector_a1d8c84e937a1896e383428f0e3f0798e}\index{GoalDetector@{GoalDetector}!ballRb@{ballRb}}
+\index{ballRb@{ballRb}!GoalDetector@{GoalDetector}}
+\doxysubsubsection{\texorpdfstring{ballRb}{ballRb}}
+{\footnotesize\ttfamily \label{class_goal_detector_a1d8c84e937a1896e383428f0e3f0798e} 
+Rigidbody2D Goal\+Detector.\+ball\+Rb\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_goal_detector_acedc7ce95e250efeb1ef8b4f5d236092}\index{GoalDetector@{GoalDetector}!ballTag@{ballTag}}
+\index{ballTag@{ballTag}!GoalDetector@{GoalDetector}}
+\doxysubsubsection{\texorpdfstring{ballTag}{ballTag}}
+{\footnotesize\ttfamily \label{class_goal_detector_acedc7ce95e250efeb1ef8b4f5d236092} 
+string Goal\+Detector.\+ball\+Tag = "{}Ball"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_goal_detector_ae247b92188f23c5cc42c5ebaeeb2b93c}\index{GoalDetector@{GoalDetector}!firstGoalTag@{firstGoalTag}}
+\index{firstGoalTag@{firstGoalTag}!GoalDetector@{GoalDetector}}
+\doxysubsubsection{\texorpdfstring{firstGoalTag}{firstGoalTag}}
+{\footnotesize\ttfamily \label{class_goal_detector_ae247b92188f23c5cc42c5ebaeeb2b93c} 
+string Goal\+Detector.\+first\+Goal\+Tag = "{}First\+Goal"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_goal_detector_aca5c62dc25ed21a81eb3da59e408d40b}\index{GoalDetector@{GoalDetector}!goalManager@{goalManager}}
+\index{goalManager@{goalManager}!GoalDetector@{GoalDetector}}
+\doxysubsubsection{\texorpdfstring{goalManager}{goalManager}}
+{\footnotesize\ttfamily \label{class_goal_detector_aca5c62dc25ed21a81eb3da59e408d40b} 
+\mbox{\hyperlink{class_goal_manager}{Goal\+Manager}} Goal\+Detector.\+goal\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_goal_detector_aa277d05f4e95173f565768555551ec4a}\index{GoalDetector@{GoalDetector}!goalScored@{goalScored}}
+\index{goalScored@{goalScored}!GoalDetector@{GoalDetector}}
+\doxysubsubsection{\texorpdfstring{goalScored}{goalScored}}
+{\footnotesize\ttfamily \label{class_goal_detector_aa277d05f4e95173f565768555551ec4a} 
+bool Goal\+Detector.\+goal\+Scored = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_goal_detector_ab5eb885b645b91586ead41ad0fcbf396}\index{GoalDetector@{GoalDetector}!secondGoalTag@{secondGoalTag}}
+\index{secondGoalTag@{secondGoalTag}!GoalDetector@{GoalDetector}}
+\doxysubsubsection{\texorpdfstring{secondGoalTag}{secondGoalTag}}
+{\footnotesize\ttfamily \label{class_goal_detector_ab5eb885b645b91586ead41ad0fcbf396} 
+string Goal\+Detector.\+second\+Goal\+Tag = "{}Second\+Goal"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Map\+And\+Menu\+Scripts/\mbox{\hyperlink{_goal_detector_8cs}{Goal\+Detector.\+cs}}\end{DoxyCompactItemize}

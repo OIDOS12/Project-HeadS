@@ -1,0 +1,119 @@
+\doxysection{Local\+Player\+Input\+Handler Class Reference}
+\hypertarget{class_local_player_input_handler}{}\label{class_local_player_input_handler}\index{LocalPlayerInputHandler@{LocalPlayerInputHandler}}
+
+
+Handles and centralizes player input. This is no longer a singleton. An instance of this class should be placed on a Game\+Object in your scene where input is needed.  
+
+
+Inheritance diagram for Local\+Player\+Input\+Handler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_local_player_input_handler}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_local_player_input_handler_ae5787c0a8a66870f658c7dd843040630}{Get\+Horizontal\+Input}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current horizontal input value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+System.\+Action \mbox{\hyperlink{class_local_player_input_handler_a423eb06d42e8c5b14789f00b0e9e961e}{On\+Jump\+Pressed}}
+\begin{DoxyCompactList}\small\item\em Event fired when the jump button is pressed down. \end{DoxyCompactList}\item 
+System.\+Action \mbox{\hyperlink{class_local_player_input_handler_a863c7174d8cf3ee19e4e5581e7bd775f}{On\+Kick\+Pressed}}
+\begin{DoxyCompactList}\small\item\em Event fired when the kick button is pressed down. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_local_player_input_handler_aaf4b81d9209c853578e92cbc900aa8d3}{Update}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_local_player_input_handler_a42f3ae4af73adb1ca846f07d1f3ef78c}{horizontal\+Axis}} = "{}Horizontal"{}
+\item 
+string \mbox{\hyperlink{class_local_player_input_handler_a8e04606288339318d7978316d4bed6df}{jump\+Key}} = "{}Jump"{}
+\item 
+string \mbox{\hyperlink{class_local_player_input_handler_aef723d01bc3b086d27b2ada0c340b67b}{kick\+Key}} = "{}Kick"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles and centralizes player input. This is no longer a singleton. An instance of this class should be placed on a Game\+Object in your scene where input is needed. 
+
+\label{doc-func-members}
+\Hypertarget{class_local_player_input_handler_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_local_player_input_handler_ae5787c0a8a66870f658c7dd843040630}\index{LocalPlayerInputHandler@{LocalPlayerInputHandler}!GetHorizontalInput@{GetHorizontalInput}}
+\index{GetHorizontalInput@{GetHorizontalInput}!LocalPlayerInputHandler@{LocalPlayerInputHandler}}
+\doxysubsubsection{\texorpdfstring{GetHorizontalInput()}{GetHorizontalInput()}}
+{\footnotesize\ttfamily \label{class_local_player_input_handler_ae5787c0a8a66870f658c7dd843040630} 
+float Local\+Player\+Input\+Handler.\+Get\+Horizontal\+Input (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the current horizontal input value. 
+
+\begin{DoxyReturn}{Returns}
+The horizontal input value, between -\/1 and 1.
+\end{DoxyReturn}
+\Hypertarget{class_local_player_input_handler_aaf4b81d9209c853578e92cbc900aa8d3}\index{LocalPlayerInputHandler@{LocalPlayerInputHandler}!Update@{Update}}
+\index{Update@{Update}!LocalPlayerInputHandler@{LocalPlayerInputHandler}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_local_player_input_handler_aaf4b81d9209c853578e92cbc900aa8d3} 
+void Local\+Player\+Input\+Handler.\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_local_player_input_handler_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_local_player_input_handler_a42f3ae4af73adb1ca846f07d1f3ef78c}\index{LocalPlayerInputHandler@{LocalPlayerInputHandler}!horizontalAxis@{horizontalAxis}}
+\index{horizontalAxis@{horizontalAxis}!LocalPlayerInputHandler@{LocalPlayerInputHandler}}
+\doxysubsubsection{\texorpdfstring{horizontalAxis}{horizontalAxis}}
+{\footnotesize\ttfamily \label{class_local_player_input_handler_a42f3ae4af73adb1ca846f07d1f3ef78c} 
+string Local\+Player\+Input\+Handler.\+horizontal\+Axis = "{}Horizontal"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_local_player_input_handler_a8e04606288339318d7978316d4bed6df}\index{LocalPlayerInputHandler@{LocalPlayerInputHandler}!jumpKey@{jumpKey}}
+\index{jumpKey@{jumpKey}!LocalPlayerInputHandler@{LocalPlayerInputHandler}}
+\doxysubsubsection{\texorpdfstring{jumpKey}{jumpKey}}
+{\footnotesize\ttfamily \label{class_local_player_input_handler_a8e04606288339318d7978316d4bed6df} 
+string Local\+Player\+Input\+Handler.\+jump\+Key = "{}Jump"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_local_player_input_handler_aef723d01bc3b086d27b2ada0c340b67b}\index{LocalPlayerInputHandler@{LocalPlayerInputHandler}!kickKey@{kickKey}}
+\index{kickKey@{kickKey}!LocalPlayerInputHandler@{LocalPlayerInputHandler}}
+\doxysubsubsection{\texorpdfstring{kickKey}{kickKey}}
+{\footnotesize\ttfamily \label{class_local_player_input_handler_aef723d01bc3b086d27b2ada0c340b67b} 
+string Local\+Player\+Input\+Handler.\+kick\+Key = "{}Kick"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\label{doc-event-members}
+\Hypertarget{class_local_player_input_handler_doc-event-members}
+\doxysubsection{Event Documentation}
+\Hypertarget{class_local_player_input_handler_a423eb06d42e8c5b14789f00b0e9e961e}\index{LocalPlayerInputHandler@{LocalPlayerInputHandler}!OnJumpPressed@{OnJumpPressed}}
+\index{OnJumpPressed@{OnJumpPressed}!LocalPlayerInputHandler@{LocalPlayerInputHandler}}
+\doxysubsubsection{\texorpdfstring{OnJumpPressed}{OnJumpPressed}}
+{\footnotesize\ttfamily \label{class_local_player_input_handler_a423eb06d42e8c5b14789f00b0e9e961e} 
+System.\+Action Local\+Player\+Input\+Handler.\+On\+Jump\+Pressed}
+
+
+
+Event fired when the jump button is pressed down. 
+
+\Hypertarget{class_local_player_input_handler_a863c7174d8cf3ee19e4e5581e7bd775f}\index{LocalPlayerInputHandler@{LocalPlayerInputHandler}!OnKickPressed@{OnKickPressed}}
+\index{OnKickPressed@{OnKickPressed}!LocalPlayerInputHandler@{LocalPlayerInputHandler}}
+\doxysubsubsection{\texorpdfstring{OnKickPressed}{OnKickPressed}}
+{\footnotesize\ttfamily \label{class_local_player_input_handler_a863c7174d8cf3ee19e4e5581e7bd775f} 
+System.\+Action Local\+Player\+Input\+Handler.\+On\+Kick\+Pressed}
+
+
+
+Event fired when the kick button is pressed down. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Local\+Player/\mbox{\hyperlink{_local_player_input_handler_8cs}{Local\+Player\+Input\+Handler.\+cs}}\end{DoxyCompactItemize}

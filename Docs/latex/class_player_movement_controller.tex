@@ -1,0 +1,444 @@
+\doxysection{Player\+Movement\+Controller Class Reference}
+\hypertarget{class_player_movement_controller}{}\label{class_player_movement_controller}\index{PlayerMovementController@{PlayerMovementController}}
+
+
+Handles player movement, jumping, and kicking in a networked environment.  
+
+
+Inheritance diagram for Player\+Movement\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_player_movement_controller}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_player_movement_controller_a8c370d0ae971178ebd52cb5eb5f59963}{On\+Start\+Local\+Player}} ()
+\begin{DoxyCompactList}\small\item\em Called when the local player starts. Initializes input handling and sets area settings based on player net\+Id. \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_player_movement_controller_aae7fb25a76b9248c74e9cc6d3d2121a6}{On\+Stop\+Local\+Player}} ()
+\begin{DoxyCompactList}\small\item\em Called when the local player stops. Unsubscribes from input events to prevent memory leaks. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_movement_controller_ae3ebc929199cda64e26ba5ff4c8e8f04}{On\+Kick\+Animation\+End}} ()
+\begin{DoxyCompactList}\small\item\em Called by an animation event at the end of the kick animation. Resets the "{}\+Is\+Kicking"{} animation parameter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_player_movement_controller_a4b630765e921da9696ccd256fd1310a7}{Awake}} ()
+\begin{DoxyCompactList}\small\item\em Caches references to components and logs errors if critical references are missing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_movement_controller_a77c70505f08e912f948529ebd2b11cc2}{Start}} ()
+\begin{DoxyCompactList}\small\item\em Disables the player model and Rigidbody2D simulation at the start. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_movement_controller_ae7ea26dc7a445151581087d8324c41f9}{Handle\+Jump\+Input}} ()
+\begin{DoxyCompactList}\small\item\em Handles jump input from the \doxylink{class_player_input_handler}{Player\+Input\+Handler}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_movement_controller_ab430a53cad1c23d66ec2ce9b2625a1e3}{Handle\+Kick\+Input}} ()
+\begin{DoxyCompactList}\small\item\em Handles kick input from the \doxylink{class_player_input_handler}{Player\+Input\+Handler}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_movement_controller_ae5fe1e8776604ded63eb25e191d5fe7b}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Updates the player model and area settings when entering the game scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_movement_controller_a0951e6aa1557f1324d88500c2e5d3615}{Fixed\+Update}} ()
+\begin{DoxyCompactList}\small\item\em Fixed\+Update is called at a fixed interval and is used for physics-\/related updates. It processes player input and sends movement commands to the server. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_movement_controller_ab6027f14044a14c694f0049f3da0ca9d}{On\+Trigger\+Enter2D}} (Collider2D other)
+\begin{DoxyCompactList}\small\item\em Called when another collider enters the trigger. This method checks if the collider is on the ground layer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_movement_controller_a4231c9de562d0d73e098f60747e270a0}{On\+Trigger\+Exit2D}} (Collider2D other)
+\begin{DoxyCompactList}\small\item\em Called when another collider exits the trigger. This method checks if the collider is on the ground layer and updates the ground contact count. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_movement_controller_abae5dde467d40ca17a8b9c561bba59fe}{Update\+Is\+Grounded}} ()
+\begin{DoxyCompactList}\small\item\em If ground\+Contact\+Count is greater than 0, is\+Grounded is set to true, otherwise -\/ false. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_movement_controller_a1be9675a1d752ec0d1d9f9790a18dc3b}{Set\+Area\+Settings}} ()
+\begin{DoxyCompactList}\small\item\em Sets area settings and player orientation based on net\+Id. Used for team assignment. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_movement_controller_a670c278a15a8cc99e7ba40306e4a5310}{Handle\+Movement}} (bool jump, bool kick, bool \mbox{\hyperlink{class_player_movement_controller_a3b164312fa4ed2719ccf054872e106c0}{is\+Grounded}})
+\begin{DoxyCompactList}\small\item\em Handles local input and sends movement commands to the server. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_movement_controller_ae31117ca5926a9f6040f05bbb9888164}{Cmd\+Move}} (float horizontal\+Input, bool jump\+Pressed, bool kick, bool \mbox{\hyperlink{class_player_movement_controller_a3b164312fa4ed2719ccf054872e106c0}{is\+Grounded}})
+\begin{DoxyCompactList}\small\item\em Command sent from client to server to synchronize player movement and actions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_movement_controller_a053c5f669fb94f8eb5d7f18219d87b50}{Rpc\+Move}} (float horizontal\+Input, bool jump\+Pressed, bool kick, bool \mbox{\hyperlink{class_player_movement_controller_a3b164312fa4ed2719ccf054872e106c0}{is\+Grounded}})
+\begin{DoxyCompactList}\small\item\em Client\+Rpc called from server to all clients to apply movement and actions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_movement_controller_ab26c3089491deaafdf345eb7e046cf96}{Cmd\+Kick}} (Vector3 \mbox{\hyperlink{class_player_movement_controller_abce58994e0f150336a6c5f3eb913261b}{area\+Settings}}, bool \mbox{\hyperlink{class_player_movement_controller_a3b164312fa4ed2719ccf054872e106c0}{is\+Grounded}})
+\begin{DoxyCompactList}\small\item\em Command sent from client to server to perform a kick action. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_movement_controller_ac976fe1cf4a424b62cdafc5c77d4a3f7}{Rpc\+Kick}} (Vector3 \mbox{\hyperlink{class_player_movement_controller_abce58994e0f150336a6c5f3eb913261b}{area\+Settings}}, bool \mbox{\hyperlink{class_player_movement_controller_a3b164312fa4ed2719ccf054872e106c0}{is\+Grounded}})
+\begin{DoxyCompactList}\small\item\em Performs the kick action, applying force to the ball. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_player_input_handler}{Player\+Input\+Handler}} \mbox{\hyperlink{class_player_movement_controller_a4945aacba85338cbf86ca087ec0e0145}{input\+Handler}}
+\item 
+float \mbox{\hyperlink{class_player_movement_controller_a43fe35e6bff040d5ef3f3e0515f01661}{speed}} = 5f
+\item 
+float \mbox{\hyperlink{class_player_movement_controller_ad101a7062dfee2cd1d03ce43bd837168}{jump\+Force}} = 10f
+\item 
+float \mbox{\hyperlink{class_player_movement_controller_a347ba9252ca86e9649dcb52d77b91b4d}{kick\+Force}} = 10f
+\item 
+float \mbox{\hyperlink{class_player_movement_controller_a7f37985d32dd9eb0fce68f96b341a4ed}{upward\+Force}} = 0.\+9f
+\item 
+Game\+Object \mbox{\hyperlink{class_player_movement_controller_ab67788c6998f2b37bc7a23d2b2b3b394}{player\+Model}}
+\item 
+Rigidbody2D \mbox{\hyperlink{class_player_movement_controller_ab3c45f65bbcd187b7b69fff90f49a3c3}{rb}}
+\item 
+Layer\+Mask \mbox{\hyperlink{class_player_movement_controller_aa2a5cac6ecc4e8b28487cbbf54291afc}{what\+Is\+Ground}}
+\item 
+Box\+Collider2D \mbox{\hyperlink{class_player_movement_controller_a5cced20ff7d704c8856dadcfac6d88e5}{ground\+Check\+Collider}}
+\item 
+Animator \mbox{\hyperlink{class_player_movement_controller_ab74fb6277ec38266fe555e5891f04e6f}{animator}}
+\item 
+Network\+Animator \mbox{\hyperlink{class_player_movement_controller_af40710a3cdc20a96231e7589078ac474}{network\+Animator}}
+\item 
+Audio\+Clip \mbox{\hyperlink{class_player_movement_controller_ab2c74f60a13346e30772576fd2c20186}{kick\+Sound\+Clip}}
+\item 
+Vector3 \mbox{\hyperlink{class_player_movement_controller_a0ad33094ccfbf488cc0dcb9d1058da96}{positive\+Area\+Settings}} = new Vector3(0.\+8f, -\/0.\+8f, 0)
+\item 
+Vector3 \mbox{\hyperlink{class_player_movement_controller_a1f5f70f3e546e3f3a4320d9996f39e31}{negative\+Area\+Settings}} = new Vector3(-\/0.\+8f, -\/0.\+8f, 0)
+\item 
+Vector3 \mbox{\hyperlink{class_player_movement_controller_abce58994e0f150336a6c5f3eb913261b}{area\+Settings}}
+\item 
+bool \mbox{\hyperlink{class_player_movement_controller_ad35f409b6181e5b976e02949045e7d47}{jump\+Input\+Received}}
+\item 
+bool \mbox{\hyperlink{class_player_movement_controller_a8f94908dbc39e57a8a2e522ab663883e}{kick\+Input\+Received}}
+\item 
+bool \mbox{\hyperlink{class_player_movement_controller_a3b164312fa4ed2719ccf054872e106c0}{is\+Grounded}}
+\item 
+int \mbox{\hyperlink{class_player_movement_controller_a5c791276bd00ac488115aa78ad53f26c}{ground\+Contact\+Count}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles player movement, jumping, and kicking in a networked environment. 
+
+\label{doc-func-members}
+\Hypertarget{class_player_movement_controller_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_player_movement_controller_a4b630765e921da9696ccd256fd1310a7}\index{PlayerMovementController@{PlayerMovementController}!Awake@{Awake}}
+\index{Awake@{Awake}!PlayerMovementController@{PlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{Awake()}{Awake()}}
+{\footnotesize\ttfamily \label{class_player_movement_controller_a4b630765e921da9696ccd256fd1310a7} 
+void Player\+Movement\+Controller.\+Awake (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Caches references to components and logs errors if critical references are missing. 
+
+\Hypertarget{class_player_movement_controller_ab26c3089491deaafdf345eb7e046cf96}\index{PlayerMovementController@{PlayerMovementController}!CmdKick@{CmdKick}}
+\index{CmdKick@{CmdKick}!PlayerMovementController@{PlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{CmdKick()}{CmdKick()}}
+{\footnotesize\ttfamily \label{class_player_movement_controller_ab26c3089491deaafdf345eb7e046cf96} 
+void Player\+Movement\+Controller.\+Cmd\+Kick (\begin{DoxyParamCaption}\item[{Vector3}]{area\+Settings}{, }\item[{bool}]{is\+Grounded}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Command sent from client to server to perform a kick action. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em area\+Settings} & \\
+\hline
+{\em is\+Grounded} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_player_movement_controller_ae31117ca5926a9f6040f05bbb9888164}\index{PlayerMovementController@{PlayerMovementController}!CmdMove@{CmdMove}}
+\index{CmdMove@{CmdMove}!PlayerMovementController@{PlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{CmdMove()}{CmdMove()}}
+{\footnotesize\ttfamily \label{class_player_movement_controller_ae31117ca5926a9f6040f05bbb9888164} 
+void Player\+Movement\+Controller.\+Cmd\+Move (\begin{DoxyParamCaption}\item[{float}]{horizontal\+Input}{, }\item[{bool}]{jump\+Pressed}{, }\item[{bool}]{kick}{, }\item[{bool}]{is\+Grounded}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Command sent from client to server to synchronize player movement and actions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em horizontal\+Input} & The horizontal input value.\\
+\hline
+{\em jump\+Pressed} & True if the jump button was pressed.\\
+\hline
+{\em kick} & True if the kick button was pressed.\\
+\hline
+{\em is\+Grounded} & True if the player is currently grounded.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_player_movement_controller_a0951e6aa1557f1324d88500c2e5d3615}\index{PlayerMovementController@{PlayerMovementController}!FixedUpdate@{FixedUpdate}}
+\index{FixedUpdate@{FixedUpdate}!PlayerMovementController@{PlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{FixedUpdate()}{FixedUpdate()}}
+{\footnotesize\ttfamily \label{class_player_movement_controller_a0951e6aa1557f1324d88500c2e5d3615} 
+void Player\+Movement\+Controller.\+Fixed\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Fixed\+Update is called at a fixed interval and is used for physics-\/related updates. It processes player input and sends movement commands to the server. 
+
+\Hypertarget{class_player_movement_controller_ae7ea26dc7a445151581087d8324c41f9}\index{PlayerMovementController@{PlayerMovementController}!HandleJumpInput@{HandleJumpInput}}
+\index{HandleJumpInput@{HandleJumpInput}!PlayerMovementController@{PlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{HandleJumpInput()}{HandleJumpInput()}}
+{\footnotesize\ttfamily \label{class_player_movement_controller_ae7ea26dc7a445151581087d8324c41f9} 
+void Player\+Movement\+Controller.\+Handle\+Jump\+Input (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Handles jump input from the \doxylink{class_player_input_handler}{Player\+Input\+Handler}. 
+
+\Hypertarget{class_player_movement_controller_ab430a53cad1c23d66ec2ce9b2625a1e3}\index{PlayerMovementController@{PlayerMovementController}!HandleKickInput@{HandleKickInput}}
+\index{HandleKickInput@{HandleKickInput}!PlayerMovementController@{PlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{HandleKickInput()}{HandleKickInput()}}
+{\footnotesize\ttfamily \label{class_player_movement_controller_ab430a53cad1c23d66ec2ce9b2625a1e3} 
+void Player\+Movement\+Controller.\+Handle\+Kick\+Input (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Handles kick input from the \doxylink{class_player_input_handler}{Player\+Input\+Handler}. 
+
+\Hypertarget{class_player_movement_controller_a670c278a15a8cc99e7ba40306e4a5310}\index{PlayerMovementController@{PlayerMovementController}!HandleMovement@{HandleMovement}}
+\index{HandleMovement@{HandleMovement}!PlayerMovementController@{PlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{HandleMovement()}{HandleMovement()}}
+{\footnotesize\ttfamily \label{class_player_movement_controller_a670c278a15a8cc99e7ba40306e4a5310} 
+void Player\+Movement\+Controller.\+Handle\+Movement (\begin{DoxyParamCaption}\item[{bool}]{jump}{, }\item[{bool}]{kick}{, }\item[{bool}]{is\+Grounded}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Handles local input and sends movement commands to the server. 
+
+\Hypertarget{class_player_movement_controller_ae3ebc929199cda64e26ba5ff4c8e8f04}\index{PlayerMovementController@{PlayerMovementController}!OnKickAnimationEnd@{OnKickAnimationEnd}}
+\index{OnKickAnimationEnd@{OnKickAnimationEnd}!PlayerMovementController@{PlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{OnKickAnimationEnd()}{OnKickAnimationEnd()}}
+{\footnotesize\ttfamily \label{class_player_movement_controller_ae3ebc929199cda64e26ba5ff4c8e8f04} 
+void Player\+Movement\+Controller.\+On\+Kick\+Animation\+End (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Called by an animation event at the end of the kick animation. Resets the "{}\+Is\+Kicking"{} animation parameter. 
+
+\Hypertarget{class_player_movement_controller_a8c370d0ae971178ebd52cb5eb5f59963}\index{PlayerMovementController@{PlayerMovementController}!OnStartLocalPlayer@{OnStartLocalPlayer}}
+\index{OnStartLocalPlayer@{OnStartLocalPlayer}!PlayerMovementController@{PlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{OnStartLocalPlayer()}{OnStartLocalPlayer()}}
+{\footnotesize\ttfamily \label{class_player_movement_controller_a8c370d0ae971178ebd52cb5eb5f59963} 
+override void Player\+Movement\+Controller.\+On\+Start\+Local\+Player (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Called when the local player starts. Initializes input handling and sets area settings based on player net\+Id. 
+
+\Hypertarget{class_player_movement_controller_aae7fb25a76b9248c74e9cc6d3d2121a6}\index{PlayerMovementController@{PlayerMovementController}!OnStopLocalPlayer@{OnStopLocalPlayer}}
+\index{OnStopLocalPlayer@{OnStopLocalPlayer}!PlayerMovementController@{PlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{OnStopLocalPlayer()}{OnStopLocalPlayer()}}
+{\footnotesize\ttfamily \label{class_player_movement_controller_aae7fb25a76b9248c74e9cc6d3d2121a6} 
+override void Player\+Movement\+Controller.\+On\+Stop\+Local\+Player (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Called when the local player stops. Unsubscribes from input events to prevent memory leaks. 
+
+\Hypertarget{class_player_movement_controller_ab6027f14044a14c694f0049f3da0ca9d}\index{PlayerMovementController@{PlayerMovementController}!OnTriggerEnter2D@{OnTriggerEnter2D}}
+\index{OnTriggerEnter2D@{OnTriggerEnter2D}!PlayerMovementController@{PlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{OnTriggerEnter2D()}{OnTriggerEnter2D()}}
+{\footnotesize\ttfamily \label{class_player_movement_controller_ab6027f14044a14c694f0049f3da0ca9d} 
+void Player\+Movement\+Controller.\+On\+Trigger\+Enter2D (\begin{DoxyParamCaption}\item[{Collider2D}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Called when another collider enters the trigger. This method checks if the collider is on the ground layer. 
+
+\Hypertarget{class_player_movement_controller_a4231c9de562d0d73e098f60747e270a0}\index{PlayerMovementController@{PlayerMovementController}!OnTriggerExit2D@{OnTriggerExit2D}}
+\index{OnTriggerExit2D@{OnTriggerExit2D}!PlayerMovementController@{PlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{OnTriggerExit2D()}{OnTriggerExit2D()}}
+{\footnotesize\ttfamily \label{class_player_movement_controller_a4231c9de562d0d73e098f60747e270a0} 
+void Player\+Movement\+Controller.\+On\+Trigger\+Exit2D (\begin{DoxyParamCaption}\item[{Collider2D}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Called when another collider exits the trigger. This method checks if the collider is on the ground layer and updates the ground contact count. 
+
+\Hypertarget{class_player_movement_controller_ac976fe1cf4a424b62cdafc5c77d4a3f7}\index{PlayerMovementController@{PlayerMovementController}!RpcKick@{RpcKick}}
+\index{RpcKick@{RpcKick}!PlayerMovementController@{PlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{RpcKick()}{RpcKick()}}
+{\footnotesize\ttfamily \label{class_player_movement_controller_ac976fe1cf4a424b62cdafc5c77d4a3f7} 
+void Player\+Movement\+Controller.\+Rpc\+Kick (\begin{DoxyParamCaption}\item[{Vector3}]{area\+Settings}{, }\item[{bool}]{is\+Grounded}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Performs the kick action, applying force to the ball. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em area\+Settings} & The area settings for detecting the ball.\\
+\hline
+{\em is\+Grounded} & True if the player is currently grounded.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_player_movement_controller_a053c5f669fb94f8eb5d7f18219d87b50}\index{PlayerMovementController@{PlayerMovementController}!RpcMove@{RpcMove}}
+\index{RpcMove@{RpcMove}!PlayerMovementController@{PlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{RpcMove()}{RpcMove()}}
+{\footnotesize\ttfamily \label{class_player_movement_controller_a053c5f669fb94f8eb5d7f18219d87b50} 
+void Player\+Movement\+Controller.\+Rpc\+Move (\begin{DoxyParamCaption}\item[{float}]{horizontal\+Input}{, }\item[{bool}]{jump\+Pressed}{, }\item[{bool}]{kick}{, }\item[{bool}]{is\+Grounded}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Client\+Rpc called from server to all clients to apply movement and actions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em horizontal\+Input} & The horizontal input value.\\
+\hline
+{\em jump\+Pressed} & True if the jump button was pressed.\\
+\hline
+{\em kick} & True if the kick button was pressed.\\
+\hline
+{\em is\+Grounded} & True if the player is currently grounded.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_player_movement_controller_a1be9675a1d752ec0d1d9f9790a18dc3b}\index{PlayerMovementController@{PlayerMovementController}!SetAreaSettings@{SetAreaSettings}}
+\index{SetAreaSettings@{SetAreaSettings}!PlayerMovementController@{PlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{SetAreaSettings()}{SetAreaSettings()}}
+{\footnotesize\ttfamily \label{class_player_movement_controller_a1be9675a1d752ec0d1d9f9790a18dc3b} 
+void Player\+Movement\+Controller.\+Set\+Area\+Settings (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Sets area settings and player orientation based on net\+Id. Used for team assignment. 
+
+\Hypertarget{class_player_movement_controller_a77c70505f08e912f948529ebd2b11cc2}\index{PlayerMovementController@{PlayerMovementController}!Start@{Start}}
+\index{Start@{Start}!PlayerMovementController@{PlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily \label{class_player_movement_controller_a77c70505f08e912f948529ebd2b11cc2} 
+void Player\+Movement\+Controller.\+Start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Disables the player model and Rigidbody2D simulation at the start. 
+
+\Hypertarget{class_player_movement_controller_ae5fe1e8776604ded63eb25e191d5fe7b}\index{PlayerMovementController@{PlayerMovementController}!Update@{Update}}
+\index{Update@{Update}!PlayerMovementController@{PlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_player_movement_controller_ae5fe1e8776604ded63eb25e191d5fe7b} 
+void Player\+Movement\+Controller.\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Updates the player model and area settings when entering the game scene. 
+
+\Hypertarget{class_player_movement_controller_abae5dde467d40ca17a8b9c561bba59fe}\index{PlayerMovementController@{PlayerMovementController}!UpdateIsGrounded@{UpdateIsGrounded}}
+\index{UpdateIsGrounded@{UpdateIsGrounded}!PlayerMovementController@{PlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{UpdateIsGrounded()}{UpdateIsGrounded()}}
+{\footnotesize\ttfamily \label{class_player_movement_controller_abae5dde467d40ca17a8b9c561bba59fe} 
+void Player\+Movement\+Controller.\+Update\+Is\+Grounded (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+If ground\+Contact\+Count is greater than 0, is\+Grounded is set to true, otherwise -\/ false. 
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_player_movement_controller_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_player_movement_controller_ab74fb6277ec38266fe555e5891f04e6f}\index{PlayerMovementController@{PlayerMovementController}!animator@{animator}}
+\index{animator@{animator}!PlayerMovementController@{PlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{animator}{animator}}
+{\footnotesize\ttfamily \label{class_player_movement_controller_ab74fb6277ec38266fe555e5891f04e6f} 
+Animator Player\+Movement\+Controller.\+animator\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_movement_controller_abce58994e0f150336a6c5f3eb913261b}\index{PlayerMovementController@{PlayerMovementController}!areaSettings@{areaSettings}}
+\index{areaSettings@{areaSettings}!PlayerMovementController@{PlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{areaSettings}{areaSettings}}
+{\footnotesize\ttfamily \label{class_player_movement_controller_abce58994e0f150336a6c5f3eb913261b} 
+Vector3 Player\+Movement\+Controller.\+area\+Settings\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_movement_controller_a5cced20ff7d704c8856dadcfac6d88e5}\index{PlayerMovementController@{PlayerMovementController}!groundCheckCollider@{groundCheckCollider}}
+\index{groundCheckCollider@{groundCheckCollider}!PlayerMovementController@{PlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{groundCheckCollider}{groundCheckCollider}}
+{\footnotesize\ttfamily \label{class_player_movement_controller_a5cced20ff7d704c8856dadcfac6d88e5} 
+Box\+Collider2D Player\+Movement\+Controller.\+ground\+Check\+Collider\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_movement_controller_a5c791276bd00ac488115aa78ad53f26c}\index{PlayerMovementController@{PlayerMovementController}!groundContactCount@{groundContactCount}}
+\index{groundContactCount@{groundContactCount}!PlayerMovementController@{PlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{groundContactCount}{groundContactCount}}
+{\footnotesize\ttfamily \label{class_player_movement_controller_a5c791276bd00ac488115aa78ad53f26c} 
+int Player\+Movement\+Controller.\+ground\+Contact\+Count = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_movement_controller_a4945aacba85338cbf86ca087ec0e0145}\index{PlayerMovementController@{PlayerMovementController}!inputHandler@{inputHandler}}
+\index{inputHandler@{inputHandler}!PlayerMovementController@{PlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{inputHandler}{inputHandler}}
+{\footnotesize\ttfamily \label{class_player_movement_controller_a4945aacba85338cbf86ca087ec0e0145} 
+\mbox{\hyperlink{class_player_input_handler}{Player\+Input\+Handler}} Player\+Movement\+Controller.\+input\+Handler\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_movement_controller_a3b164312fa4ed2719ccf054872e106c0}\index{PlayerMovementController@{PlayerMovementController}!isGrounded@{isGrounded}}
+\index{isGrounded@{isGrounded}!PlayerMovementController@{PlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{isGrounded}{isGrounded}}
+{\footnotesize\ttfamily \label{class_player_movement_controller_a3b164312fa4ed2719ccf054872e106c0} 
+bool Player\+Movement\+Controller.\+is\+Grounded\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_movement_controller_ad101a7062dfee2cd1d03ce43bd837168}\index{PlayerMovementController@{PlayerMovementController}!jumpForce@{jumpForce}}
+\index{jumpForce@{jumpForce}!PlayerMovementController@{PlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{jumpForce}{jumpForce}}
+{\footnotesize\ttfamily \label{class_player_movement_controller_ad101a7062dfee2cd1d03ce43bd837168} 
+float Player\+Movement\+Controller.\+jump\+Force = 10f\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_movement_controller_ad35f409b6181e5b976e02949045e7d47}\index{PlayerMovementController@{PlayerMovementController}!jumpInputReceived@{jumpInputReceived}}
+\index{jumpInputReceived@{jumpInputReceived}!PlayerMovementController@{PlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{jumpInputReceived}{jumpInputReceived}}
+{\footnotesize\ttfamily \label{class_player_movement_controller_ad35f409b6181e5b976e02949045e7d47} 
+bool Player\+Movement\+Controller.\+jump\+Input\+Received\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_movement_controller_a347ba9252ca86e9649dcb52d77b91b4d}\index{PlayerMovementController@{PlayerMovementController}!kickForce@{kickForce}}
+\index{kickForce@{kickForce}!PlayerMovementController@{PlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{kickForce}{kickForce}}
+{\footnotesize\ttfamily \label{class_player_movement_controller_a347ba9252ca86e9649dcb52d77b91b4d} 
+float Player\+Movement\+Controller.\+kick\+Force = 10f\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_movement_controller_a8f94908dbc39e57a8a2e522ab663883e}\index{PlayerMovementController@{PlayerMovementController}!kickInputReceived@{kickInputReceived}}
+\index{kickInputReceived@{kickInputReceived}!PlayerMovementController@{PlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{kickInputReceived}{kickInputReceived}}
+{\footnotesize\ttfamily \label{class_player_movement_controller_a8f94908dbc39e57a8a2e522ab663883e} 
+bool Player\+Movement\+Controller.\+kick\+Input\+Received\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_movement_controller_ab2c74f60a13346e30772576fd2c20186}\index{PlayerMovementController@{PlayerMovementController}!kickSoundClip@{kickSoundClip}}
+\index{kickSoundClip@{kickSoundClip}!PlayerMovementController@{PlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{kickSoundClip}{kickSoundClip}}
+{\footnotesize\ttfamily \label{class_player_movement_controller_ab2c74f60a13346e30772576fd2c20186} 
+Audio\+Clip Player\+Movement\+Controller.\+kick\+Sound\+Clip\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_movement_controller_a1f5f70f3e546e3f3a4320d9996f39e31}\index{PlayerMovementController@{PlayerMovementController}!negativeAreaSettings@{negativeAreaSettings}}
+\index{negativeAreaSettings@{negativeAreaSettings}!PlayerMovementController@{PlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{negativeAreaSettings}{negativeAreaSettings}}
+{\footnotesize\ttfamily \label{class_player_movement_controller_a1f5f70f3e546e3f3a4320d9996f39e31} 
+Vector3 Player\+Movement\+Controller.\+negative\+Area\+Settings = new Vector3(-\/0.\+8f, -\/0.\+8f, 0)\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_movement_controller_af40710a3cdc20a96231e7589078ac474}\index{PlayerMovementController@{PlayerMovementController}!networkAnimator@{networkAnimator}}
+\index{networkAnimator@{networkAnimator}!PlayerMovementController@{PlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{networkAnimator}{networkAnimator}}
+{\footnotesize\ttfamily \label{class_player_movement_controller_af40710a3cdc20a96231e7589078ac474} 
+Network\+Animator Player\+Movement\+Controller.\+network\+Animator\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_movement_controller_ab67788c6998f2b37bc7a23d2b2b3b394}\index{PlayerMovementController@{PlayerMovementController}!playerModel@{playerModel}}
+\index{playerModel@{playerModel}!PlayerMovementController@{PlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{playerModel}{playerModel}}
+{\footnotesize\ttfamily \label{class_player_movement_controller_ab67788c6998f2b37bc7a23d2b2b3b394} 
+Game\+Object Player\+Movement\+Controller.\+player\+Model\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_movement_controller_a0ad33094ccfbf488cc0dcb9d1058da96}\index{PlayerMovementController@{PlayerMovementController}!positiveAreaSettings@{positiveAreaSettings}}
+\index{positiveAreaSettings@{positiveAreaSettings}!PlayerMovementController@{PlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{positiveAreaSettings}{positiveAreaSettings}}
+{\footnotesize\ttfamily \label{class_player_movement_controller_a0ad33094ccfbf488cc0dcb9d1058da96} 
+Vector3 Player\+Movement\+Controller.\+positive\+Area\+Settings = new Vector3(0.\+8f, -\/0.\+8f, 0)\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_movement_controller_ab3c45f65bbcd187b7b69fff90f49a3c3}\index{PlayerMovementController@{PlayerMovementController}!rb@{rb}}
+\index{rb@{rb}!PlayerMovementController@{PlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{rb}{rb}}
+{\footnotesize\ttfamily \label{class_player_movement_controller_ab3c45f65bbcd187b7b69fff90f49a3c3} 
+Rigidbody2D Player\+Movement\+Controller.\+rb\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_movement_controller_a43fe35e6bff040d5ef3f3e0515f01661}\index{PlayerMovementController@{PlayerMovementController}!speed@{speed}}
+\index{speed@{speed}!PlayerMovementController@{PlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{speed}{speed}}
+{\footnotesize\ttfamily \label{class_player_movement_controller_a43fe35e6bff040d5ef3f3e0515f01661} 
+float Player\+Movement\+Controller.\+speed = 5f\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_movement_controller_a7f37985d32dd9eb0fce68f96b341a4ed}\index{PlayerMovementController@{PlayerMovementController}!upwardForce@{upwardForce}}
+\index{upwardForce@{upwardForce}!PlayerMovementController@{PlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{upwardForce}{upwardForce}}
+{\footnotesize\ttfamily \label{class_player_movement_controller_a7f37985d32dd9eb0fce68f96b341a4ed} 
+float Player\+Movement\+Controller.\+upward\+Force = 0.\+9f\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_movement_controller_aa2a5cac6ecc4e8b28487cbbf54291afc}\index{PlayerMovementController@{PlayerMovementController}!whatIsGround@{whatIsGround}}
+\index{whatIsGround@{whatIsGround}!PlayerMovementController@{PlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{whatIsGround}{whatIsGround}}
+{\footnotesize\ttfamily \label{class_player_movement_controller_aa2a5cac6ecc4e8b28487cbbf54291afc} 
+Layer\+Mask Player\+Movement\+Controller.\+what\+Is\+Ground\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Multiplayer\+Player/\mbox{\hyperlink{_player_movement_controller_8cs}{Player\+Movement\+Controller.\+cs}}\end{DoxyCompactItemize}

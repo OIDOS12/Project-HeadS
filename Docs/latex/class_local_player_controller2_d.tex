@@ -1,0 +1,251 @@
+\doxysection{Local\+Player\+Controller2D Class Reference}
+\hypertarget{class_local_player_controller2_d}{}\label{class_local_player_controller2_d}\index{LocalPlayerController2D@{LocalPlayerController2D}}
+Inheritance diagram for Local\+Player\+Controller2D\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_local_player_controller2_d}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_local_player_controller2_d_1_1_bool_event}{Bool\+Event}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_local_player_controller2_d_aa9609f2f5c314c8c8ac4fd43760df51c}{Move}} (float move, bool jump)
+\item 
+void \mbox{\hyperlink{class_local_player_controller2_d_aae23e9b5d5dffa49c074592212b2576b}{Kick}} (Vector3 area\+Settings)
+\item 
+void \mbox{\hyperlink{class_local_player_controller2_d_a2bd4f828df314de80409b279976f6ba3}{Call\+End\+Animation}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Unity\+Event \mbox{\hyperlink{class_local_player_controller2_d_a6c7ac299b0002c59745c2b2a65f08e1f}{On\+Land\+Event}}
+\item 
+\mbox{\hyperlink{class_local_player_controller2_d_1_1_bool_event}{Bool\+Event}} \mbox{\hyperlink{class_local_player_controller2_d_a7e405836be4dffe8ff2e2fd09e7df034}{On\+Crouch\+Event}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_local_player_controller2_d_a5f27deedc2aeadc31e6b7f2ab9be5c77}{Awake}} ()
+\item 
+void \mbox{\hyperlink{class_local_player_controller2_d_ae0d9661a5f1f4dd9919a6ed3279640e9}{Fixed\+Update}} ()
+\item 
+void \mbox{\hyperlink{class_local_player_controller2_d_aad6cc6bab03e79cf9e42d39ac98e9ee0}{Play\+Kick\+Animation}} ()
+\item 
+void \mbox{\hyperlink{class_local_player_controller2_d_a2131ad35b74a98dab6d819aac028ea68}{On\+Draw\+Gizmos2}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_local_player_controller2_d_a20274ac297488fff02093f3315bdfefe}{m\+\_\+\+Jump\+Force}} = 400f
+\item 
+float \mbox{\hyperlink{class_local_player_controller2_d_ad30b4cc4f3dc39ae270d4ca780330909}{m\+\_\+\+Movement\+Smoothing}} = .\+05f
+\item 
+float \mbox{\hyperlink{class_local_player_controller2_d_af6a4b19d583de35fde26910b9209aa7f}{kick\+Force}} = 10f
+\item 
+float \mbox{\hyperlink{class_local_player_controller2_d_ab22c87797e0622c5bb3b5d92af46090b}{upward\+Force}} = 5f
+\item 
+bool \mbox{\hyperlink{class_local_player_controller2_d_a7c9babb0543125ed0898637b8ba4ff07}{m\+\_\+\+Air\+Control}} = false
+\item 
+Layer\+Mask \mbox{\hyperlink{class_local_player_controller2_d_a93b56184d4cd2b59cf383077f169975a}{m\+\_\+\+What\+Is\+Ground}}
+\item 
+Transform \mbox{\hyperlink{class_local_player_controller2_d_ab55d8b67cdf36ece25a68758483c9f3c}{m\+\_\+\+Ground\+Check}}
+\item 
+Transform \mbox{\hyperlink{class_local_player_controller2_d_ad540737523025e49abb7fa5ffc80418f}{m\+\_\+\+Ceiling\+Check}}
+\item 
+bool \mbox{\hyperlink{class_local_player_controller2_d_abb5ed6f1a6e30f1979309aaee65b7718}{m\+\_\+\+Grounded}}
+\item 
+Rigidbody2D \mbox{\hyperlink{class_local_player_controller2_d_ab476eb031fdc3b04c8558d1788c5366d}{m\+\_\+\+Rigidbody2D}}
+\item 
+Vector3 \mbox{\hyperlink{class_local_player_controller2_d_ab4ad11f56832283fc29f6b0b6a934324}{m\+\_\+\+Velocity}} = Vector3.\+zero
+\item 
+Vector3 \mbox{\hyperlink{class_local_player_controller2_d_a965754193ca105326e88ea08a5e0bf34}{minus\+Height}} = new Vector3(0, 0.\+01f, 0)
+\item 
+Vector3 \mbox{\hyperlink{class_local_player_controller2_d_ae128eb6a1e55cb08f778c1d62c7a31e2}{center\+Point}}
+\item 
+Box\+Collider2D \mbox{\hyperlink{class_local_player_controller2_d_a1acb76fadc4a06ec5d17594c349bb5f6}{box\+Collider}}
+\item 
+Animator \mbox{\hyperlink{class_local_player_controller2_d_aecd9179d87007ac8a73067bc5c77bde9}{animator}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const float \mbox{\hyperlink{class_local_player_controller2_d_a7506ec1b6b909f5dd5a63d934f8c36e4}{k\+\_\+\+Grounded\+Radius}} = .\+1f
+\item 
+const float \mbox{\hyperlink{class_local_player_controller2_d_afc994b536dfcc72d243e477c29144b12}{k\+\_\+\+Ceiling\+Radius}} = .\+1f
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{class_local_player_controller2_d_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_local_player_controller2_d_a5f27deedc2aeadc31e6b7f2ab9be5c77}\index{LocalPlayerController2D@{LocalPlayerController2D}!Awake@{Awake}}
+\index{Awake@{Awake}!LocalPlayerController2D@{LocalPlayerController2D}}
+\doxysubsubsection{\texorpdfstring{Awake()}{Awake()}}
+{\footnotesize\ttfamily \label{class_local_player_controller2_d_a5f27deedc2aeadc31e6b7f2ab9be5c77} 
+void Local\+Player\+Controller2\+D.\+Awake (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_local_player_controller2_d_a2bd4f828df314de80409b279976f6ba3}\index{LocalPlayerController2D@{LocalPlayerController2D}!CallEndAnimation@{CallEndAnimation}}
+\index{CallEndAnimation@{CallEndAnimation}!LocalPlayerController2D@{LocalPlayerController2D}}
+\doxysubsubsection{\texorpdfstring{CallEndAnimation()}{CallEndAnimation()}}
+{\footnotesize\ttfamily \label{class_local_player_controller2_d_a2bd4f828df314de80409b279976f6ba3} 
+void Local\+Player\+Controller2\+D.\+Call\+End\+Animation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_local_player_controller2_d_ae0d9661a5f1f4dd9919a6ed3279640e9}\index{LocalPlayerController2D@{LocalPlayerController2D}!FixedUpdate@{FixedUpdate}}
+\index{FixedUpdate@{FixedUpdate}!LocalPlayerController2D@{LocalPlayerController2D}}
+\doxysubsubsection{\texorpdfstring{FixedUpdate()}{FixedUpdate()}}
+{\footnotesize\ttfamily \label{class_local_player_controller2_d_ae0d9661a5f1f4dd9919a6ed3279640e9} 
+void Local\+Player\+Controller2\+D.\+Fixed\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_local_player_controller2_d_aae23e9b5d5dffa49c074592212b2576b}\index{LocalPlayerController2D@{LocalPlayerController2D}!Kick@{Kick}}
+\index{Kick@{Kick}!LocalPlayerController2D@{LocalPlayerController2D}}
+\doxysubsubsection{\texorpdfstring{Kick()}{Kick()}}
+{\footnotesize\ttfamily \label{class_local_player_controller2_d_aae23e9b5d5dffa49c074592212b2576b} 
+void Local\+Player\+Controller2\+D.\+Kick (\begin{DoxyParamCaption}\item[{Vector3}]{area\+Settings}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_local_player_controller2_d_aa9609f2f5c314c8c8ac4fd43760df51c}\index{LocalPlayerController2D@{LocalPlayerController2D}!Move@{Move}}
+\index{Move@{Move}!LocalPlayerController2D@{LocalPlayerController2D}}
+\doxysubsubsection{\texorpdfstring{Move()}{Move()}}
+{\footnotesize\ttfamily \label{class_local_player_controller2_d_aa9609f2f5c314c8c8ac4fd43760df51c} 
+void Local\+Player\+Controller2\+D.\+Move (\begin{DoxyParamCaption}\item[{float}]{move}{, }\item[{bool}]{jump}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_local_player_controller2_d_a2131ad35b74a98dab6d819aac028ea68}\index{LocalPlayerController2D@{LocalPlayerController2D}!OnDrawGizmos2@{OnDrawGizmos2}}
+\index{OnDrawGizmos2@{OnDrawGizmos2}!LocalPlayerController2D@{LocalPlayerController2D}}
+\doxysubsubsection{\texorpdfstring{OnDrawGizmos2()}{OnDrawGizmos2()}}
+{\footnotesize\ttfamily \label{class_local_player_controller2_d_a2131ad35b74a98dab6d819aac028ea68} 
+void Local\+Player\+Controller2\+D.\+On\+Draw\+Gizmos2 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_local_player_controller2_d_aad6cc6bab03e79cf9e42d39ac98e9ee0}\index{LocalPlayerController2D@{LocalPlayerController2D}!PlayKickAnimation@{PlayKickAnimation}}
+\index{PlayKickAnimation@{PlayKickAnimation}!LocalPlayerController2D@{LocalPlayerController2D}}
+\doxysubsubsection{\texorpdfstring{PlayKickAnimation()}{PlayKickAnimation()}}
+{\footnotesize\ttfamily \label{class_local_player_controller2_d_aad6cc6bab03e79cf9e42d39ac98e9ee0} 
+void Local\+Player\+Controller2\+D.\+Play\+Kick\+Animation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_local_player_controller2_d_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_local_player_controller2_d_aecd9179d87007ac8a73067bc5c77bde9}\index{LocalPlayerController2D@{LocalPlayerController2D}!animator@{animator}}
+\index{animator@{animator}!LocalPlayerController2D@{LocalPlayerController2D}}
+\doxysubsubsection{\texorpdfstring{animator}{animator}}
+{\footnotesize\ttfamily \label{class_local_player_controller2_d_aecd9179d87007ac8a73067bc5c77bde9} 
+Animator Local\+Player\+Controller2\+D.\+animator\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_local_player_controller2_d_a1acb76fadc4a06ec5d17594c349bb5f6}\index{LocalPlayerController2D@{LocalPlayerController2D}!boxCollider@{boxCollider}}
+\index{boxCollider@{boxCollider}!LocalPlayerController2D@{LocalPlayerController2D}}
+\doxysubsubsection{\texorpdfstring{boxCollider}{boxCollider}}
+{\footnotesize\ttfamily \label{class_local_player_controller2_d_a1acb76fadc4a06ec5d17594c349bb5f6} 
+Box\+Collider2D Local\+Player\+Controller2\+D.\+box\+Collider\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_local_player_controller2_d_ae128eb6a1e55cb08f778c1d62c7a31e2}\index{LocalPlayerController2D@{LocalPlayerController2D}!centerPoint@{centerPoint}}
+\index{centerPoint@{centerPoint}!LocalPlayerController2D@{LocalPlayerController2D}}
+\doxysubsubsection{\texorpdfstring{centerPoint}{centerPoint}}
+{\footnotesize\ttfamily \label{class_local_player_controller2_d_ae128eb6a1e55cb08f778c1d62c7a31e2} 
+Vector3 Local\+Player\+Controller2\+D.\+center\+Point\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_local_player_controller2_d_afc994b536dfcc72d243e477c29144b12}\index{LocalPlayerController2D@{LocalPlayerController2D}!k\_CeilingRadius@{k\_CeilingRadius}}
+\index{k\_CeilingRadius@{k\_CeilingRadius}!LocalPlayerController2D@{LocalPlayerController2D}}
+\doxysubsubsection{\texorpdfstring{k\_CeilingRadius}{k\_CeilingRadius}}
+{\footnotesize\ttfamily \label{class_local_player_controller2_d_afc994b536dfcc72d243e477c29144b12} 
+const float Local\+Player\+Controller2\+D.\+k\+\_\+\+Ceiling\+Radius = .\+1f\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_local_player_controller2_d_a7506ec1b6b909f5dd5a63d934f8c36e4}\index{LocalPlayerController2D@{LocalPlayerController2D}!k\_GroundedRadius@{k\_GroundedRadius}}
+\index{k\_GroundedRadius@{k\_GroundedRadius}!LocalPlayerController2D@{LocalPlayerController2D}}
+\doxysubsubsection{\texorpdfstring{k\_GroundedRadius}{k\_GroundedRadius}}
+{\footnotesize\ttfamily \label{class_local_player_controller2_d_a7506ec1b6b909f5dd5a63d934f8c36e4} 
+const float Local\+Player\+Controller2\+D.\+k\+\_\+\+Grounded\+Radius = .\+1f\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_local_player_controller2_d_af6a4b19d583de35fde26910b9209aa7f}\index{LocalPlayerController2D@{LocalPlayerController2D}!kickForce@{kickForce}}
+\index{kickForce@{kickForce}!LocalPlayerController2D@{LocalPlayerController2D}}
+\doxysubsubsection{\texorpdfstring{kickForce}{kickForce}}
+{\footnotesize\ttfamily \label{class_local_player_controller2_d_af6a4b19d583de35fde26910b9209aa7f} 
+float Local\+Player\+Controller2\+D.\+kick\+Force = 10f\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_local_player_controller2_d_a7c9babb0543125ed0898637b8ba4ff07}\index{LocalPlayerController2D@{LocalPlayerController2D}!m\_AirControl@{m\_AirControl}}
+\index{m\_AirControl@{m\_AirControl}!LocalPlayerController2D@{LocalPlayerController2D}}
+\doxysubsubsection{\texorpdfstring{m\_AirControl}{m\_AirControl}}
+{\footnotesize\ttfamily \label{class_local_player_controller2_d_a7c9babb0543125ed0898637b8ba4ff07} 
+bool Local\+Player\+Controller2\+D.\+m\+\_\+\+Air\+Control = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_local_player_controller2_d_ad540737523025e49abb7fa5ffc80418f}\index{LocalPlayerController2D@{LocalPlayerController2D}!m\_CeilingCheck@{m\_CeilingCheck}}
+\index{m\_CeilingCheck@{m\_CeilingCheck}!LocalPlayerController2D@{LocalPlayerController2D}}
+\doxysubsubsection{\texorpdfstring{m\_CeilingCheck}{m\_CeilingCheck}}
+{\footnotesize\ttfamily \label{class_local_player_controller2_d_ad540737523025e49abb7fa5ffc80418f} 
+Transform Local\+Player\+Controller2\+D.\+m\+\_\+\+Ceiling\+Check\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_local_player_controller2_d_ab55d8b67cdf36ece25a68758483c9f3c}\index{LocalPlayerController2D@{LocalPlayerController2D}!m\_GroundCheck@{m\_GroundCheck}}
+\index{m\_GroundCheck@{m\_GroundCheck}!LocalPlayerController2D@{LocalPlayerController2D}}
+\doxysubsubsection{\texorpdfstring{m\_GroundCheck}{m\_GroundCheck}}
+{\footnotesize\ttfamily \label{class_local_player_controller2_d_ab55d8b67cdf36ece25a68758483c9f3c} 
+Transform Local\+Player\+Controller2\+D.\+m\+\_\+\+Ground\+Check\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_local_player_controller2_d_abb5ed6f1a6e30f1979309aaee65b7718}\index{LocalPlayerController2D@{LocalPlayerController2D}!m\_Grounded@{m\_Grounded}}
+\index{m\_Grounded@{m\_Grounded}!LocalPlayerController2D@{LocalPlayerController2D}}
+\doxysubsubsection{\texorpdfstring{m\_Grounded}{m\_Grounded}}
+{\footnotesize\ttfamily \label{class_local_player_controller2_d_abb5ed6f1a6e30f1979309aaee65b7718} 
+bool Local\+Player\+Controller2\+D.\+m\+\_\+\+Grounded\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_local_player_controller2_d_a20274ac297488fff02093f3315bdfefe}\index{LocalPlayerController2D@{LocalPlayerController2D}!m\_JumpForce@{m\_JumpForce}}
+\index{m\_JumpForce@{m\_JumpForce}!LocalPlayerController2D@{LocalPlayerController2D}}
+\doxysubsubsection{\texorpdfstring{m\_JumpForce}{m\_JumpForce}}
+{\footnotesize\ttfamily \label{class_local_player_controller2_d_a20274ac297488fff02093f3315bdfefe} 
+float Local\+Player\+Controller2\+D.\+m\+\_\+\+Jump\+Force = 400f\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_local_player_controller2_d_ad30b4cc4f3dc39ae270d4ca780330909}\index{LocalPlayerController2D@{LocalPlayerController2D}!m\_MovementSmoothing@{m\_MovementSmoothing}}
+\index{m\_MovementSmoothing@{m\_MovementSmoothing}!LocalPlayerController2D@{LocalPlayerController2D}}
+\doxysubsubsection{\texorpdfstring{m\_MovementSmoothing}{m\_MovementSmoothing}}
+{\footnotesize\ttfamily \label{class_local_player_controller2_d_ad30b4cc4f3dc39ae270d4ca780330909} 
+float Local\+Player\+Controller2\+D.\+m\+\_\+\+Movement\+Smoothing = .\+05f\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_local_player_controller2_d_ab476eb031fdc3b04c8558d1788c5366d}\index{LocalPlayerController2D@{LocalPlayerController2D}!m\_Rigidbody2D@{m\_Rigidbody2D}}
+\index{m\_Rigidbody2D@{m\_Rigidbody2D}!LocalPlayerController2D@{LocalPlayerController2D}}
+\doxysubsubsection{\texorpdfstring{m\_Rigidbody2D}{m\_Rigidbody2D}}
+{\footnotesize\ttfamily \label{class_local_player_controller2_d_ab476eb031fdc3b04c8558d1788c5366d} 
+Rigidbody2D Local\+Player\+Controller2\+D.\+m\+\_\+\+Rigidbody2D\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_local_player_controller2_d_ab4ad11f56832283fc29f6b0b6a934324}\index{LocalPlayerController2D@{LocalPlayerController2D}!m\_Velocity@{m\_Velocity}}
+\index{m\_Velocity@{m\_Velocity}!LocalPlayerController2D@{LocalPlayerController2D}}
+\doxysubsubsection{\texorpdfstring{m\_Velocity}{m\_Velocity}}
+{\footnotesize\ttfamily \label{class_local_player_controller2_d_ab4ad11f56832283fc29f6b0b6a934324} 
+Vector3 Local\+Player\+Controller2\+D.\+m\+\_\+\+Velocity = Vector3.\+zero\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_local_player_controller2_d_a93b56184d4cd2b59cf383077f169975a}\index{LocalPlayerController2D@{LocalPlayerController2D}!m\_WhatIsGround@{m\_WhatIsGround}}
+\index{m\_WhatIsGround@{m\_WhatIsGround}!LocalPlayerController2D@{LocalPlayerController2D}}
+\doxysubsubsection{\texorpdfstring{m\_WhatIsGround}{m\_WhatIsGround}}
+{\footnotesize\ttfamily \label{class_local_player_controller2_d_a93b56184d4cd2b59cf383077f169975a} 
+Layer\+Mask Local\+Player\+Controller2\+D.\+m\+\_\+\+What\+Is\+Ground\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_local_player_controller2_d_a965754193ca105326e88ea08a5e0bf34}\index{LocalPlayerController2D@{LocalPlayerController2D}!minusHeight@{minusHeight}}
+\index{minusHeight@{minusHeight}!LocalPlayerController2D@{LocalPlayerController2D}}
+\doxysubsubsection{\texorpdfstring{minusHeight}{minusHeight}}
+{\footnotesize\ttfamily \label{class_local_player_controller2_d_a965754193ca105326e88ea08a5e0bf34} 
+Vector3 Local\+Player\+Controller2\+D.\+minus\+Height = new Vector3(0, 0.\+01f, 0)\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_local_player_controller2_d_a7e405836be4dffe8ff2e2fd09e7df034}\index{LocalPlayerController2D@{LocalPlayerController2D}!OnCrouchEvent@{OnCrouchEvent}}
+\index{OnCrouchEvent@{OnCrouchEvent}!LocalPlayerController2D@{LocalPlayerController2D}}
+\doxysubsubsection{\texorpdfstring{OnCrouchEvent}{OnCrouchEvent}}
+{\footnotesize\ttfamily \label{class_local_player_controller2_d_a7e405836be4dffe8ff2e2fd09e7df034} 
+\mbox{\hyperlink{class_local_player_controller2_d_1_1_bool_event}{Bool\+Event}} Local\+Player\+Controller2\+D.\+On\+Crouch\+Event}
+
+\Hypertarget{class_local_player_controller2_d_a6c7ac299b0002c59745c2b2a65f08e1f}\index{LocalPlayerController2D@{LocalPlayerController2D}!OnLandEvent@{OnLandEvent}}
+\index{OnLandEvent@{OnLandEvent}!LocalPlayerController2D@{LocalPlayerController2D}}
+\doxysubsubsection{\texorpdfstring{OnLandEvent}{OnLandEvent}}
+{\footnotesize\ttfamily \label{class_local_player_controller2_d_a6c7ac299b0002c59745c2b2a65f08e1f} 
+Unity\+Event Local\+Player\+Controller2\+D.\+On\+Land\+Event}
+
+\Hypertarget{class_local_player_controller2_d_ab22c87797e0622c5bb3b5d92af46090b}\index{LocalPlayerController2D@{LocalPlayerController2D}!upwardForce@{upwardForce}}
+\index{upwardForce@{upwardForce}!LocalPlayerController2D@{LocalPlayerController2D}}
+\doxysubsubsection{\texorpdfstring{upwardForce}{upwardForce}}
+{\footnotesize\ttfamily \label{class_local_player_controller2_d_ab22c87797e0622c5bb3b5d92af46090b} 
+float Local\+Player\+Controller2\+D.\+upward\+Force = 5f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Local\+Player/\+Old\+Movement/\mbox{\hyperlink{_local_controller_8cs}{Local\+Controller.\+cs}}\end{DoxyCompactItemize}

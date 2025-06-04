@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class PlayerMovementController : NetworkBehaviour
 {
+    private PlayerInputHandler inputHandler;
+    
     [Header("Movement Settings")]
     [SerializeField] private float speed = 5f;
     [SerializeField] private float jumpForce = 10f;
@@ -17,28 +19,30 @@ public class PlayerMovementController : NetworkBehaviour
     [SerializeField] private GameObject playerModel;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private LayerMask whatIsGround;
-    [SerializeField] private BoxCollider2D boxCollider;
+    [SerializeField] private BoxCollider2D groundCheckCollider; 
     [SerializeField] private Animator animator;
     [SerializeField] private NetworkAnimator networkAnimator;
     [SerializeField] private AudioClip kickSoundClip;
 
-    private Vector3 groundCheckOffset = new Vector3(0, 0.1f, 0);
-    private Vector3 groundCheckSizeReduction = new Vector3(0.03f, 0.2f, 0);
+    [Header("Area Settings")]
     private Vector3 positiveAreaSettings = new Vector3(0.8f, -0.8f, 0);
     private Vector3 negativeAreaSettings = new Vector3(-0.8f, -0.8f, 0);
     private Vector3 areaSettings;
 
+    [Header("Input States")]
     private bool jumpInputReceived;
     private bool kickInputReceived;
     private bool isGrounded;
+    private int groundContactCount = 0;
 
-    private PlayerInputHandler inputHandler; // Will now be a reference to *this player's* input handler
-
+    /// <summary>
+    /// Caches references to components and logs errors.
+    /// </summary>
     private void Awake()
     {
         // Cache references if not set in inspector
         rb = rb == null ? GetComponent<Rigidbody2D>() : rb;
-        boxCollider = boxCollider == null ? GetComponent<BoxCollider2D>() : boxCollider;
+        groundCheckCollider = groundCheckCollider == null ? GetComponent<BoxCollider2D>() : groundCheckCollider;
 
         // Log errors if critical references are missing
         if (playerModel == null) Debug.LogError("PlayerModel not assigned.");
@@ -46,32 +50,41 @@ public class PlayerMovementController : NetworkBehaviour
         if (networkAnimator == null) Debug.LogError("NetworkAnimator not assigned.");
     }
 
+    /// <summary>
+    /// Disables the player model and Rigidbody2D simulation at the start.
+    /// </summary>
     private void Start()
     {
         if (playerModel != null)
         {
-            playerModel.SetActive(false); // Player model starts inactive
+            playerModel.SetActive(false);
+            rb.simulated = false;
         }
     }
 
+    /// <summary>
+    /// Called when the local player starts.
+    /// Initializes input handling and sets area settings based on player netId.
+    /// </summary>
     public override void OnStartLocalPlayer()
     {
-        // Get the PlayerInputHandler from *this* player's game object
+        // Get the PlayerInputHandler from player's game object
         inputHandler = GetComponent<PlayerInputHandler>();
         if (inputHandler == null)
         {
-            Debug.LogError("PlayerMovementController: PlayerInputHandler component not found on this player's GameObject.", this);
             return;
         }
 
-        // Only local player handles input
         inputHandler.OnJumpPressed += HandleJumpInput;
         inputHandler.OnKickPressed += HandleKickInput;
 
-        // Immediately set area settings for the local player when they start
         SetAreaSettings();
     }
 
+    /// <summary>
+    /// Called when the local player stops.
+    /// Unsubscribes from input events to prevent memory leaks.
+    /// </summary>
     public override void OnStopLocalPlayer()
     {
         // Unsubscribe to prevent memory leaks when player is destroyed
@@ -82,16 +95,25 @@ public class PlayerMovementController : NetworkBehaviour
         }
     }
 
+    /// <summary>
+    /// Handles jump input from the PlayerInputHandler.
+    /// </summary>
     private void HandleJumpInput()
     {
         jumpInputReceived = true;
     }
 
+    /// <summary>
+    /// Handles kick input from the PlayerInputHandler.
+    /// </summary>
     private void HandleKickInput()
     {
         kickInputReceived = true;
     }
 
+    /// <summary>
+    /// Updates the player model and area settings when entering the game scene.
+    /// </summary>
     private void Update()
     {
         // Activate player model and set area settings when entering the game scene
@@ -99,25 +121,31 @@ public class PlayerMovementController : NetworkBehaviour
         if (SceneManager.GetActiveScene().name == "OnlineGameScene" && playerModel != null && !playerModel.activeSelf)
         {
             playerModel.SetActive(true);
+            rb.simulated = true; // Enable physics simulation for the local player
         }
 
-        if (!isLocalPlayer) return;
+        if (!isServer) return;
 
         // Clamp player position if falling below threshold
-        // This threshold might need to be adjusted based on your game's level design
-        if (transform.position.y <= -3.69f)
-        {
-            transform.position = new Vector3(transform.position.x, -3.705019f, 0);
-        }
+        Vector3 position = transform.position;
+        if (transform.position.y <= -3.704f) position.y = -3.705019f;
+
+        if (position.x <= -10f) { position.x = -6f; }
+
+        else if (position.x >= 10f) { position.x = 6f; }
+
+        transform.position = position;
     }
 
+    /// <summary>
+    /// FixedUpdate is called at a fixed interval and is used for physics-related updates.
+    /// It processes player input and sends movement commands to the server.
+    /// </summary>
     private void FixedUpdate()
     {
         if (!isLocalPlayer) return; // Only local player's FixedUpdate should process input and send commands
 
-        if (boxCollider == null) return;
-
-        PerformGroundCheck();
+        if (groundCheckCollider == null) return;
 
         // Ensure playerModel is active before handling movement (relevant if not activated in OnStartLocalPlayer)
         if (playerModel != null && playerModel.activeSelf)
@@ -130,24 +158,39 @@ public class PlayerMovementController : NetworkBehaviour
         kickInputReceived = false;
     }
 
-    // Performs a ground check using an OverlapBoxAll to detect ground colliders.
-    private void PerformGroundCheck()
+    /// <summary>
+    /// Called when another collider enters the trigger.
+    /// This method checks if the collider is on the ground layer.
+    /// </summary>
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        isGrounded = false;
-        // Adjust the ground check box based on the player's collider
-        Collider2D[] colliders = Physics2D.OverlapBoxAll(
-            boxCollider.bounds.center - groundCheckOffset,
-            boxCollider.bounds.size - groundCheckSizeReduction,
-            0f, whatIsGround);
-
-        foreach (var col in colliders)
+        if (((1 << other.gameObject.layer) & whatIsGround) != 0) // bitwise check if the layer is in whatIsGround
         {
-            if (col.gameObject != gameObject)
-            {
-                isGrounded = true;
-                break;
-            }
+            groundContactCount++;
+            UpdateIsGrounded(); 
         }
+    }
+
+    /// <summary>
+    /// Called when another collider exits the trigger.
+    /// This method checks if the collider is on the ground layer and updates the ground contact count.
+    /// </summary>
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (((1 << other.gameObject.layer) & whatIsGround) != 0)
+        {
+            groundContactCount--;
+            groundContactCount = Mathf.Max(0, groundContactCount);
+            UpdateIsGrounded();
+        }
+    }
+
+    /// <summary>
+    /// If groundContactCount is greater than 0, isGrounded is set to true, otherwise - false.
+    /// </summary>
+    private void UpdateIsGrounded()
+    {
+        isGrounded = groundContactCount > 0;
     }
 
     /// <summary>
@@ -156,18 +199,14 @@ public class PlayerMovementController : NetworkBehaviour
     /// </summary>
     private void SetAreaSettings()
     {
-        // This logic will run on the server and then be reflected on clients.
-        // For visual changes based on netId (like rotation), you might use a SyncVar
-        // or ensure this is called on the client for the local player.
-        // Since netId is assigned by Mirror, it's reliable.
-        if (netId == 1) // Assuming netId 1 is the first player, and netId 2 is the second, etc.
+        if (netId == 1)
         {
             transform.rotation = Quaternion.Euler(0, -180, 0);
             areaSettings = negativeAreaSettings;
         }
         else
         {
-            transform.rotation = Quaternion.Euler(0, 0, 0); // Ensure default rotation for other players
+            transform.rotation = Quaternion.Euler(0, 0, 0); 
             areaSettings = positiveAreaSettings;
         }
     }
@@ -177,9 +216,6 @@ public class PlayerMovementController : NetworkBehaviour
     /// </summary>
     private void HandleMovement(bool jump, bool kick, bool isGrounded)
     {
-        // No need to check playerModel.activeSelf here if it's set in OnStartLocalPlayer and FixedUpdate is only for local player
-        if (!isLocalPlayer) return;
-
         float horizontal = inputHandler.GetHorizontalInput();
         CmdMove(horizontal, jump, kick, isGrounded);
     }
@@ -215,28 +251,30 @@ public class PlayerMovementController : NetworkBehaviour
     [ClientRpc]
     private void RpcMove(float horizontalInput, bool jumpPressed, bool kick, bool isGrounded)
     {
-        // Apply horizontal movement
-        rb.linearVelocity = new Vector2(horizontalInput * speed, rb.linearVelocity.y);
+        rb.linearVelocity = new Vector2(horizontalInput * speed, rb.linearVelocity.y); // horizontal movement
 
-        // Apply jump force if jump button was pressed and player is grounded
         if (jumpPressed && isGrounded)
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
 
-        // Perform kick action
         if (kick)
         {
             CmdKick(areaSettings, isGrounded);
         }
     }
 
-    [Command]
+    /// <summary>
+    /// Command sent from client to server to perform a kick action.
+    /// </summary>
+    /// <param name="areaSettings"></param>
+    /// <param name="isGrounded"></param>
+    [Command(requiresAuthority = false)]
     private void CmdKick(Vector3 areaSettings, bool isGrounded)
     {
-        // Call the kick action on all clients
         RpcKick(areaSettings, isGrounded);
     }
+
     /// <summary>
     /// Performs the kick action, applying force to the ball.
     /// </summary>
@@ -245,7 +283,6 @@ public class PlayerMovementController : NetworkBehaviour
     [ClientRpc]
     private void RpcKick(Vector3 areaSettings, bool isGrounded)
     {
-        // OverlapAreaAll is used to find all colliders within a specified 2D area
         Collider2D[] hitColliders = Physics2D.OverlapAreaAll(transform.position, transform.position + areaSettings);
         foreach (Collider2D hitCollider in hitColliders)
         {
@@ -258,9 +295,9 @@ public class PlayerMovementController : NetworkBehaviour
                 {
                     kickDirection = new Vector2(kickDirection.x, upwardForce).normalized;
                 }
+
                 ballRb.AddForce(kickDirection * kickForce, ForceMode2D.Impulse);
-                // Play kick sound effect
-                SoundFXManager.instance.PlaySoundFX(kickSoundClip, transform);
+                SoundFXManager.Instance.PlaySoundFX(kickSoundClip, transform);
             }
         }
     }

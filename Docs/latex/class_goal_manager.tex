@@ -1,0 +1,171 @@
+\doxysection{Goal\+Manager Class Reference}
+\hypertarget{class_goal_manager}{}\label{class_goal_manager}\index{GoalManager@{GoalManager}}
+
+
+Manages post-\/goal game events, such as updating UI, resetting player and ball positions.  
+
+
+Inheritance diagram for Goal\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_goal_manager}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_goal_manager_a8e076d53602e4d52a528ca8cc1e5b9af}{Handle\+Goal}} (string scoring\+Player, Action on\+Complete)
+\begin{DoxyCompactList}\small\item\em Initiates the goal handling sequence. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_goal_manager_a7c5ab65f5197a4908a810f343226f8ec}{Start}} ()
+\begin{DoxyCompactList}\small\item\em Called at the start of the game. Plays initial whistle. \end{DoxyCompactList}\item 
+IEnumerator \mbox{\hyperlink{class_goal_manager_a814c23643d23103476d24f071f48da72}{Goal\+Sequence}} (string scoring\+Player, Action on\+Complete)
+\begin{DoxyCompactList}\small\item\em Coroutine that performs UI updates and resets after a goal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_goal_manager_a5a236ac4d5936bdba4d4acd94d4499fc}{Play\+Refferee\+Whistle}} ()
+\begin{DoxyCompactList}\small\item\em Plays the referee whistle sound effect. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_goal_manager_a47b31cb581a0dff28ecee4bdebf59a70}{Reset\+Player\+Positions}} ()
+\begin{DoxyCompactList}\small\item\em Resets player positions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_goal_manager_a37aef22efda5aa6d18121e6106ae842d}{Reset\+Ball\+Position}} (string scoring\+Player)
+\begin{DoxyCompactList}\small\item\em Resets the ball position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_network_game_u_i}{Network\+Game\+UI}} \mbox{\hyperlink{class_goal_manager_a7b41257568fb5b5f42f5456b751d2e90}{game\+UI}}
+\item 
+\mbox{\hyperlink{class_ball_and_player_methods}{Ball\+And\+Player\+Methods}} \mbox{\hyperlink{class_goal_manager_a17e84c0123dd26983c9c3c5ac6ec96ce}{ball\+And\+Player\+Methods}}
+\item 
+Audio\+Clip \mbox{\hyperlink{class_goal_manager_ae6564777ed364e1d1d9d52281727e41a}{referee\+Whistle}}
+\item 
+string \mbox{\hyperlink{class_goal_manager_abde33db72907fecbf283b7b59b6e2ae6}{scoreboard\+Text}}
+\item 
+string \mbox{\hyperlink{class_goal_manager_a417fbba6590a09baa9d26fbf2d8f5c78}{goal\+Text}} = "{}Goal!"{}
+\item 
+int \mbox{\hyperlink{class_goal_manager_ac6c5fde6ed27de1ea3e8d8d543ca5f21}{goal\+Limit}} = 10
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const float \mbox{\hyperlink{class_goal_manager_aabf904e69fa0c714a95a88cf6694fc8c}{Ball\+Reset\+Delay\+Seconds}} = 2f
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages post-\/goal game events, such as updating UI, resetting player and ball positions. 
+
+\label{doc-func-members}
+\Hypertarget{class_goal_manager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_goal_manager_a814c23643d23103476d24f071f48da72}\index{GoalManager@{GoalManager}!GoalSequence@{GoalSequence}}
+\index{GoalSequence@{GoalSequence}!GoalManager@{GoalManager}}
+\doxysubsubsection{\texorpdfstring{GoalSequence()}{GoalSequence()}}
+{\footnotesize\ttfamily \label{class_goal_manager_a814c23643d23103476d24f071f48da72} 
+IEnumerator Goal\+Manager.\+Goal\+Sequence (\begin{DoxyParamCaption}\item[{string}]{scoring\+Player}{, }\item[{Action}]{on\+Complete}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Coroutine that performs UI updates and resets after a goal. 
+
+\Hypertarget{class_goal_manager_a8e076d53602e4d52a528ca8cc1e5b9af}\index{GoalManager@{GoalManager}!HandleGoal@{HandleGoal}}
+\index{HandleGoal@{HandleGoal}!GoalManager@{GoalManager}}
+\doxysubsubsection{\texorpdfstring{HandleGoal()}{HandleGoal()}}
+{\footnotesize\ttfamily \label{class_goal_manager_a8e076d53602e4d52a528ca8cc1e5b9af} 
+void Goal\+Manager.\+Handle\+Goal (\begin{DoxyParamCaption}\item[{string}]{scoring\+Player}{, }\item[{Action}]{on\+Complete}{}\end{DoxyParamCaption})}
+
+
+
+Initiates the goal handling sequence. 
+
+\Hypertarget{class_goal_manager_a5a236ac4d5936bdba4d4acd94d4499fc}\index{GoalManager@{GoalManager}!PlayReffereeWhistle@{PlayReffereeWhistle}}
+\index{PlayReffereeWhistle@{PlayReffereeWhistle}!GoalManager@{GoalManager}}
+\doxysubsubsection{\texorpdfstring{PlayReffereeWhistle()}{PlayReffereeWhistle()}}
+{\footnotesize\ttfamily \label{class_goal_manager_a5a236ac4d5936bdba4d4acd94d4499fc} 
+void Goal\+Manager.\+Play\+Refferee\+Whistle (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Plays the referee whistle sound effect. 
+
+\Hypertarget{class_goal_manager_a37aef22efda5aa6d18121e6106ae842d}\index{GoalManager@{GoalManager}!ResetBallPosition@{ResetBallPosition}}
+\index{ResetBallPosition@{ResetBallPosition}!GoalManager@{GoalManager}}
+\doxysubsubsection{\texorpdfstring{ResetBallPosition()}{ResetBallPosition()}}
+{\footnotesize\ttfamily \label{class_goal_manager_a37aef22efda5aa6d18121e6106ae842d} 
+void Goal\+Manager.\+Reset\+Ball\+Position (\begin{DoxyParamCaption}\item[{string}]{scoring\+Player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Resets the ball position. 
+
+\Hypertarget{class_goal_manager_a47b31cb581a0dff28ecee4bdebf59a70}\index{GoalManager@{GoalManager}!ResetPlayerPositions@{ResetPlayerPositions}}
+\index{ResetPlayerPositions@{ResetPlayerPositions}!GoalManager@{GoalManager}}
+\doxysubsubsection{\texorpdfstring{ResetPlayerPositions()}{ResetPlayerPositions()}}
+{\footnotesize\ttfamily \label{class_goal_manager_a47b31cb581a0dff28ecee4bdebf59a70} 
+void Goal\+Manager.\+Reset\+Player\+Positions (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Resets player positions. 
+
+\Hypertarget{class_goal_manager_a7c5ab65f5197a4908a810f343226f8ec}\index{GoalManager@{GoalManager}!Start@{Start}}
+\index{Start@{Start}!GoalManager@{GoalManager}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily \label{class_goal_manager_a7c5ab65f5197a4908a810f343226f8ec} 
+void Goal\+Manager.\+Start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Called at the start of the game. Plays initial whistle. 
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_goal_manager_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_goal_manager_a17e84c0123dd26983c9c3c5ac6ec96ce}\index{GoalManager@{GoalManager}!ballAndPlayerMethods@{ballAndPlayerMethods}}
+\index{ballAndPlayerMethods@{ballAndPlayerMethods}!GoalManager@{GoalManager}}
+\doxysubsubsection{\texorpdfstring{ballAndPlayerMethods}{ballAndPlayerMethods}}
+{\footnotesize\ttfamily \label{class_goal_manager_a17e84c0123dd26983c9c3c5ac6ec96ce} 
+\mbox{\hyperlink{class_ball_and_player_methods}{Ball\+And\+Player\+Methods}} Goal\+Manager.\+ball\+And\+Player\+Methods\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_goal_manager_aabf904e69fa0c714a95a88cf6694fc8c}\index{GoalManager@{GoalManager}!BallResetDelaySeconds@{BallResetDelaySeconds}}
+\index{BallResetDelaySeconds@{BallResetDelaySeconds}!GoalManager@{GoalManager}}
+\doxysubsubsection{\texorpdfstring{BallResetDelaySeconds}{BallResetDelaySeconds}}
+{\footnotesize\ttfamily \label{class_goal_manager_aabf904e69fa0c714a95a88cf6694fc8c} 
+const float Goal\+Manager.\+Ball\+Reset\+Delay\+Seconds = 2f\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_goal_manager_a7b41257568fb5b5f42f5456b751d2e90}\index{GoalManager@{GoalManager}!gameUI@{gameUI}}
+\index{gameUI@{gameUI}!GoalManager@{GoalManager}}
+\doxysubsubsection{\texorpdfstring{gameUI}{gameUI}}
+{\footnotesize\ttfamily \label{class_goal_manager_a7b41257568fb5b5f42f5456b751d2e90} 
+\mbox{\hyperlink{class_network_game_u_i}{Network\+Game\+UI}} Goal\+Manager.\+game\+UI\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_goal_manager_ac6c5fde6ed27de1ea3e8d8d543ca5f21}\index{GoalManager@{GoalManager}!goalLimit@{goalLimit}}
+\index{goalLimit@{goalLimit}!GoalManager@{GoalManager}}
+\doxysubsubsection{\texorpdfstring{goalLimit}{goalLimit}}
+{\footnotesize\ttfamily \label{class_goal_manager_ac6c5fde6ed27de1ea3e8d8d543ca5f21} 
+int Goal\+Manager.\+goal\+Limit = 10\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_goal_manager_a417fbba6590a09baa9d26fbf2d8f5c78}\index{GoalManager@{GoalManager}!goalText@{goalText}}
+\index{goalText@{goalText}!GoalManager@{GoalManager}}
+\doxysubsubsection{\texorpdfstring{goalText}{goalText}}
+{\footnotesize\ttfamily \label{class_goal_manager_a417fbba6590a09baa9d26fbf2d8f5c78} 
+string Goal\+Manager.\+goal\+Text = "{}Goal!"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_goal_manager_ae6564777ed364e1d1d9d52281727e41a}\index{GoalManager@{GoalManager}!refereeWhistle@{refereeWhistle}}
+\index{refereeWhistle@{refereeWhistle}!GoalManager@{GoalManager}}
+\doxysubsubsection{\texorpdfstring{refereeWhistle}{refereeWhistle}}
+{\footnotesize\ttfamily \label{class_goal_manager_ae6564777ed364e1d1d9d52281727e41a} 
+Audio\+Clip Goal\+Manager.\+referee\+Whistle\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_goal_manager_abde33db72907fecbf283b7b59b6e2ae6}\index{GoalManager@{GoalManager}!scoreboardText@{scoreboardText}}
+\index{scoreboardText@{scoreboardText}!GoalManager@{GoalManager}}
+\doxysubsubsection{\texorpdfstring{scoreboardText}{scoreboardText}}
+{\footnotesize\ttfamily \label{class_goal_manager_abde33db72907fecbf283b7b59b6e2ae6} 
+string Goal\+Manager.\+scoreboard\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Map\+And\+Menu\+Scripts/\mbox{\hyperlink{_goal_manager_8cs}{Goal\+Manager.\+cs}}\end{DoxyCompactItemize}

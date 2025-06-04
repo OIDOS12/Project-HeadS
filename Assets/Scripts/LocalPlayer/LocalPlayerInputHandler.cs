@@ -7,8 +7,6 @@ using UnityEngine;
 /// </summary>
 public class LocalPlayerInputHandler : MonoBehaviour
 {
-    // Removed: public static LocalPlayerInputHandler Instance { get; private set; }
-
     [Header("Input Settings")]
     [SerializeField] private string horizontalAxis = "Horizontal";
     [SerializeField] private string jumpKey = "Jump";
@@ -29,20 +27,20 @@ public class LocalPlayerInputHandler : MonoBehaviour
         // Check for jump input
         if (Input.GetButtonDown(jumpKey))
         {
-            OnJumpPressed?.Invoke(); // Invoke the jump event
+            OnJumpPressed?.Invoke(); 
         }
 
         // Check for kick input
         if (Input.GetButtonDown(kickKey))
         {
-            OnKickPressed?.Invoke(); // Invoke the kick event
+            OnKickPressed?.Invoke(); 
         }
     }
 
     /// <summary>
     /// Gets the current horizontal input value.
     /// </summary>
-    /// <returns>The horizontal input value, typically between -1 and 1.</returns>
+    /// <returns>The horizontal input value, between -1 and 1.</returns>
     public float GetHorizontalInput()
     {
         return Input.GetAxis(horizontalAxis);

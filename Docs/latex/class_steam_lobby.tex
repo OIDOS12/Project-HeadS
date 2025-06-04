@@ -1,0 +1,293 @@
+\doxysection{Steam\+Lobby Class Reference}
+\hypertarget{class_steam_lobby}{}\label{class_steam_lobby}\index{SteamLobby@{SteamLobby}}
+
+
+Manages the Steam lobby functionality, including creating, joining, and listing lobbies.  
+
+
+Inheritance diagram for Steam\+Lobby\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_steam_lobby}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_steam_lobby_a14b95fbef245c4eee157b5c7d2e08993}{Host\+Lobby}} ()
+\begin{DoxyCompactList}\small\item\em Creates a new Steam lobby and starts hosting the game. This method is called when the player chooses to host a lobby. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_steam_lobby_aab334fa867dac42c6a6efdcd3ec9d723}{Join\+Lobby}} (CSteam\+ID lobby\+ID)
+\begin{DoxyCompactList}\small\item\em Joins an existing Steam lobby using the provided lobby ID. This method is called when the player selects a lobby to join from the lobby list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_steam_lobby_ac4b72b3a2992f781aae685e5c7ee1172}{Get\+Lobbies\+List}} ()
+\begin{DoxyCompactList}\small\item\em Requests a list of available Steam lobbies. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_steam_lobby_a320cceeb0c134b7f1b120c70e2e8f42d}{To\+Main\+Menu}} ()
+\item 
+void \mbox{\hyperlink{class_steam_lobby_ac3da58d5a468f7afd9d5be73bf8d5591}{Leave\+Lobby}} ()
+\begin{DoxyCompactList}\small\item\em Leaves the current Steam lobby and stops the network session. Handles scene transitions appropriately. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ CSteam\+ID $>$ \mbox{\hyperlink{class_steam_lobby_af7cd1e041d31ab8bc37fff6c77f61f5c}{lobby\+Ids}} = new List$<$CSteam\+ID$>$()
+\item 
+ulong \mbox{\hyperlink{class_steam_lobby_a26e0f24d84bd0613383ab28535c20f71}{Current\+Lobby\+ID}}
+\item 
+TMP\+\_\+\+Text \mbox{\hyperlink{class_steam_lobby_ae3d7270a590f29f6d002dde9bb749a33}{Steam\+Initialization\+Text}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_steam_lobby}{Steam\+Lobby}} \mbox{\hyperlink{class_steam_lobby_a255f64bbc45c6c00ba4f6e8fc113d400}{Instance}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Callback$<$ Lobby\+Created\+\_\+t $>$ \mbox{\hyperlink{class_steam_lobby_a1bb6ce3dd68fe71fcc49e4c09fb5942e}{lobby\+Created}}
+\item 
+Callback$<$ Game\+Lobby\+Join\+Requested\+\_\+t $>$ \mbox{\hyperlink{class_steam_lobby_a7b1ef7cfcac046c2cdc29501b2c6ecf5}{game\+Lobby\+Join\+Request}}
+\item 
+Callback$<$ Lobby\+Enter\+\_\+t $>$ \mbox{\hyperlink{class_steam_lobby_aed0bfdd7f3b8d1e7bdadf184d546128b}{lobby\+Entered}}
+\item 
+Callback$<$ Lobby\+Match\+List\+\_\+t $>$ \mbox{\hyperlink{class_steam_lobby_a49421a0b174c05f7f8003a2e69f7bb8a}{Lobby\+List}}
+\item 
+Callback$<$ Lobby\+Data\+Update\+\_\+t $>$ \mbox{\hyperlink{class_steam_lobby_abf0301d82549bb9f67715ab125175ff0}{Lobby\+Data\+Update}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_steam_lobby_a2d1f2d3bd386a2854fc1d59636e78d2a}{Awake}} ()
+\begin{DoxyCompactList}\small\item\em Ensures that this is a singleton instance. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_steam_lobby_a61a589bde08d8b2db91cf5b41917481b}{Start}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the lobby manager and sets up callbacks. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_steam_lobby_a9416e1148caf4757b94fcce166f9a482}{On\+Lobby\+Created}} (Lobby\+Created\+\_\+t callback)
+\begin{DoxyCompactList}\small\item\em Called when a lobby is created successfully. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_steam_lobby_a1eaea6f3cc58e2f47b8dfca39fc9117b}{On\+Join\+Request}} (Game\+Lobby\+Join\+Requested\+\_\+t callback)
+\begin{DoxyCompactList}\small\item\em Called when a player requests to join a lobby. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_steam_lobby_ad8f03bc3a9c2ea06bda0a9a290b47577}{On\+Lobby\+Entered}} (Lobby\+Enter\+\_\+t callback)
+\begin{DoxyCompactList}\small\item\em Called when the player successfully enters a lobby. It sets the current lobby ID and starts the client. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_steam_lobby_af7226552efcc1ee74909d3b0ce1f266b}{On\+Get\+Lobby\+List}} (Lobby\+Match\+List\+\_\+t result)
+\begin{DoxyCompactList}\small\item\em Callback method that is called when the lobby list is received from Steam. It processes the list of lobbies and requests their data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_steam_lobby_a6743e4c0f00de102f9fdbd016e16da21}{On\+Lobby\+Data\+Update}} (Lobby\+Data\+Update\+\_\+t result)
+\begin{DoxyCompactList}\small\item\em Callback method that is called when the lobby data is updated. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Network\+Manager \mbox{\hyperlink{class_steam_lobby_a964edae9a0effbfd8986608db26f7195}{network\+Manager}}
+\item 
+\mbox{\hyperlink{class_host_or_join_scene_manager}{Host\+Or\+Join\+Scene\+Manager}} \mbox{\hyperlink{class_steam_lobby_a16828aa73b954acf259f7e4678fddc2d}{Host\+Scene\+Manager}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const string \mbox{\hyperlink{class_steam_lobby_a36ae490d1f84364a4d47c10be99a0395}{Host\+Address\+Key}} = "{}Host\+Address"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the Steam lobby functionality, including creating, joining, and listing lobbies. 
+
+\label{doc-func-members}
+\Hypertarget{class_steam_lobby_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_steam_lobby_a2d1f2d3bd386a2854fc1d59636e78d2a}\index{SteamLobby@{SteamLobby}!Awake@{Awake}}
+\index{Awake@{Awake}!SteamLobby@{SteamLobby}}
+\doxysubsubsection{\texorpdfstring{Awake()}{Awake()}}
+{\footnotesize\ttfamily \label{class_steam_lobby_a2d1f2d3bd386a2854fc1d59636e78d2a} 
+void Steam\+Lobby.\+Awake (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Ensures that this is a singleton instance. 
+
+\Hypertarget{class_steam_lobby_ac4b72b3a2992f781aae685e5c7ee1172}\index{SteamLobby@{SteamLobby}!GetLobbiesList@{GetLobbiesList}}
+\index{GetLobbiesList@{GetLobbiesList}!SteamLobby@{SteamLobby}}
+\doxysubsubsection{\texorpdfstring{GetLobbiesList()}{GetLobbiesList()}}
+{\footnotesize\ttfamily \label{class_steam_lobby_ac4b72b3a2992f781aae685e5c7ee1172} 
+void Steam\+Lobby.\+Get\+Lobbies\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Requests a list of available Steam lobbies. 
+
+\Hypertarget{class_steam_lobby_a14b95fbef245c4eee157b5c7d2e08993}\index{SteamLobby@{SteamLobby}!HostLobby@{HostLobby}}
+\index{HostLobby@{HostLobby}!SteamLobby@{SteamLobby}}
+\doxysubsubsection{\texorpdfstring{HostLobby()}{HostLobby()}}
+{\footnotesize\ttfamily \label{class_steam_lobby_a14b95fbef245c4eee157b5c7d2e08993} 
+void Steam\+Lobby.\+Host\+Lobby (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Creates a new Steam lobby and starts hosting the game. This method is called when the player chooses to host a lobby. 
+
+\Hypertarget{class_steam_lobby_aab334fa867dac42c6a6efdcd3ec9d723}\index{SteamLobby@{SteamLobby}!JoinLobby@{JoinLobby}}
+\index{JoinLobby@{JoinLobby}!SteamLobby@{SteamLobby}}
+\doxysubsubsection{\texorpdfstring{JoinLobby()}{JoinLobby()}}
+{\footnotesize\ttfamily \label{class_steam_lobby_aab334fa867dac42c6a6efdcd3ec9d723} 
+void Steam\+Lobby.\+Join\+Lobby (\begin{DoxyParamCaption}\item[{CSteam\+ID}]{lobby\+ID}{}\end{DoxyParamCaption})}
+
+
+
+Joins an existing Steam lobby using the provided lobby ID. This method is called when the player selects a lobby to join from the lobby list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lobby\+ID} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_steam_lobby_ac3da58d5a468f7afd9d5be73bf8d5591}\index{SteamLobby@{SteamLobby}!LeaveLobby@{LeaveLobby}}
+\index{LeaveLobby@{LeaveLobby}!SteamLobby@{SteamLobby}}
+\doxysubsubsection{\texorpdfstring{LeaveLobby()}{LeaveLobby()}}
+{\footnotesize\ttfamily \label{class_steam_lobby_ac3da58d5a468f7afd9d5be73bf8d5591} 
+void Steam\+Lobby.\+Leave\+Lobby (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Leaves the current Steam lobby and stops the network session. Handles scene transitions appropriately. 
+
+\Hypertarget{class_steam_lobby_af7226552efcc1ee74909d3b0ce1f266b}\index{SteamLobby@{SteamLobby}!OnGetLobbyList@{OnGetLobbyList}}
+\index{OnGetLobbyList@{OnGetLobbyList}!SteamLobby@{SteamLobby}}
+\doxysubsubsection{\texorpdfstring{OnGetLobbyList()}{OnGetLobbyList()}}
+{\footnotesize\ttfamily \label{class_steam_lobby_af7226552efcc1ee74909d3b0ce1f266b} 
+void Steam\+Lobby.\+On\+Get\+Lobby\+List (\begin{DoxyParamCaption}\item[{Lobby\+Match\+List\+\_\+t}]{result}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Callback method that is called when the lobby list is received from Steam. It processes the list of lobbies and requests their data. 
+
+\Hypertarget{class_steam_lobby_a1eaea6f3cc58e2f47b8dfca39fc9117b}\index{SteamLobby@{SteamLobby}!OnJoinRequest@{OnJoinRequest}}
+\index{OnJoinRequest@{OnJoinRequest}!SteamLobby@{SteamLobby}}
+\doxysubsubsection{\texorpdfstring{OnJoinRequest()}{OnJoinRequest()}}
+{\footnotesize\ttfamily \label{class_steam_lobby_a1eaea6f3cc58e2f47b8dfca39fc9117b} 
+void Steam\+Lobby.\+On\+Join\+Request (\begin{DoxyParamCaption}\item[{Game\+Lobby\+Join\+Requested\+\_\+t}]{callback}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Called when a player requests to join a lobby. 
+
+\Hypertarget{class_steam_lobby_a9416e1148caf4757b94fcce166f9a482}\index{SteamLobby@{SteamLobby}!OnLobbyCreated@{OnLobbyCreated}}
+\index{OnLobbyCreated@{OnLobbyCreated}!SteamLobby@{SteamLobby}}
+\doxysubsubsection{\texorpdfstring{OnLobbyCreated()}{OnLobbyCreated()}}
+{\footnotesize\ttfamily \label{class_steam_lobby_a9416e1148caf4757b94fcce166f9a482} 
+void Steam\+Lobby.\+On\+Lobby\+Created (\begin{DoxyParamCaption}\item[{Lobby\+Created\+\_\+t}]{callback}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Called when a lobby is created successfully. 
+
+\Hypertarget{class_steam_lobby_a6743e4c0f00de102f9fdbd016e16da21}\index{SteamLobby@{SteamLobby}!OnLobbyDataUpdate@{OnLobbyDataUpdate}}
+\index{OnLobbyDataUpdate@{OnLobbyDataUpdate}!SteamLobby@{SteamLobby}}
+\doxysubsubsection{\texorpdfstring{OnLobbyDataUpdate()}{OnLobbyDataUpdate()}}
+{\footnotesize\ttfamily \label{class_steam_lobby_a6743e4c0f00de102f9fdbd016e16da21} 
+void Steam\+Lobby.\+On\+Lobby\+Data\+Update (\begin{DoxyParamCaption}\item[{Lobby\+Data\+Update\+\_\+t}]{result}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Callback method that is called when the lobby data is updated. 
+
+\Hypertarget{class_steam_lobby_ad8f03bc3a9c2ea06bda0a9a290b47577}\index{SteamLobby@{SteamLobby}!OnLobbyEntered@{OnLobbyEntered}}
+\index{OnLobbyEntered@{OnLobbyEntered}!SteamLobby@{SteamLobby}}
+\doxysubsubsection{\texorpdfstring{OnLobbyEntered()}{OnLobbyEntered()}}
+{\footnotesize\ttfamily \label{class_steam_lobby_ad8f03bc3a9c2ea06bda0a9a290b47577} 
+void Steam\+Lobby.\+On\+Lobby\+Entered (\begin{DoxyParamCaption}\item[{Lobby\+Enter\+\_\+t}]{callback}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Called when the player successfully enters a lobby. It sets the current lobby ID and starts the client. 
+
+\Hypertarget{class_steam_lobby_a61a589bde08d8b2db91cf5b41917481b}\index{SteamLobby@{SteamLobby}!Start@{Start}}
+\index{Start@{Start}!SteamLobby@{SteamLobby}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily \label{class_steam_lobby_a61a589bde08d8b2db91cf5b41917481b} 
+void Steam\+Lobby.\+Start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initializes the lobby manager and sets up callbacks. 
+
+\Hypertarget{class_steam_lobby_a320cceeb0c134b7f1b120c70e2e8f42d}\index{SteamLobby@{SteamLobby}!ToMainMenu@{ToMainMenu}}
+\index{ToMainMenu@{ToMainMenu}!SteamLobby@{SteamLobby}}
+\doxysubsubsection{\texorpdfstring{ToMainMenu()}{ToMainMenu()}}
+{\footnotesize\ttfamily \label{class_steam_lobby_a320cceeb0c134b7f1b120c70e2e8f42d} 
+void Steam\+Lobby.\+To\+Main\+Menu (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_steam_lobby_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_steam_lobby_a26e0f24d84bd0613383ab28535c20f71}\index{SteamLobby@{SteamLobby}!CurrentLobbyID@{CurrentLobbyID}}
+\index{CurrentLobbyID@{CurrentLobbyID}!SteamLobby@{SteamLobby}}
+\doxysubsubsection{\texorpdfstring{CurrentLobbyID}{CurrentLobbyID}}
+{\footnotesize\ttfamily \label{class_steam_lobby_a26e0f24d84bd0613383ab28535c20f71} 
+ulong Steam\+Lobby.\+Current\+Lobby\+ID}
+
+\Hypertarget{class_steam_lobby_a7b1ef7cfcac046c2cdc29501b2c6ecf5}\index{SteamLobby@{SteamLobby}!gameLobbyJoinRequest@{gameLobbyJoinRequest}}
+\index{gameLobbyJoinRequest@{gameLobbyJoinRequest}!SteamLobby@{SteamLobby}}
+\doxysubsubsection{\texorpdfstring{gameLobbyJoinRequest}{gameLobbyJoinRequest}}
+{\footnotesize\ttfamily \label{class_steam_lobby_a7b1ef7cfcac046c2cdc29501b2c6ecf5} 
+Callback$<$Game\+Lobby\+Join\+Requested\+\_\+t$>$ Steam\+Lobby.\+game\+Lobby\+Join\+Request\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_steam_lobby_a36ae490d1f84364a4d47c10be99a0395}\index{SteamLobby@{SteamLobby}!HostAddressKey@{HostAddressKey}}
+\index{HostAddressKey@{HostAddressKey}!SteamLobby@{SteamLobby}}
+\doxysubsubsection{\texorpdfstring{HostAddressKey}{HostAddressKey}}
+{\footnotesize\ttfamily \label{class_steam_lobby_a36ae490d1f84364a4d47c10be99a0395} 
+const string Steam\+Lobby.\+Host\+Address\+Key = "{}Host\+Address"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_steam_lobby_a16828aa73b954acf259f7e4678fddc2d}\index{SteamLobby@{SteamLobby}!HostSceneManager@{HostSceneManager}}
+\index{HostSceneManager@{HostSceneManager}!SteamLobby@{SteamLobby}}
+\doxysubsubsection{\texorpdfstring{HostSceneManager}{HostSceneManager}}
+{\footnotesize\ttfamily \label{class_steam_lobby_a16828aa73b954acf259f7e4678fddc2d} 
+\mbox{\hyperlink{class_host_or_join_scene_manager}{Host\+Or\+Join\+Scene\+Manager}} Steam\+Lobby.\+Host\+Scene\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_steam_lobby_a255f64bbc45c6c00ba4f6e8fc113d400}\index{SteamLobby@{SteamLobby}!Instance@{Instance}}
+\index{Instance@{Instance}!SteamLobby@{SteamLobby}}
+\doxysubsubsection{\texorpdfstring{Instance}{Instance}}
+{\footnotesize\ttfamily \label{class_steam_lobby_a255f64bbc45c6c00ba4f6e8fc113d400} 
+\mbox{\hyperlink{class_steam_lobby}{Steam\+Lobby}} Steam\+Lobby.\+Instance\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_steam_lobby_a1bb6ce3dd68fe71fcc49e4c09fb5942e}\index{SteamLobby@{SteamLobby}!lobbyCreated@{lobbyCreated}}
+\index{lobbyCreated@{lobbyCreated}!SteamLobby@{SteamLobby}}
+\doxysubsubsection{\texorpdfstring{lobbyCreated}{lobbyCreated}}
+{\footnotesize\ttfamily \label{class_steam_lobby_a1bb6ce3dd68fe71fcc49e4c09fb5942e} 
+Callback$<$Lobby\+Created\+\_\+t$>$ Steam\+Lobby.\+lobby\+Created\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_steam_lobby_abf0301d82549bb9f67715ab125175ff0}\index{SteamLobby@{SteamLobby}!LobbyDataUpdate@{LobbyDataUpdate}}
+\index{LobbyDataUpdate@{LobbyDataUpdate}!SteamLobby@{SteamLobby}}
+\doxysubsubsection{\texorpdfstring{LobbyDataUpdate}{LobbyDataUpdate}}
+{\footnotesize\ttfamily \label{class_steam_lobby_abf0301d82549bb9f67715ab125175ff0} 
+Callback$<$Lobby\+Data\+Update\+\_\+t$>$ Steam\+Lobby.\+Lobby\+Data\+Update\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_steam_lobby_aed0bfdd7f3b8d1e7bdadf184d546128b}\index{SteamLobby@{SteamLobby}!lobbyEntered@{lobbyEntered}}
+\index{lobbyEntered@{lobbyEntered}!SteamLobby@{SteamLobby}}
+\doxysubsubsection{\texorpdfstring{lobbyEntered}{lobbyEntered}}
+{\footnotesize\ttfamily \label{class_steam_lobby_aed0bfdd7f3b8d1e7bdadf184d546128b} 
+Callback$<$Lobby\+Enter\+\_\+t$>$ Steam\+Lobby.\+lobby\+Entered\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_steam_lobby_af7cd1e041d31ab8bc37fff6c77f61f5c}\index{SteamLobby@{SteamLobby}!lobbyIds@{lobbyIds}}
+\index{lobbyIds@{lobbyIds}!SteamLobby@{SteamLobby}}
+\doxysubsubsection{\texorpdfstring{lobbyIds}{lobbyIds}}
+{\footnotesize\ttfamily \label{class_steam_lobby_af7cd1e041d31ab8bc37fff6c77f61f5c} 
+List$<$CSteam\+ID$>$ Steam\+Lobby.\+lobby\+Ids = new List$<$CSteam\+ID$>$()}
+
+\Hypertarget{class_steam_lobby_a49421a0b174c05f7f8003a2e69f7bb8a}\index{SteamLobby@{SteamLobby}!LobbyList@{LobbyList}}
+\index{LobbyList@{LobbyList}!SteamLobby@{SteamLobby}}
+\doxysubsubsection{\texorpdfstring{LobbyList}{LobbyList}}
+{\footnotesize\ttfamily \label{class_steam_lobby_a49421a0b174c05f7f8003a2e69f7bb8a} 
+Callback$<$Lobby\+Match\+List\+\_\+t$>$ Steam\+Lobby.\+Lobby\+List\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_steam_lobby_a964edae9a0effbfd8986608db26f7195}\index{SteamLobby@{SteamLobby}!networkManager@{networkManager}}
+\index{networkManager@{networkManager}!SteamLobby@{SteamLobby}}
+\doxysubsubsection{\texorpdfstring{networkManager}{networkManager}}
+{\footnotesize\ttfamily \label{class_steam_lobby_a964edae9a0effbfd8986608db26f7195} 
+Network\+Manager Steam\+Lobby.\+network\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_steam_lobby_ae3d7270a590f29f6d002dde9bb749a33}\index{SteamLobby@{SteamLobby}!SteamInitializationText@{SteamInitializationText}}
+\index{SteamInitializationText@{SteamInitializationText}!SteamLobby@{SteamLobby}}
+\doxysubsubsection{\texorpdfstring{SteamInitializationText}{SteamInitializationText}}
+{\footnotesize\ttfamily \label{class_steam_lobby_ae3d7270a590f29f6d002dde9bb749a33} 
+TMP\+\_\+\+Text Steam\+Lobby.\+Steam\+Initialization\+Text}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Steam\+And\+Lobby\+Scripts/\mbox{\hyperlink{_steam_lobby_8cs}{Steam\+Lobby.\+cs}}\end{DoxyCompactItemize}

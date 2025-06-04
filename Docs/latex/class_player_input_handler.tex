@@ -1,0 +1,115 @@
+\doxysection{Player\+Input\+Handler Class Reference}
+\hypertarget{class_player_input_handler}{}\label{class_player_input_handler}\index{PlayerInputHandler@{PlayerInputHandler}}
+
+
+Handles and centralizes player input for a local player.  
+
+
+Inheritance diagram for Player\+Input\+Handler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_player_input_handler}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_player_input_handler_a8dcd429fc06cafc6e0cccdc35d01d251}{Get\+Horizontal\+Input}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current horizontal input value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+System.\+Action \mbox{\hyperlink{class_player_input_handler_a4a62fb2d8bdc52eb459a795c8dab00c4}{On\+Jump\+Pressed}}
+\item 
+System.\+Action \mbox{\hyperlink{class_player_input_handler_acbf658f80cdff57607e44b22dd6a8c5a}{On\+Kick\+Pressed}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_player_input_handler_ade963addbc16cda24e3688f0945e81a3}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Checks for player input and invokes events. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_player_input_handler_a15319a12aea1e2ccea3be40d1323c532}{horizontal\+Axis}} = "{}Horizontal"{}
+\item 
+string \mbox{\hyperlink{class_player_input_handler_a53b8fa9e36c578f48612b1a1ec179a28}{jump\+Key}} = "{}Jump"{}
+\item 
+string \mbox{\hyperlink{class_player_input_handler_a27407e91af2845885e340e3c50c876ba}{kick\+Key}} = "{}Kick"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles and centralizes player input for a local player. 
+
+\label{doc-func-members}
+\Hypertarget{class_player_input_handler_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_player_input_handler_a8dcd429fc06cafc6e0cccdc35d01d251}\index{PlayerInputHandler@{PlayerInputHandler}!GetHorizontalInput@{GetHorizontalInput}}
+\index{GetHorizontalInput@{GetHorizontalInput}!PlayerInputHandler@{PlayerInputHandler}}
+\doxysubsubsection{\texorpdfstring{GetHorizontalInput()}{GetHorizontalInput()}}
+{\footnotesize\ttfamily \label{class_player_input_handler_a8dcd429fc06cafc6e0cccdc35d01d251} 
+float Player\+Input\+Handler.\+Get\+Horizontal\+Input (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the current horizontal input value. 
+
+\begin{DoxyReturn}{Returns}
+The horizontal input value, between -\/1 and 1.
+\end{DoxyReturn}
+\Hypertarget{class_player_input_handler_ade963addbc16cda24e3688f0945e81a3}\index{PlayerInputHandler@{PlayerInputHandler}!Update@{Update}}
+\index{Update@{Update}!PlayerInputHandler@{PlayerInputHandler}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_player_input_handler_ade963addbc16cda24e3688f0945e81a3} 
+void Player\+Input\+Handler.\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Checks for player input and invokes events. 
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_player_input_handler_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_player_input_handler_a15319a12aea1e2ccea3be40d1323c532}\index{PlayerInputHandler@{PlayerInputHandler}!horizontalAxis@{horizontalAxis}}
+\index{horizontalAxis@{horizontalAxis}!PlayerInputHandler@{PlayerInputHandler}}
+\doxysubsubsection{\texorpdfstring{horizontalAxis}{horizontalAxis}}
+{\footnotesize\ttfamily \label{class_player_input_handler_a15319a12aea1e2ccea3be40d1323c532} 
+string Player\+Input\+Handler.\+horizontal\+Axis = "{}Horizontal"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_input_handler_a53b8fa9e36c578f48612b1a1ec179a28}\index{PlayerInputHandler@{PlayerInputHandler}!jumpKey@{jumpKey}}
+\index{jumpKey@{jumpKey}!PlayerInputHandler@{PlayerInputHandler}}
+\doxysubsubsection{\texorpdfstring{jumpKey}{jumpKey}}
+{\footnotesize\ttfamily \label{class_player_input_handler_a53b8fa9e36c578f48612b1a1ec179a28} 
+string Player\+Input\+Handler.\+jump\+Key = "{}Jump"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_input_handler_a27407e91af2845885e340e3c50c876ba}\index{PlayerInputHandler@{PlayerInputHandler}!kickKey@{kickKey}}
+\index{kickKey@{kickKey}!PlayerInputHandler@{PlayerInputHandler}}
+\doxysubsubsection{\texorpdfstring{kickKey}{kickKey}}
+{\footnotesize\ttfamily \label{class_player_input_handler_a27407e91af2845885e340e3c50c876ba} 
+string Player\+Input\+Handler.\+kick\+Key = "{}Kick"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\label{doc-event-members}
+\Hypertarget{class_player_input_handler_doc-event-members}
+\doxysubsection{Event Documentation}
+\Hypertarget{class_player_input_handler_a4a62fb2d8bdc52eb459a795c8dab00c4}\index{PlayerInputHandler@{PlayerInputHandler}!OnJumpPressed@{OnJumpPressed}}
+\index{OnJumpPressed@{OnJumpPressed}!PlayerInputHandler@{PlayerInputHandler}}
+\doxysubsubsection{\texorpdfstring{OnJumpPressed}{OnJumpPressed}}
+{\footnotesize\ttfamily \label{class_player_input_handler_a4a62fb2d8bdc52eb459a795c8dab00c4} 
+System.\+Action Player\+Input\+Handler.\+On\+Jump\+Pressed}
+
+\Hypertarget{class_player_input_handler_acbf658f80cdff57607e44b22dd6a8c5a}\index{PlayerInputHandler@{PlayerInputHandler}!OnKickPressed@{OnKickPressed}}
+\index{OnKickPressed@{OnKickPressed}!PlayerInputHandler@{PlayerInputHandler}}
+\doxysubsubsection{\texorpdfstring{OnKickPressed}{OnKickPressed}}
+{\footnotesize\ttfamily \label{class_player_input_handler_acbf658f80cdff57607e44b22dd6a8c5a} 
+System.\+Action Player\+Input\+Handler.\+On\+Kick\+Pressed}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Multiplayer\+Player/\mbox{\hyperlink{_player_input_handler_8cs}{Player\+Input\+Handler.\+cs}}\end{DoxyCompactItemize}

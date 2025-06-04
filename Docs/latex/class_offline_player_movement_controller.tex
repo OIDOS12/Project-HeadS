@@ -1,0 +1,280 @@
+\doxysection{Offline\+Player\+Movement\+Controller Class Reference}
+\hypertarget{class_offline_player_movement_controller}{}\label{class_offline_player_movement_controller}\index{OfflinePlayerMovementController@{OfflinePlayerMovementController}}
+
+
+Handles player movement, jumping, and kicking for offline gameplay.  
+
+
+Inheritance diagram for Offline\+Player\+Movement\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_offline_player_movement_controller}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_offline_player_movement_controller_a012a71e72fe231492fee3715890b664c}{Call\+End\+Animation}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_offline_player_movement_controller_abb57454fe335bdf01547e7fa4a00f805}{Awake}} ()
+\item 
+void \mbox{\hyperlink{class_offline_player_movement_controller_a29bbb0d63f2c21879f3e2f30719563af}{Start}} ()
+\item 
+void \mbox{\hyperlink{class_offline_player_movement_controller_ad7be7c16c6bd1dcbe5212de515da402c}{On\+Destroy}} ()
+\item 
+void \mbox{\hyperlink{class_offline_player_movement_controller_ad2c2a0caeda09c819eedb9dffba714e8}{Handle\+Jump\+Input}} ()
+\item 
+void \mbox{\hyperlink{class_offline_player_movement_controller_a2083b90aae2e658925fcea75fb9324e6}{Handle\+Kick\+Input}} ()
+\item 
+void \mbox{\hyperlink{class_offline_player_movement_controller_a5cf5b2ef21ecbf6405c578956d91a7de}{Update}} ()
+\item 
+void \mbox{\hyperlink{class_offline_player_movement_controller_a0521b3482c6b3bd3c6d0e5dd855d7f37}{Fixed\+Update}} ()
+\item 
+void \mbox{\hyperlink{class_offline_player_movement_controller_a8bb0eca3dfc994d792b48525e018a396}{Perform\+Ground\+Check}} ()
+\item 
+void \mbox{\hyperlink{class_offline_player_movement_controller_a8d900e9b2240859e6a24d665c6bc02dc}{Apply\+Movement}} (float horizontal\+Input, bool jump, bool kick, bool \mbox{\hyperlink{class_offline_player_movement_controller_a2c3fb510751beb37929cd0d68a7e80fa}{is\+Grounded}})
+\item 
+void \mbox{\hyperlink{class_offline_player_movement_controller_aa4361d7b6ef046b78a011090d0ef730b}{Kick}} (Vector3 current\+Area\+Settings, bool \mbox{\hyperlink{class_offline_player_movement_controller_a2c3fb510751beb37929cd0d68a7e80fa}{is\+Grounded}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_offline_player_movement_controller_ab31cc5c310da6765d0029b5aefb6f9a4}{speed}} = 5f
+\item 
+float \mbox{\hyperlink{class_offline_player_movement_controller_a72679293f7b50dd2e745d11c39bf6c1a}{jump\+Force}} = 10f
+\item 
+float \mbox{\hyperlink{class_offline_player_movement_controller_af454878e54725288211cd8aa8c559a4b}{kick\+Force}} = 10f
+\item 
+float \mbox{\hyperlink{class_offline_player_movement_controller_a79d7e94a68c63bcd48c9ee20236d98a1}{upward\+Force}} = 0.\+9f
+\item 
+Game\+Object \mbox{\hyperlink{class_offline_player_movement_controller_ac70d4f493c1f4f3c121a9efe70b3036c}{player\+Model}}
+\item 
+Rigidbody2D \mbox{\hyperlink{class_offline_player_movement_controller_abaca671916be3f88c1a1173bb07efcb1}{rb}}
+\item 
+Layer\+Mask \mbox{\hyperlink{class_offline_player_movement_controller_a832d3cde23881cbd81f1e3afd81e6799}{what\+Is\+Ground}}
+\item 
+Box\+Collider2D \mbox{\hyperlink{class_offline_player_movement_controller_a8cd505f94b16f633d4974add22dde8ee}{box\+Collider}}
+\item 
+Animator \mbox{\hyperlink{class_offline_player_movement_controller_af5bb78a83dd721d4072772f3feb585d3}{animator}}
+\item 
+Audio\+Clip \mbox{\hyperlink{class_offline_player_movement_controller_aa5e722de15dcc28f93245c8421cdc9fd}{kick\+Sound\+Clip}}
+\item 
+Vector3 \mbox{\hyperlink{class_offline_player_movement_controller_aedfaac9c4f540909f4fc3e911a6f0954}{ground\+Check\+Offset}} = new Vector3(0, 0.\+1f, 0)
+\item 
+Vector3 \mbox{\hyperlink{class_offline_player_movement_controller_a1e1b635af7c8906ead5c8fc40038164f}{ground\+Check\+Size\+Reduction}} = new Vector3(0.\+03f, 0.\+2f, 0)
+\item 
+Vector3 \mbox{\hyperlink{class_offline_player_movement_controller_a6833179682e7347ac8e9c3ebb4784fa6}{positive\+Area\+Settings}} = new Vector3(0.\+8f, -\/0.\+8f, 0)
+\item 
+Vector3 \mbox{\hyperlink{class_offline_player_movement_controller_ada863392e75e7b24b801b3c0f427aabb}{negative\+Area\+Settings}} = new Vector3(-\/0.\+8f, -\/0.\+8f, 0)
+\item 
+Vector3 \mbox{\hyperlink{class_offline_player_movement_controller_ab36521f2ac924f8ccf34047a7718a700}{area\+Settings}}
+\item 
+bool \mbox{\hyperlink{class_offline_player_movement_controller_a62bd9b695ad8ffb8ea3b096cfccc7be9}{jump\+Input\+Received}}
+\item 
+bool \mbox{\hyperlink{class_offline_player_movement_controller_a58ac8f693f0702f76f754892d82bc0ef}{kick\+Input\+Received}}
+\item 
+bool \mbox{\hyperlink{class_offline_player_movement_controller_a2c3fb510751beb37929cd0d68a7e80fa}{is\+Grounded}}
+\item 
+\mbox{\hyperlink{class_local_player_input_handler}{Local\+Player\+Input\+Handler}} \mbox{\hyperlink{class_offline_player_movement_controller_a99fb68e495d1d8756546745b7f50097f}{input\+Handler}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles player movement, jumping, and kicking for offline gameplay. 
+
+\label{doc-func-members}
+\Hypertarget{class_offline_player_movement_controller_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_offline_player_movement_controller_a8d900e9b2240859e6a24d665c6bc02dc}\index{OfflinePlayerMovementController@{OfflinePlayerMovementController}!ApplyMovement@{ApplyMovement}}
+\index{ApplyMovement@{ApplyMovement}!OfflinePlayerMovementController@{OfflinePlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{ApplyMovement()}{ApplyMovement()}}
+{\footnotesize\ttfamily \label{class_offline_player_movement_controller_a8d900e9b2240859e6a24d665c6bc02dc} 
+void Offline\+Player\+Movement\+Controller.\+Apply\+Movement (\begin{DoxyParamCaption}\item[{float}]{horizontal\+Input}{, }\item[{bool}]{jump}{, }\item[{bool}]{kick}{, }\item[{bool}]{is\+Grounded}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_offline_player_movement_controller_abb57454fe335bdf01547e7fa4a00f805}\index{OfflinePlayerMovementController@{OfflinePlayerMovementController}!Awake@{Awake}}
+\index{Awake@{Awake}!OfflinePlayerMovementController@{OfflinePlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{Awake()}{Awake()}}
+{\footnotesize\ttfamily \label{class_offline_player_movement_controller_abb57454fe335bdf01547e7fa4a00f805} 
+void Offline\+Player\+Movement\+Controller.\+Awake (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_offline_player_movement_controller_a012a71e72fe231492fee3715890b664c}\index{OfflinePlayerMovementController@{OfflinePlayerMovementController}!CallEndAnimation@{CallEndAnimation}}
+\index{CallEndAnimation@{CallEndAnimation}!OfflinePlayerMovementController@{OfflinePlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{CallEndAnimation()}{CallEndAnimation()}}
+{\footnotesize\ttfamily \label{class_offline_player_movement_controller_a012a71e72fe231492fee3715890b664c} 
+void Offline\+Player\+Movement\+Controller.\+Call\+End\+Animation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_offline_player_movement_controller_a0521b3482c6b3bd3c6d0e5dd855d7f37}\index{OfflinePlayerMovementController@{OfflinePlayerMovementController}!FixedUpdate@{FixedUpdate}}
+\index{FixedUpdate@{FixedUpdate}!OfflinePlayerMovementController@{OfflinePlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{FixedUpdate()}{FixedUpdate()}}
+{\footnotesize\ttfamily \label{class_offline_player_movement_controller_a0521b3482c6b3bd3c6d0e5dd855d7f37} 
+void Offline\+Player\+Movement\+Controller.\+Fixed\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_offline_player_movement_controller_ad2c2a0caeda09c819eedb9dffba714e8}\index{OfflinePlayerMovementController@{OfflinePlayerMovementController}!HandleJumpInput@{HandleJumpInput}}
+\index{HandleJumpInput@{HandleJumpInput}!OfflinePlayerMovementController@{OfflinePlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{HandleJumpInput()}{HandleJumpInput()}}
+{\footnotesize\ttfamily \label{class_offline_player_movement_controller_ad2c2a0caeda09c819eedb9dffba714e8} 
+void Offline\+Player\+Movement\+Controller.\+Handle\+Jump\+Input (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_offline_player_movement_controller_a2083b90aae2e658925fcea75fb9324e6}\index{OfflinePlayerMovementController@{OfflinePlayerMovementController}!HandleKickInput@{HandleKickInput}}
+\index{HandleKickInput@{HandleKickInput}!OfflinePlayerMovementController@{OfflinePlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{HandleKickInput()}{HandleKickInput()}}
+{\footnotesize\ttfamily \label{class_offline_player_movement_controller_a2083b90aae2e658925fcea75fb9324e6} 
+void Offline\+Player\+Movement\+Controller.\+Handle\+Kick\+Input (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_offline_player_movement_controller_aa4361d7b6ef046b78a011090d0ef730b}\index{OfflinePlayerMovementController@{OfflinePlayerMovementController}!Kick@{Kick}}
+\index{Kick@{Kick}!OfflinePlayerMovementController@{OfflinePlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{Kick()}{Kick()}}
+{\footnotesize\ttfamily \label{class_offline_player_movement_controller_aa4361d7b6ef046b78a011090d0ef730b} 
+void Offline\+Player\+Movement\+Controller.\+Kick (\begin{DoxyParamCaption}\item[{Vector3}]{current\+Area\+Settings}{, }\item[{bool}]{is\+Grounded}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_offline_player_movement_controller_ad7be7c16c6bd1dcbe5212de515da402c}\index{OfflinePlayerMovementController@{OfflinePlayerMovementController}!OnDestroy@{OnDestroy}}
+\index{OnDestroy@{OnDestroy}!OfflinePlayerMovementController@{OfflinePlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{OnDestroy()}{OnDestroy()}}
+{\footnotesize\ttfamily \label{class_offline_player_movement_controller_ad7be7c16c6bd1dcbe5212de515da402c} 
+void Offline\+Player\+Movement\+Controller.\+On\+Destroy (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_offline_player_movement_controller_a8bb0eca3dfc994d792b48525e018a396}\index{OfflinePlayerMovementController@{OfflinePlayerMovementController}!PerformGroundCheck@{PerformGroundCheck}}
+\index{PerformGroundCheck@{PerformGroundCheck}!OfflinePlayerMovementController@{OfflinePlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{PerformGroundCheck()}{PerformGroundCheck()}}
+{\footnotesize\ttfamily \label{class_offline_player_movement_controller_a8bb0eca3dfc994d792b48525e018a396} 
+void Offline\+Player\+Movement\+Controller.\+Perform\+Ground\+Check (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_offline_player_movement_controller_a29bbb0d63f2c21879f3e2f30719563af}\index{OfflinePlayerMovementController@{OfflinePlayerMovementController}!Start@{Start}}
+\index{Start@{Start}!OfflinePlayerMovementController@{OfflinePlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily \label{class_offline_player_movement_controller_a29bbb0d63f2c21879f3e2f30719563af} 
+void Offline\+Player\+Movement\+Controller.\+Start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_offline_player_movement_controller_a5cf5b2ef21ecbf6405c578956d91a7de}\index{OfflinePlayerMovementController@{OfflinePlayerMovementController}!Update@{Update}}
+\index{Update@{Update}!OfflinePlayerMovementController@{OfflinePlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_offline_player_movement_controller_a5cf5b2ef21ecbf6405c578956d91a7de} 
+void Offline\+Player\+Movement\+Controller.\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_offline_player_movement_controller_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_offline_player_movement_controller_af5bb78a83dd721d4072772f3feb585d3}\index{OfflinePlayerMovementController@{OfflinePlayerMovementController}!animator@{animator}}
+\index{animator@{animator}!OfflinePlayerMovementController@{OfflinePlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{animator}{animator}}
+{\footnotesize\ttfamily \label{class_offline_player_movement_controller_af5bb78a83dd721d4072772f3feb585d3} 
+Animator Offline\+Player\+Movement\+Controller.\+animator\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_offline_player_movement_controller_ab36521f2ac924f8ccf34047a7718a700}\index{OfflinePlayerMovementController@{OfflinePlayerMovementController}!areaSettings@{areaSettings}}
+\index{areaSettings@{areaSettings}!OfflinePlayerMovementController@{OfflinePlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{areaSettings}{areaSettings}}
+{\footnotesize\ttfamily \label{class_offline_player_movement_controller_ab36521f2ac924f8ccf34047a7718a700} 
+Vector3 Offline\+Player\+Movement\+Controller.\+area\+Settings\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_offline_player_movement_controller_a8cd505f94b16f633d4974add22dde8ee}\index{OfflinePlayerMovementController@{OfflinePlayerMovementController}!boxCollider@{boxCollider}}
+\index{boxCollider@{boxCollider}!OfflinePlayerMovementController@{OfflinePlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{boxCollider}{boxCollider}}
+{\footnotesize\ttfamily \label{class_offline_player_movement_controller_a8cd505f94b16f633d4974add22dde8ee} 
+Box\+Collider2D Offline\+Player\+Movement\+Controller.\+box\+Collider\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_offline_player_movement_controller_aedfaac9c4f540909f4fc3e911a6f0954}\index{OfflinePlayerMovementController@{OfflinePlayerMovementController}!groundCheckOffset@{groundCheckOffset}}
+\index{groundCheckOffset@{groundCheckOffset}!OfflinePlayerMovementController@{OfflinePlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{groundCheckOffset}{groundCheckOffset}}
+{\footnotesize\ttfamily \label{class_offline_player_movement_controller_aedfaac9c4f540909f4fc3e911a6f0954} 
+Vector3 Offline\+Player\+Movement\+Controller.\+ground\+Check\+Offset = new Vector3(0, 0.\+1f, 0)\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_offline_player_movement_controller_a1e1b635af7c8906ead5c8fc40038164f}\index{OfflinePlayerMovementController@{OfflinePlayerMovementController}!groundCheckSizeReduction@{groundCheckSizeReduction}}
+\index{groundCheckSizeReduction@{groundCheckSizeReduction}!OfflinePlayerMovementController@{OfflinePlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{groundCheckSizeReduction}{groundCheckSizeReduction}}
+{\footnotesize\ttfamily \label{class_offline_player_movement_controller_a1e1b635af7c8906ead5c8fc40038164f} 
+Vector3 Offline\+Player\+Movement\+Controller.\+ground\+Check\+Size\+Reduction = new Vector3(0.\+03f, 0.\+2f, 0)\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_offline_player_movement_controller_a99fb68e495d1d8756546745b7f50097f}\index{OfflinePlayerMovementController@{OfflinePlayerMovementController}!inputHandler@{inputHandler}}
+\index{inputHandler@{inputHandler}!OfflinePlayerMovementController@{OfflinePlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{inputHandler}{inputHandler}}
+{\footnotesize\ttfamily \label{class_offline_player_movement_controller_a99fb68e495d1d8756546745b7f50097f} 
+\mbox{\hyperlink{class_local_player_input_handler}{Local\+Player\+Input\+Handler}} Offline\+Player\+Movement\+Controller.\+input\+Handler\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_offline_player_movement_controller_a2c3fb510751beb37929cd0d68a7e80fa}\index{OfflinePlayerMovementController@{OfflinePlayerMovementController}!isGrounded@{isGrounded}}
+\index{isGrounded@{isGrounded}!OfflinePlayerMovementController@{OfflinePlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{isGrounded}{isGrounded}}
+{\footnotesize\ttfamily \label{class_offline_player_movement_controller_a2c3fb510751beb37929cd0d68a7e80fa} 
+bool Offline\+Player\+Movement\+Controller.\+is\+Grounded\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_offline_player_movement_controller_a72679293f7b50dd2e745d11c39bf6c1a}\index{OfflinePlayerMovementController@{OfflinePlayerMovementController}!jumpForce@{jumpForce}}
+\index{jumpForce@{jumpForce}!OfflinePlayerMovementController@{OfflinePlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{jumpForce}{jumpForce}}
+{\footnotesize\ttfamily \label{class_offline_player_movement_controller_a72679293f7b50dd2e745d11c39bf6c1a} 
+float Offline\+Player\+Movement\+Controller.\+jump\+Force = 10f\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_offline_player_movement_controller_a62bd9b695ad8ffb8ea3b096cfccc7be9}\index{OfflinePlayerMovementController@{OfflinePlayerMovementController}!jumpInputReceived@{jumpInputReceived}}
+\index{jumpInputReceived@{jumpInputReceived}!OfflinePlayerMovementController@{OfflinePlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{jumpInputReceived}{jumpInputReceived}}
+{\footnotesize\ttfamily \label{class_offline_player_movement_controller_a62bd9b695ad8ffb8ea3b096cfccc7be9} 
+bool Offline\+Player\+Movement\+Controller.\+jump\+Input\+Received\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_offline_player_movement_controller_af454878e54725288211cd8aa8c559a4b}\index{OfflinePlayerMovementController@{OfflinePlayerMovementController}!kickForce@{kickForce}}
+\index{kickForce@{kickForce}!OfflinePlayerMovementController@{OfflinePlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{kickForce}{kickForce}}
+{\footnotesize\ttfamily \label{class_offline_player_movement_controller_af454878e54725288211cd8aa8c559a4b} 
+float Offline\+Player\+Movement\+Controller.\+kick\+Force = 10f\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_offline_player_movement_controller_a58ac8f693f0702f76f754892d82bc0ef}\index{OfflinePlayerMovementController@{OfflinePlayerMovementController}!kickInputReceived@{kickInputReceived}}
+\index{kickInputReceived@{kickInputReceived}!OfflinePlayerMovementController@{OfflinePlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{kickInputReceived}{kickInputReceived}}
+{\footnotesize\ttfamily \label{class_offline_player_movement_controller_a58ac8f693f0702f76f754892d82bc0ef} 
+bool Offline\+Player\+Movement\+Controller.\+kick\+Input\+Received\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_offline_player_movement_controller_aa5e722de15dcc28f93245c8421cdc9fd}\index{OfflinePlayerMovementController@{OfflinePlayerMovementController}!kickSoundClip@{kickSoundClip}}
+\index{kickSoundClip@{kickSoundClip}!OfflinePlayerMovementController@{OfflinePlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{kickSoundClip}{kickSoundClip}}
+{\footnotesize\ttfamily \label{class_offline_player_movement_controller_aa5e722de15dcc28f93245c8421cdc9fd} 
+Audio\+Clip Offline\+Player\+Movement\+Controller.\+kick\+Sound\+Clip\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_offline_player_movement_controller_ada863392e75e7b24b801b3c0f427aabb}\index{OfflinePlayerMovementController@{OfflinePlayerMovementController}!negativeAreaSettings@{negativeAreaSettings}}
+\index{negativeAreaSettings@{negativeAreaSettings}!OfflinePlayerMovementController@{OfflinePlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{negativeAreaSettings}{negativeAreaSettings}}
+{\footnotesize\ttfamily \label{class_offline_player_movement_controller_ada863392e75e7b24b801b3c0f427aabb} 
+Vector3 Offline\+Player\+Movement\+Controller.\+negative\+Area\+Settings = new Vector3(-\/0.\+8f, -\/0.\+8f, 0)\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_offline_player_movement_controller_ac70d4f493c1f4f3c121a9efe70b3036c}\index{OfflinePlayerMovementController@{OfflinePlayerMovementController}!playerModel@{playerModel}}
+\index{playerModel@{playerModel}!OfflinePlayerMovementController@{OfflinePlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{playerModel}{playerModel}}
+{\footnotesize\ttfamily \label{class_offline_player_movement_controller_ac70d4f493c1f4f3c121a9efe70b3036c} 
+Game\+Object Offline\+Player\+Movement\+Controller.\+player\+Model\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_offline_player_movement_controller_a6833179682e7347ac8e9c3ebb4784fa6}\index{OfflinePlayerMovementController@{OfflinePlayerMovementController}!positiveAreaSettings@{positiveAreaSettings}}
+\index{positiveAreaSettings@{positiveAreaSettings}!OfflinePlayerMovementController@{OfflinePlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{positiveAreaSettings}{positiveAreaSettings}}
+{\footnotesize\ttfamily \label{class_offline_player_movement_controller_a6833179682e7347ac8e9c3ebb4784fa6} 
+Vector3 Offline\+Player\+Movement\+Controller.\+positive\+Area\+Settings = new Vector3(0.\+8f, -\/0.\+8f, 0)\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_offline_player_movement_controller_abaca671916be3f88c1a1173bb07efcb1}\index{OfflinePlayerMovementController@{OfflinePlayerMovementController}!rb@{rb}}
+\index{rb@{rb}!OfflinePlayerMovementController@{OfflinePlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{rb}{rb}}
+{\footnotesize\ttfamily \label{class_offline_player_movement_controller_abaca671916be3f88c1a1173bb07efcb1} 
+Rigidbody2D Offline\+Player\+Movement\+Controller.\+rb\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_offline_player_movement_controller_ab31cc5c310da6765d0029b5aefb6f9a4}\index{OfflinePlayerMovementController@{OfflinePlayerMovementController}!speed@{speed}}
+\index{speed@{speed}!OfflinePlayerMovementController@{OfflinePlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{speed}{speed}}
+{\footnotesize\ttfamily \label{class_offline_player_movement_controller_ab31cc5c310da6765d0029b5aefb6f9a4} 
+float Offline\+Player\+Movement\+Controller.\+speed = 5f\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_offline_player_movement_controller_a79d7e94a68c63bcd48c9ee20236d98a1}\index{OfflinePlayerMovementController@{OfflinePlayerMovementController}!upwardForce@{upwardForce}}
+\index{upwardForce@{upwardForce}!OfflinePlayerMovementController@{OfflinePlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{upwardForce}{upwardForce}}
+{\footnotesize\ttfamily \label{class_offline_player_movement_controller_a79d7e94a68c63bcd48c9ee20236d98a1} 
+float Offline\+Player\+Movement\+Controller.\+upward\+Force = 0.\+9f\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_offline_player_movement_controller_a832d3cde23881cbd81f1e3afd81e6799}\index{OfflinePlayerMovementController@{OfflinePlayerMovementController}!whatIsGround@{whatIsGround}}
+\index{whatIsGround@{whatIsGround}!OfflinePlayerMovementController@{OfflinePlayerMovementController}}
+\doxysubsubsection{\texorpdfstring{whatIsGround}{whatIsGround}}
+{\footnotesize\ttfamily \label{class_offline_player_movement_controller_a832d3cde23881cbd81f1e3afd81e6799} 
+Layer\+Mask Offline\+Player\+Movement\+Controller.\+what\+Is\+Ground\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Local\+Player/\mbox{\hyperlink{_offline_player_movement_controller_8cs}{Offline\+Player\+Movement\+Controller.\+cs}}\end{DoxyCompactItemize}

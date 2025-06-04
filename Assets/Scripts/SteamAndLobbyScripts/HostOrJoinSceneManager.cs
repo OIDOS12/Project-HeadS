@@ -2,6 +2,9 @@ using UnityEngine;
 using Steamworks;
 using System.Collections.Generic;
 
+/// <summary>
+/// Manages the host or join lobby functionality.
+/// </summary>
 public class HostOrJoinSceneManager : MonoBehaviour
 {
     public static HostOrJoinSceneManager Instance;
@@ -14,6 +17,9 @@ public class HostOrJoinSceneManager : MonoBehaviour
     public GameObject lobbiesButton, hostButton, MainMenuButton;
     public List<GameObject> ListOfLobbies = new List<GameObject>();
 
+    /// <summary>
+    /// Ensures that this is a singleton instance and initializes the SteamLobby reference.
+    /// </summary>
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -33,6 +39,11 @@ public class HostOrJoinSceneManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Displays the list of lobbies in the UI.
+    /// </summary>
+    /// <param name="lobbyIds"></param>
+    /// <param name="result"></param>
     public void DisplayLobbies(List<CSteamID> lobbyIds, LobbyDataUpdate_t result)
     {
         if (LobbyDataItemPrefab == null || LobbiesListContent == null)
@@ -44,7 +55,7 @@ public class HostOrJoinSceneManager : MonoBehaviour
         // Remove any existing entry with the same ID
         for (int i = ListOfLobbies.Count - 1; i >= 0; i--)
         {
-            var entry = ListOfLobbies[i].GetComponent<LobbyDataEntry>();
+            var entry = ListOfLobbies[i].GetComponent<LobbyData>();
             if (entry != null && entry.LobbyID.m_SteamID == result.m_ulSteamIDLobby)
             {
                 Destroy(ListOfLobbies[i]);
@@ -62,10 +73,11 @@ public class HostOrJoinSceneManager : MonoBehaviour
                     continue;
 
                 GameObject createdItem = Instantiate(LobbyDataItemPrefab, LobbiesListContent.transform);
-                var entry = createdItem.GetComponent<LobbyDataEntry>();
-                if (entry == null)
+
+                // Ensure the created item has a LobbyData component
+                if (!createdItem.TryGetComponent<LobbyData>(out var entry))
                 {
-                    Debug.LogError("LobbyDataItemPrefab does not have a LobbyDataEntry component.");
+                    Debug.LogError("LobbyDataItemPrefab does not have a LobbyData component.");
                     Destroy(createdItem);
                     continue;
                 }
@@ -79,19 +91,23 @@ public class HostOrJoinSceneManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Initiates the process to get a list of lobbies.
+    /// </summary>
     public void GetListOfLobbies()
     {
-        lobbiesButton?.SetActive(false);
-        hostButton?.SetActive(false);
-        MainMenuButton?.SetActive(false);
+        lobbiesButton.SetActive(false);
+        hostButton.SetActive(false);
+        MainMenuButton.SetActive(false);
 
-        LobbiesMenu?.SetActive(true);
-        if (steamLobby != null)
-            steamLobby.GetLobbiesList();
-        else
-            Debug.LogError("SteamLobby reference missing in HostOrJoinSceneManager.");
+        LobbiesMenu.SetActive(true);
+        steamLobby.GetLobbiesList();
+
     }
 
+    /// <summary>
+    /// Destroys all lobby entries in the UI and clears the list of lobbies.
+    /// </summary>
     public void DestroyLobbies()
     {
         foreach (GameObject lobby in ListOfLobbies)
@@ -104,23 +120,21 @@ public class HostOrJoinSceneManager : MonoBehaviour
         ListOfLobbies.Clear();
     }
 
+    /// <summary>
+    /// Handles the back button functionality to return to the previous menu.
+    /// </summary>
     public void BackButton()
     {
-        lobbiesButton?.SetActive(true);
-        hostButton?.SetActive(true);
-        MainMenuButton?.SetActive(true);
+        lobbiesButton.SetActive(true);
+        hostButton.SetActive(true);
+        MainMenuButton.SetActive(true);
 
-        LobbiesMenu?.SetActive(false);
+        LobbiesMenu.SetActive(false);
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape) && steamLobby != null)
-        {
-            steamLobby.ToMainMenu();
-        }
-    }
-
+    /// <summary>
+    /// Hosts a new lobby using the SteamLobby instance.
+    /// </summary>
     public void HostLobby()
     {
         if (steamLobby != null)
@@ -129,6 +143,9 @@ public class HostOrJoinSceneManager : MonoBehaviour
             Debug.LogError("SteamLobby reference missing in HostOrJoinSceneManager.");
     }
 
+    /// <summary>
+    /// Returns to the main menu.
+    /// </summary>
     public void ToMainMenu()
     {
         if (steamLobby != null)

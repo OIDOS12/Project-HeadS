@@ -1,0 +1,167 @@
+\doxysection{Sound\+Mixer\+Manager Class Reference}
+\hypertarget{class_sound_mixer_manager}{}\label{class_sound_mixer_manager}\index{SoundMixerManager@{SoundMixerManager}}
+
+
+\doxylink{class_sound_mixer_manager}{Sound\+Mixer\+Manager} class handles the sound volume settings in the game.  
+
+
+Inheritance diagram for Sound\+Mixer\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_sound_mixer_manager}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_sound_mixer_manager_a9a1e9f8d10cd0cc3d24994203e093e35}{Set\+Master\+Volume}} (float volume)
+\begin{DoxyCompactList}\small\item\em Sets the master volume. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sound_mixer_manager_a9419f52cf03e72aef5ec73b3909a4da4}{Set\+Music\+Volume}} (float volume)
+\begin{DoxyCompactList}\small\item\em Sets the music volume. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sound_mixer_manager_aa6bdc755cfdd9b554f00ab506c571e71}{Set\+Sound\+FXVolume}} (float volume)
+\begin{DoxyCompactList}\small\item\em Sets the sound effects volume. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sound_mixer_manager_a9564de7a0b471093d2ff78f2cd6cde63}{Load\+Sliders}} ()
+\begin{DoxyCompactList}\small\item\em Loads the volume settings from Player\+Prefs and sets the sliders accordingly. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_sound_mixer_manager_a552df532d14cd951627e085d65fb2fdd}{Start}} ()
+\begin{DoxyCompactList}\small\item\em Loads the volume settings from Player\+Prefs on start. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Audio\+Mixer \mbox{\hyperlink{class_sound_mixer_manager_aac111e8df0d1830ccecb810c9eba17fa}{audio\+Mixer}}
+\item 
+Audio\+Clip \mbox{\hyperlink{class_sound_mixer_manager_ab0b4f197c16a47820c7898af93d80a8b}{test\+Sound\+FX}}
+\item 
+Game\+Object \mbox{\hyperlink{class_sound_mixer_manager_a48ba0fbdd7be40dd8dd1eee3a5a4a01e}{Master\+Volume\+Slider}}
+\item 
+Game\+Object \mbox{\hyperlink{class_sound_mixer_manager_aed2b562732f5fa3c9f1c0e11c9bdb1a7}{Music\+Volume\+Slider}}
+\item 
+Game\+Object \mbox{\hyperlink{class_sound_mixer_manager_a2383e70ac23e26812491e239e4dc0834}{Sound\+FXVolume\+Slider}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const string \mbox{\hyperlink{class_sound_mixer_manager_aa2aa50d7dfcd6204b8996228801656cd}{Master\+Volume\+Key}} = "{}Master\+Volume"{}
+\item 
+const string \mbox{\hyperlink{class_sound_mixer_manager_ae417d978fa5364b5be7b22bcdc0d0ab3}{Music\+Volume\+Key}} = "{}Music\+Volume"{}
+\item 
+const string \mbox{\hyperlink{class_sound_mixer_manager_ac6422cf1a33fd9b1b25099c2bf84b931}{Sound\+FXVolume\+Key}} = "{}Sound\+FXVolume"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_sound_mixer_manager}{Sound\+Mixer\+Manager} class handles the sound volume settings in the game. 
+
+\label{doc-func-members}
+\Hypertarget{class_sound_mixer_manager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_sound_mixer_manager_a9564de7a0b471093d2ff78f2cd6cde63}\index{SoundMixerManager@{SoundMixerManager}!LoadSliders@{LoadSliders}}
+\index{LoadSliders@{LoadSliders}!SoundMixerManager@{SoundMixerManager}}
+\doxysubsubsection{\texorpdfstring{LoadSliders()}{LoadSliders()}}
+{\footnotesize\ttfamily \label{class_sound_mixer_manager_a9564de7a0b471093d2ff78f2cd6cde63} 
+void Sound\+Mixer\+Manager.\+Load\+Sliders (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Loads the volume settings from Player\+Prefs and sets the sliders accordingly. 
+
+\Hypertarget{class_sound_mixer_manager_a9a1e9f8d10cd0cc3d24994203e093e35}\index{SoundMixerManager@{SoundMixerManager}!SetMasterVolume@{SetMasterVolume}}
+\index{SetMasterVolume@{SetMasterVolume}!SoundMixerManager@{SoundMixerManager}}
+\doxysubsubsection{\texorpdfstring{SetMasterVolume()}{SetMasterVolume()}}
+{\footnotesize\ttfamily \label{class_sound_mixer_manager_a9a1e9f8d10cd0cc3d24994203e093e35} 
+void Sound\+Mixer\+Manager.\+Set\+Master\+Volume (\begin{DoxyParamCaption}\item[{float}]{volume}{}\end{DoxyParamCaption})}
+
+
+
+Sets the master volume. 
+
+\Hypertarget{class_sound_mixer_manager_a9419f52cf03e72aef5ec73b3909a4da4}\index{SoundMixerManager@{SoundMixerManager}!SetMusicVolume@{SetMusicVolume}}
+\index{SetMusicVolume@{SetMusicVolume}!SoundMixerManager@{SoundMixerManager}}
+\doxysubsubsection{\texorpdfstring{SetMusicVolume()}{SetMusicVolume()}}
+{\footnotesize\ttfamily \label{class_sound_mixer_manager_a9419f52cf03e72aef5ec73b3909a4da4} 
+void Sound\+Mixer\+Manager.\+Set\+Music\+Volume (\begin{DoxyParamCaption}\item[{float}]{volume}{}\end{DoxyParamCaption})}
+
+
+
+Sets the music volume. 
+
+\Hypertarget{class_sound_mixer_manager_aa6bdc755cfdd9b554f00ab506c571e71}\index{SoundMixerManager@{SoundMixerManager}!SetSoundFXVolume@{SetSoundFXVolume}}
+\index{SetSoundFXVolume@{SetSoundFXVolume}!SoundMixerManager@{SoundMixerManager}}
+\doxysubsubsection{\texorpdfstring{SetSoundFXVolume()}{SetSoundFXVolume()}}
+{\footnotesize\ttfamily \label{class_sound_mixer_manager_aa6bdc755cfdd9b554f00ab506c571e71} 
+void Sound\+Mixer\+Manager.\+Set\+Sound\+FXVolume (\begin{DoxyParamCaption}\item[{float}]{volume}{}\end{DoxyParamCaption})}
+
+
+
+Sets the sound effects volume. 
+
+\Hypertarget{class_sound_mixer_manager_a552df532d14cd951627e085d65fb2fdd}\index{SoundMixerManager@{SoundMixerManager}!Start@{Start}}
+\index{Start@{Start}!SoundMixerManager@{SoundMixerManager}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily \label{class_sound_mixer_manager_a552df532d14cd951627e085d65fb2fdd} 
+void Sound\+Mixer\+Manager.\+Start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Loads the volume settings from Player\+Prefs on start. 
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_sound_mixer_manager_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_sound_mixer_manager_aac111e8df0d1830ccecb810c9eba17fa}\index{SoundMixerManager@{SoundMixerManager}!audioMixer@{audioMixer}}
+\index{audioMixer@{audioMixer}!SoundMixerManager@{SoundMixerManager}}
+\doxysubsubsection{\texorpdfstring{audioMixer}{audioMixer}}
+{\footnotesize\ttfamily \label{class_sound_mixer_manager_aac111e8df0d1830ccecb810c9eba17fa} 
+Audio\+Mixer Sound\+Mixer\+Manager.\+audio\+Mixer\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_sound_mixer_manager_aa2aa50d7dfcd6204b8996228801656cd}\index{SoundMixerManager@{SoundMixerManager}!MasterVolumeKey@{MasterVolumeKey}}
+\index{MasterVolumeKey@{MasterVolumeKey}!SoundMixerManager@{SoundMixerManager}}
+\doxysubsubsection{\texorpdfstring{MasterVolumeKey}{MasterVolumeKey}}
+{\footnotesize\ttfamily \label{class_sound_mixer_manager_aa2aa50d7dfcd6204b8996228801656cd} 
+const string Sound\+Mixer\+Manager.\+Master\+Volume\+Key = "{}Master\+Volume"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_sound_mixer_manager_a48ba0fbdd7be40dd8dd1eee3a5a4a01e}\index{SoundMixerManager@{SoundMixerManager}!MasterVolumeSlider@{MasterVolumeSlider}}
+\index{MasterVolumeSlider@{MasterVolumeSlider}!SoundMixerManager@{SoundMixerManager}}
+\doxysubsubsection{\texorpdfstring{MasterVolumeSlider}{MasterVolumeSlider}}
+{\footnotesize\ttfamily \label{class_sound_mixer_manager_a48ba0fbdd7be40dd8dd1eee3a5a4a01e} 
+Game\+Object Sound\+Mixer\+Manager.\+Master\+Volume\+Slider\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_sound_mixer_manager_ae417d978fa5364b5be7b22bcdc0d0ab3}\index{SoundMixerManager@{SoundMixerManager}!MusicVolumeKey@{MusicVolumeKey}}
+\index{MusicVolumeKey@{MusicVolumeKey}!SoundMixerManager@{SoundMixerManager}}
+\doxysubsubsection{\texorpdfstring{MusicVolumeKey}{MusicVolumeKey}}
+{\footnotesize\ttfamily \label{class_sound_mixer_manager_ae417d978fa5364b5be7b22bcdc0d0ab3} 
+const string Sound\+Mixer\+Manager.\+Music\+Volume\+Key = "{}Music\+Volume"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_sound_mixer_manager_aed2b562732f5fa3c9f1c0e11c9bdb1a7}\index{SoundMixerManager@{SoundMixerManager}!MusicVolumeSlider@{MusicVolumeSlider}}
+\index{MusicVolumeSlider@{MusicVolumeSlider}!SoundMixerManager@{SoundMixerManager}}
+\doxysubsubsection{\texorpdfstring{MusicVolumeSlider}{MusicVolumeSlider}}
+{\footnotesize\ttfamily \label{class_sound_mixer_manager_aed2b562732f5fa3c9f1c0e11c9bdb1a7} 
+Game\+Object Sound\+Mixer\+Manager.\+Music\+Volume\+Slider\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_sound_mixer_manager_ac6422cf1a33fd9b1b25099c2bf84b931}\index{SoundMixerManager@{SoundMixerManager}!SoundFXVolumeKey@{SoundFXVolumeKey}}
+\index{SoundFXVolumeKey@{SoundFXVolumeKey}!SoundMixerManager@{SoundMixerManager}}
+\doxysubsubsection{\texorpdfstring{SoundFXVolumeKey}{SoundFXVolumeKey}}
+{\footnotesize\ttfamily \label{class_sound_mixer_manager_ac6422cf1a33fd9b1b25099c2bf84b931} 
+const string Sound\+Mixer\+Manager.\+Sound\+FXVolume\+Key = "{}Sound\+FXVolume"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_sound_mixer_manager_a2383e70ac23e26812491e239e4dc0834}\index{SoundMixerManager@{SoundMixerManager}!SoundFXVolumeSlider@{SoundFXVolumeSlider}}
+\index{SoundFXVolumeSlider@{SoundFXVolumeSlider}!SoundMixerManager@{SoundMixerManager}}
+\doxysubsubsection{\texorpdfstring{SoundFXVolumeSlider}{SoundFXVolumeSlider}}
+{\footnotesize\ttfamily \label{class_sound_mixer_manager_a2383e70ac23e26812491e239e4dc0834} 
+Game\+Object Sound\+Mixer\+Manager.\+Sound\+FXVolume\+Slider\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_sound_mixer_manager_ab0b4f197c16a47820c7898af93d80a8b}\index{SoundMixerManager@{SoundMixerManager}!testSoundFX@{testSoundFX}}
+\index{testSoundFX@{testSoundFX}!SoundMixerManager@{SoundMixerManager}}
+\doxysubsubsection{\texorpdfstring{testSoundFX}{testSoundFX}}
+{\footnotesize\ttfamily \label{class_sound_mixer_manager_ab0b4f197c16a47820c7898af93d80a8b} 
+Audio\+Clip Sound\+Mixer\+Manager.\+test\+Sound\+FX\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Sounds/\mbox{\hyperlink{_sound_mixer_manager_8cs}{Sound\+Mixer\+Manager.\+cs}}\end{DoxyCompactItemize}

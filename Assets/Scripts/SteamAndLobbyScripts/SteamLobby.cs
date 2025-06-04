@@ -1,11 +1,13 @@
 using UnityEngine;
 using Mirror;
 using Steamworks;
-using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 
+/// <summary>
+/// Manages the Steam lobby functionality, including creating, joining, and listing lobbies.
+/// </summary>
 public class SteamLobby : MonoBehaviour
 {
     public static SteamLobby Instance;
@@ -24,9 +26,11 @@ public class SteamLobby : MonoBehaviour
     private const string HostAddressKey = "HostAddress";
     public TMP_Text SteamInitializationText;
 
+    /// <summary>
+    /// Ensures that this is a singleton instance.
+    /// </summary>
     private void Awake()
     {
-        // Enforce singleton pattern
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -35,6 +39,9 @@ public class SteamLobby : MonoBehaviour
         Instance = this;
     }
 
+    /// <summary>
+    /// Initializes the lobby manager and sets up callbacks.
+    /// </summary>
     private void Start()
     {
         if (SteamInitializationText == null)
@@ -75,6 +82,10 @@ public class SteamLobby : MonoBehaviour
         LobbyDataUpdate = Callback<LobbyDataUpdate_t>.Create(OnLobbyDataUpdate);
     }
 
+    /// <summary>
+    /// Creates a new Steam lobby and starts hosting the game.
+    /// This method is called when the player chooses to host a lobby.
+    /// </summary>
     public void HostLobby()
     {
         if (networkManager == null)
@@ -85,6 +96,9 @@ public class SteamLobby : MonoBehaviour
         SteamMatchmaking.CreateLobby(ELobbyType.k_ELobbyTypePublic, networkManager.maxConnections);
     }
 
+    /// <summary>
+    /// Called when a lobby is created successfully.
+    /// </summary>
     private void OnLobbyCreated(LobbyCreated_t callback)
     {
         if (callback.m_eResult != EResult.k_EResultOK) { return; }
@@ -97,12 +111,19 @@ public class SteamLobby : MonoBehaviour
         SteamMatchmaking.SetLobbyData(lobbyId, "name", SteamFriends.GetPersonaName() + "'s LOBBY");
     }
 
+    /// <summary>
+    /// Called when a player requests to join a lobby.
+    /// </summary>
     private void OnJoinRequest(GameLobbyJoinRequested_t callback)
     {
         Debug.Log("Request to join lobby");
         SteamMatchmaking.JoinLobby(callback.m_steamIDLobby);
     }
 
+    /// <summary>
+    /// Called when the player successfully enters a lobby. 
+    /// It sets the current lobby ID and starts the client.
+    /// </summary>
     private void OnLobbyEntered(LobbyEnter_t callback)
     {
         CurrentLobbyID = callback.m_ulSteamIDLobby;
@@ -114,19 +135,31 @@ public class SteamLobby : MonoBehaviour
         networkManager.StartClient();
     }
 
+    /// <summary>
+    /// Joins an existing Steam lobby using the provided lobby ID.
+    /// This method is called when the player selects a lobby to join from the lobby list.
+    /// </summary>
+    /// <param name="lobbyID"></param>
     public void JoinLobby(CSteamID lobbyID)
     {
         Debug.Log("Joining lobby: " + lobbyID);
         SteamMatchmaking.JoinLobby(lobbyID);
     }
 
+    /// <summary>
+    /// Requests a list of available Steam lobbies.
+    /// </summary>
     public void GetLobbiesList()
     {
         if (lobbyIds.Count > 0) { lobbyIds.Clear(); }
-        SteamMatchmaking.AddRequestLobbyListResultCountFilter(60);
+        SteamMatchmaking.AddRequestLobbyListResultCountFilter(100);
         SteamMatchmaking.RequestLobbyList();
     }
 
+    /// <summary>
+    /// Callback method that is called when the lobby list is received from Steam.
+    /// It processes the list of lobbies and requests their data.
+    /// </summary>
     private void OnGetLobbyList(LobbyMatchList_t result)
     {
         if (HostSceneManager == null)
@@ -152,6 +185,9 @@ public class SteamLobby : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Callback method that is called when the lobby data is updated. 
+    /// </summary>
     private void OnLobbyDataUpdate(LobbyDataUpdate_t result)
     {
         if (HostSceneManager == null)
@@ -166,10 +202,7 @@ public class SteamLobby : MonoBehaviour
         HostSceneManager.DisplayLobbies(lobbyIds, result);
     }
 
-    public void ToMainMenu()
-    {
-        SceneManager.LoadScene("MainMenu");
-    }
+    public void ToMainMenu() => SceneManager.LoadScene("MainMenu");
 
     /// <summary>
     /// Leaves the current Steam lobby and stops the network session.
@@ -177,14 +210,8 @@ public class SteamLobby : MonoBehaviour
     /// </summary>
     public void LeaveLobby()
     {
-        // Leave the Steam lobby if currently in one
-        if (CurrentLobbyID != 0)
-        {
-            SteamMatchmaking.LeaveLobby(new CSteamID(CurrentLobbyID));
-            CurrentLobbyID = 0;
-        }
+        SteamMatchmaking.LeaveLobby(new CSteamID(CurrentLobbyID));
 
-        // Stop network session if active
         if (networkManager != null)
         {
             if (networkManager.isNetworkActive)

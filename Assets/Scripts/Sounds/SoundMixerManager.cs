@@ -1,7 +1,9 @@
-using System;
 using UnityEngine;
 using UnityEngine.Audio;
 
+/// <summary>
+/// SoundMixerManager class handles the sound volume settings in the game.
+/// </summary>
 public class SoundMixerManager : MonoBehaviour
 {
     [SerializeField] private AudioMixer audioMixer;
@@ -15,31 +17,45 @@ public class SoundMixerManager : MonoBehaviour
     private const string MusicVolumeKey = "MusicVolume";
     private const string SoundFXVolumeKey = "SoundFXVolume";
 
-
+    /// <summary>
+    /// Loads the volume settings from PlayerPrefs on start.
+    /// </summary>
     void Start()
     {
-        LoadSliders(); // Load volume settings at the start
+        LoadSliders();
     }
 
+    /// <summary>
+    /// Sets the master volume.
+    /// </summary>
     public void SetMasterVolume(float volume)
     {
         audioMixer.SetFloat("MasterVolume", Mathf.Log10(volume) * 20); // Convert linear volume to decibels
         PlayerPrefs.SetFloat(MasterVolumeKey, volume);
     }
 
+    /// <summary>
+    /// Sets the music volume.
+    /// </summary>
     public void SetMusicVolume(float volume)
     {
-        audioMixer.SetFloat("MusicVolume",  Mathf.Log10(volume) * 20);
+        audioMixer.SetFloat("MusicVolume", Mathf.Log10(volume) * 20); // Convert linear volume to decibels
         PlayerPrefs.SetFloat(MusicVolumeKey, volume);
     }
 
+    /// <summary>
+    /// Sets the sound effects volume.
+    /// </summary>
     public void SetSoundFXVolume(float volume)
     {
-        audioMixer.SetFloat("SoundFXVolume",  Mathf.Log10(volume) * 20);
+        audioMixer.SetFloat("SoundFXVolume", Mathf.Log10(volume) * 20); // Convert linear volume to decibels
         PlayerPrefs.SetFloat(SoundFXVolumeKey, volume);
-        SoundFXManager.instance.PlaySoundFX(testSoundFX, transform, volume); // Play test sound effect
+        SoundFXManager.Instance.PlaySoundFX(testSoundFX, transform, volume); // Play test sound effect
     }
 
+    /// <summary>
+    /// Loads the volume settings from PlayerPrefs and sets the sliders accordingly.
+    /// </summary>
     public void LoadSliders()
     {
         MasterVolumeSlider.GetComponent<UnityEngine.UI.Slider>().value = PlayerPrefs.GetFloat(MasterVolumeKey, 0.75f);

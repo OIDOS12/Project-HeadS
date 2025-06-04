@@ -1,0 +1,191 @@
+\doxysection{Ball\+And\+Player\+Methods Class Reference}
+\hypertarget{class_ball_and_player_methods}{}\label{class_ball_and_player_methods}\index{BallAndPlayerMethods@{BallAndPlayerMethods}}
+Inheritance diagram for Ball\+And\+Player\+Methods\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_ball_and_player_methods}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Game\+Object\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_ball_and_player_methods_a80b77a7ed65811876676ca962bf3b92e}{Get\+Players}} ()
+\item 
+Game\+Object \mbox{\hyperlink{class_ball_and_player_methods_af6ef4aa29a22854d77eac849f54eaf2c}{Get\+Ball}} ()
+\item 
+string\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_ball_and_player_methods_a44973ab73ce6bc7121e7dd54639f1ff3}{Get\+Player\+Names}} ()
+\item 
+void \mbox{\hyperlink{class_ball_and_player_methods_a54aa43bc3cf23274b722622cc3577d63}{Set\+Standart\+Position}} ()
+\item 
+void \mbox{\hyperlink{class_ball_and_player_methods_ae9c32fed69f5083cd6af49780fa9903e}{Reset\+Ball}} (string scoring\+Player)
+\begin{DoxyCompactList}\small\item\em Resets the ball\textquotesingle{}s position and applies a force depending on the scoring player. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_ball_and_player_methods}{Ball\+And\+Player\+Methods}} \mbox{\hyperlink{class_ball_and_player_methods_a9e0bf717f3001e30e7db3b6f8c41d0b2}{Instance}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_ball_and_player_methods_a0d19a049cf546ac8c5ba2dfef627b58b}{Player1\+Goals}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, private set\mbox{]}}
+\item 
+int \mbox{\hyperlink{class_ball_and_player_methods_a5574f2f27b94e6ea858d832ea2fb574e}{Player2\+Goals}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, private set\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_ball_and_player_methods_adc0648257e75c314d11c2a80eb67a086}{Awake}} ()
+\item 
+void \mbox{\hyperlink{class_ball_and_player_methods_a368a9e9d808f809df0fbfa2bd8012d0b}{Start}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Vector2\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_ball_and_player_methods_ae26405ae64ce9ba7dded1818df19ec58}{respawns}}
+\item 
+Game\+Object\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_ball_and_player_methods_a54a1742bc1ca94d77e3f38d7318bba83}{players}}
+\item 
+Vector2 \mbox{\hyperlink{class_ball_and_player_methods_aec72520091c93d599c97eb4a298237a3}{player1\+Pos}} = new(5.\+6F, -\/3.\+76F)
+\item 
+Vector2 \mbox{\hyperlink{class_ball_and_player_methods_a96def7ace1e1143276b79b9597195cc8}{player2\+Pos}} = new(-\/5.\+6F, -\/3.\+76F)
+\item 
+Game\+Object \mbox{\hyperlink{class_ball_and_player_methods_a32d5d41de74b91738b18d03ff1ed5c2a}{ball}}
+\item 
+Rigidbody2D \mbox{\hyperlink{class_ball_and_player_methods_af0fe9b421ccdcde8ed93319cff9b40af}{ball\+Rb}}
+\item 
+Vector2 \mbox{\hyperlink{class_ball_and_player_methods_af19c06108fc4972290603d4ddf585ec4}{start\+Ball\+Position}} = new(0f, -\/1.\+27f)
+\item 
+float \mbox{\hyperlink{class_ball_and_player_methods_a97f8ba7c2d3a9e8d1972f76b536dcfa7}{force\+Magnitude\+For\+Ball\+Release}} = 100f
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{class_ball_and_player_methods_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ball_and_player_methods_adc0648257e75c314d11c2a80eb67a086}\index{BallAndPlayerMethods@{BallAndPlayerMethods}!Awake@{Awake}}
+\index{Awake@{Awake}!BallAndPlayerMethods@{BallAndPlayerMethods}}
+\doxysubsubsection{\texorpdfstring{Awake()}{Awake()}}
+{\footnotesize\ttfamily \label{class_ball_and_player_methods_adc0648257e75c314d11c2a80eb67a086} 
+void Ball\+And\+Player\+Methods.\+Awake (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_ball_and_player_methods_af6ef4aa29a22854d77eac849f54eaf2c}\index{BallAndPlayerMethods@{BallAndPlayerMethods}!GetBall@{GetBall}}
+\index{GetBall@{GetBall}!BallAndPlayerMethods@{BallAndPlayerMethods}}
+\doxysubsubsection{\texorpdfstring{GetBall()}{GetBall()}}
+{\footnotesize\ttfamily \label{class_ball_and_player_methods_af6ef4aa29a22854d77eac849f54eaf2c} 
+Game\+Object Ball\+And\+Player\+Methods.\+Get\+Ball (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_ball_and_player_methods_a44973ab73ce6bc7121e7dd54639f1ff3}\index{BallAndPlayerMethods@{BallAndPlayerMethods}!GetPlayerNames@{GetPlayerNames}}
+\index{GetPlayerNames@{GetPlayerNames}!BallAndPlayerMethods@{BallAndPlayerMethods}}
+\doxysubsubsection{\texorpdfstring{GetPlayerNames()}{GetPlayerNames()}}
+{\footnotesize\ttfamily \label{class_ball_and_player_methods_a44973ab73ce6bc7121e7dd54639f1ff3} 
+string\mbox{[}$\,$\mbox{]} Ball\+And\+Player\+Methods.\+Get\+Player\+Names (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_ball_and_player_methods_a80b77a7ed65811876676ca962bf3b92e}\index{BallAndPlayerMethods@{BallAndPlayerMethods}!GetPlayers@{GetPlayers}}
+\index{GetPlayers@{GetPlayers}!BallAndPlayerMethods@{BallAndPlayerMethods}}
+\doxysubsubsection{\texorpdfstring{GetPlayers()}{GetPlayers()}}
+{\footnotesize\ttfamily \label{class_ball_and_player_methods_a80b77a7ed65811876676ca962bf3b92e} 
+Game\+Object\mbox{[}$\,$\mbox{]} Ball\+And\+Player\+Methods.\+Get\+Players (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_ball_and_player_methods_ae9c32fed69f5083cd6af49780fa9903e}\index{BallAndPlayerMethods@{BallAndPlayerMethods}!ResetBall@{ResetBall}}
+\index{ResetBall@{ResetBall}!BallAndPlayerMethods@{BallAndPlayerMethods}}
+\doxysubsubsection{\texorpdfstring{ResetBall()}{ResetBall()}}
+{\footnotesize\ttfamily \label{class_ball_and_player_methods_ae9c32fed69f5083cd6af49780fa9903e} 
+void Ball\+And\+Player\+Methods.\+Reset\+Ball (\begin{DoxyParamCaption}\item[{string}]{scoring\+Player}{}\end{DoxyParamCaption})}
+
+
+
+Resets the ball\textquotesingle{}s position and applies a force depending on the scoring player. 
+
+\Hypertarget{class_ball_and_player_methods_a54aa43bc3cf23274b722622cc3577d63}\index{BallAndPlayerMethods@{BallAndPlayerMethods}!SetStandartPosition@{SetStandartPosition}}
+\index{SetStandartPosition@{SetStandartPosition}!BallAndPlayerMethods@{BallAndPlayerMethods}}
+\doxysubsubsection{\texorpdfstring{SetStandartPosition()}{SetStandartPosition()}}
+{\footnotesize\ttfamily \label{class_ball_and_player_methods_a54aa43bc3cf23274b722622cc3577d63} 
+void Ball\+And\+Player\+Methods.\+Set\+Standart\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_ball_and_player_methods_a368a9e9d808f809df0fbfa2bd8012d0b}\index{BallAndPlayerMethods@{BallAndPlayerMethods}!Start@{Start}}
+\index{Start@{Start}!BallAndPlayerMethods@{BallAndPlayerMethods}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily \label{class_ball_and_player_methods_a368a9e9d808f809df0fbfa2bd8012d0b} 
+void Ball\+And\+Player\+Methods.\+Start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_ball_and_player_methods_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_ball_and_player_methods_a32d5d41de74b91738b18d03ff1ed5c2a}\index{BallAndPlayerMethods@{BallAndPlayerMethods}!ball@{ball}}
+\index{ball@{ball}!BallAndPlayerMethods@{BallAndPlayerMethods}}
+\doxysubsubsection{\texorpdfstring{ball}{ball}}
+{\footnotesize\ttfamily \label{class_ball_and_player_methods_a32d5d41de74b91738b18d03ff1ed5c2a} 
+Game\+Object Ball\+And\+Player\+Methods.\+ball\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_ball_and_player_methods_af0fe9b421ccdcde8ed93319cff9b40af}\index{BallAndPlayerMethods@{BallAndPlayerMethods}!ballRb@{ballRb}}
+\index{ballRb@{ballRb}!BallAndPlayerMethods@{BallAndPlayerMethods}}
+\doxysubsubsection{\texorpdfstring{ballRb}{ballRb}}
+{\footnotesize\ttfamily \label{class_ball_and_player_methods_af0fe9b421ccdcde8ed93319cff9b40af} 
+Rigidbody2D Ball\+And\+Player\+Methods.\+ball\+Rb\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_ball_and_player_methods_a97f8ba7c2d3a9e8d1972f76b536dcfa7}\index{BallAndPlayerMethods@{BallAndPlayerMethods}!forceMagnitudeForBallRelease@{forceMagnitudeForBallRelease}}
+\index{forceMagnitudeForBallRelease@{forceMagnitudeForBallRelease}!BallAndPlayerMethods@{BallAndPlayerMethods}}
+\doxysubsubsection{\texorpdfstring{forceMagnitudeForBallRelease}{forceMagnitudeForBallRelease}}
+{\footnotesize\ttfamily \label{class_ball_and_player_methods_a97f8ba7c2d3a9e8d1972f76b536dcfa7} 
+float Ball\+And\+Player\+Methods.\+force\+Magnitude\+For\+Ball\+Release = 100f\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_ball_and_player_methods_a9e0bf717f3001e30e7db3b6f8c41d0b2}\index{BallAndPlayerMethods@{BallAndPlayerMethods}!Instance@{Instance}}
+\index{Instance@{Instance}!BallAndPlayerMethods@{BallAndPlayerMethods}}
+\doxysubsubsection{\texorpdfstring{Instance}{Instance}}
+{\footnotesize\ttfamily \label{class_ball_and_player_methods_a9e0bf717f3001e30e7db3b6f8c41d0b2} 
+\mbox{\hyperlink{class_ball_and_player_methods}{Ball\+And\+Player\+Methods}} Ball\+And\+Player\+Methods.\+Instance\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_ball_and_player_methods_aec72520091c93d599c97eb4a298237a3}\index{BallAndPlayerMethods@{BallAndPlayerMethods}!player1Pos@{player1Pos}}
+\index{player1Pos@{player1Pos}!BallAndPlayerMethods@{BallAndPlayerMethods}}
+\doxysubsubsection{\texorpdfstring{player1Pos}{player1Pos}}
+{\footnotesize\ttfamily \label{class_ball_and_player_methods_aec72520091c93d599c97eb4a298237a3} 
+Vector2 Ball\+And\+Player\+Methods.\+player1\+Pos = new(5.\+6F, -\/3.\+76F)\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_ball_and_player_methods_a96def7ace1e1143276b79b9597195cc8}\index{BallAndPlayerMethods@{BallAndPlayerMethods}!player2Pos@{player2Pos}}
+\index{player2Pos@{player2Pos}!BallAndPlayerMethods@{BallAndPlayerMethods}}
+\doxysubsubsection{\texorpdfstring{player2Pos}{player2Pos}}
+{\footnotesize\ttfamily \label{class_ball_and_player_methods_a96def7ace1e1143276b79b9597195cc8} 
+Vector2 Ball\+And\+Player\+Methods.\+player2\+Pos = new(-\/5.\+6F, -\/3.\+76F)\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_ball_and_player_methods_a54a1742bc1ca94d77e3f38d7318bba83}\index{BallAndPlayerMethods@{BallAndPlayerMethods}!players@{players}}
+\index{players@{players}!BallAndPlayerMethods@{BallAndPlayerMethods}}
+\doxysubsubsection{\texorpdfstring{players}{players}}
+{\footnotesize\ttfamily \label{class_ball_and_player_methods_a54a1742bc1ca94d77e3f38d7318bba83} 
+Game\+Object \mbox{[}$\,$\mbox{]} Ball\+And\+Player\+Methods.\+players\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_ball_and_player_methods_ae26405ae64ce9ba7dded1818df19ec58}\index{BallAndPlayerMethods@{BallAndPlayerMethods}!respawns@{respawns}}
+\index{respawns@{respawns}!BallAndPlayerMethods@{BallAndPlayerMethods}}
+\doxysubsubsection{\texorpdfstring{respawns}{respawns}}
+{\footnotesize\ttfamily \label{class_ball_and_player_methods_ae26405ae64ce9ba7dded1818df19ec58} 
+Vector2 \mbox{[}$\,$\mbox{]} Ball\+And\+Player\+Methods.\+respawns\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_ball_and_player_methods_af19c06108fc4972290603d4ddf585ec4}\index{BallAndPlayerMethods@{BallAndPlayerMethods}!startBallPosition@{startBallPosition}}
+\index{startBallPosition@{startBallPosition}!BallAndPlayerMethods@{BallAndPlayerMethods}}
+\doxysubsubsection{\texorpdfstring{startBallPosition}{startBallPosition}}
+{\footnotesize\ttfamily \label{class_ball_and_player_methods_af19c06108fc4972290603d4ddf585ec4} 
+Vector2 Ball\+And\+Player\+Methods.\+start\+Ball\+Position = new(0f, -\/1.\+27f)\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_ball_and_player_methods_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_ball_and_player_methods_a0d19a049cf546ac8c5ba2dfef627b58b}\index{BallAndPlayerMethods@{BallAndPlayerMethods}!Player1Goals@{Player1Goals}}
+\index{Player1Goals@{Player1Goals}!BallAndPlayerMethods@{BallAndPlayerMethods}}
+\doxysubsubsection{\texorpdfstring{Player1Goals}{Player1Goals}}
+{\footnotesize\ttfamily \label{class_ball_and_player_methods_a0d19a049cf546ac8c5ba2dfef627b58b} 
+int Ball\+And\+Player\+Methods.\+Player1\+Goals\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [private set]}}
+
+\Hypertarget{class_ball_and_player_methods_a5574f2f27b94e6ea858d832ea2fb574e}\index{BallAndPlayerMethods@{BallAndPlayerMethods}!Player2Goals@{Player2Goals}}
+\index{Player2Goals@{Player2Goals}!BallAndPlayerMethods@{BallAndPlayerMethods}}
+\doxysubsubsection{\texorpdfstring{Player2Goals}{Player2Goals}}
+{\footnotesize\ttfamily \label{class_ball_and_player_methods_a5574f2f27b94e6ea858d832ea2fb574e} 
+int Ball\+And\+Player\+Methods.\+Player2\+Goals\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [private set]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Map\+And\+Menu\+Scripts/\mbox{\hyperlink{_ball_and_player_methods_8cs}{Ball\+And\+Player\+Methods.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,198 @@
+\doxysection{Player\+List\+Item Class Reference}
+\hypertarget{class_player_list_item}{}\label{class_player_list_item}\index{PlayerListItem@{PlayerListItem}}
+
+
+Represents a player list item in the lobby, displaying player information such as name, avatar, and ready status.  
+
+
+Inheritance diagram for Player\+List\+Item\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_player_list_item}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_player_list_item_aac2c6093f66350194b58e56a29dee532}{Change\+Ready}} ()
+\begin{DoxyCompactList}\small\item\em Changes the ready state of the player. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_list_item_a738c369d9049224ac61e82e4ee98bfbd}{Set\+Player\+Values}} ()
+\begin{DoxyCompactList}\small\item\em Sets the player values for display in the UI, including name and avatar. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_player_list_item_ac6e45c5d06662ecef908d767f0fb4106}{Player\+Name}}
+\item 
+int \mbox{\hyperlink{class_player_list_item_aca249cbb4cdd4ba8429707623d45353b}{Connection\+ID}}
+\item 
+ulong \mbox{\hyperlink{class_player_list_item_a09cef26f6c04e64fb1188ce801d26b09}{Player\+Steam\+ID}}
+\item 
+TMP\+\_\+\+Text \mbox{\hyperlink{class_player_list_item_a2a3e552692662555b16177b453a090fb}{player\+Name\+Text}}
+\item 
+Raw\+Image \mbox{\hyperlink{class_player_list_item_ac4da2c748b4a201b61c935ee460df21e}{Player\+Icon}}
+\item 
+TMP\+\_\+\+Text \mbox{\hyperlink{class_player_list_item_a3300932320ef8bc77a2da1dc83159b69}{player\+Ready\+Text}}
+\item 
+bool \mbox{\hyperlink{class_player_list_item_ae201c2d62dfc3c8a09bd3af8eb9e52b8}{is\+Ready}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Callback$<$ Avatar\+Image\+Loaded\+\_\+t $>$ \mbox{\hyperlink{class_player_list_item_afbc71809909a841cdf2f62e64872ce70}{Image\+Loaded}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_player_list_item_a312f6336d9bb9ca613d1f1ca09f56dd1}{Start}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the player list item, setting up the callback for avatar image loading. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_list_item_a25dbed8c7450adbc734d6ea0e45a1687}{Get\+Player\+Icon}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the player\textquotesingle{}s avatar icon from Steam. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_list_item_a87e569995bfdb7b7d9b9f8c575f44a1f}{On\+Avatar\+Image\+Loaded}} (Avatar\+Image\+Loaded\+\_\+t callback)
+\begin{DoxyCompactList}\small\item\em Callback method that is called when the avatar image is loaded from Steam. It updates the player\textquotesingle{}s icon if the loaded image belongs to the player represented by this list item. \end{DoxyCompactList}\item 
+Texture2D \mbox{\hyperlink{class_player_list_item_a6bb929a21fb0ef16a0cc76d99518e5e1}{Get\+Steam\+Image\+As\+Texture}} (int i\+Image)
+\begin{DoxyCompactList}\small\item\em Retrieves the Steam image as a Texture2D. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_player_list_item_a24be9d4c209fe381d8488233417ae1b7}{Avatar\+Received}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a player list item in the lobby, displaying player information such as name, avatar, and ready status. 
+
+\label{doc-func-members}
+\Hypertarget{class_player_list_item_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_player_list_item_aac2c6093f66350194b58e56a29dee532}\index{PlayerListItem@{PlayerListItem}!ChangeReady@{ChangeReady}}
+\index{ChangeReady@{ChangeReady}!PlayerListItem@{PlayerListItem}}
+\doxysubsubsection{\texorpdfstring{ChangeReady()}{ChangeReady()}}
+{\footnotesize\ttfamily \label{class_player_list_item_aac2c6093f66350194b58e56a29dee532} 
+void Player\+List\+Item.\+Change\+Ready (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Changes the ready state of the player. 
+
+\Hypertarget{class_player_list_item_a25dbed8c7450adbc734d6ea0e45a1687}\index{PlayerListItem@{PlayerListItem}!GetPlayerIcon@{GetPlayerIcon}}
+\index{GetPlayerIcon@{GetPlayerIcon}!PlayerListItem@{PlayerListItem}}
+\doxysubsubsection{\texorpdfstring{GetPlayerIcon()}{GetPlayerIcon()}}
+{\footnotesize\ttfamily \label{class_player_list_item_a25dbed8c7450adbc734d6ea0e45a1687} 
+void Player\+List\+Item.\+Get\+Player\+Icon (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Retrieves the player\textquotesingle{}s avatar icon from Steam. 
+
+\Hypertarget{class_player_list_item_a6bb929a21fb0ef16a0cc76d99518e5e1}\index{PlayerListItem@{PlayerListItem}!GetSteamImageAsTexture@{GetSteamImageAsTexture}}
+\index{GetSteamImageAsTexture@{GetSteamImageAsTexture}!PlayerListItem@{PlayerListItem}}
+\doxysubsubsection{\texorpdfstring{GetSteamImageAsTexture()}{GetSteamImageAsTexture()}}
+{\footnotesize\ttfamily \label{class_player_list_item_a6bb929a21fb0ef16a0cc76d99518e5e1} 
+Texture2D Player\+List\+Item.\+Get\+Steam\+Image\+As\+Texture (\begin{DoxyParamCaption}\item[{int}]{i\+Image}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Retrieves the Steam image as a Texture2D. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i\+Image} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{class_player_list_item_a87e569995bfdb7b7d9b9f8c575f44a1f}\index{PlayerListItem@{PlayerListItem}!OnAvatarImageLoaded@{OnAvatarImageLoaded}}
+\index{OnAvatarImageLoaded@{OnAvatarImageLoaded}!PlayerListItem@{PlayerListItem}}
+\doxysubsubsection{\texorpdfstring{OnAvatarImageLoaded()}{OnAvatarImageLoaded()}}
+{\footnotesize\ttfamily \label{class_player_list_item_a87e569995bfdb7b7d9b9f8c575f44a1f} 
+void Player\+List\+Item.\+On\+Avatar\+Image\+Loaded (\begin{DoxyParamCaption}\item[{Avatar\+Image\+Loaded\+\_\+t}]{callback}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Callback method that is called when the avatar image is loaded from Steam. It updates the player\textquotesingle{}s icon if the loaded image belongs to the player represented by this list item. 
+
+\Hypertarget{class_player_list_item_a738c369d9049224ac61e82e4ee98bfbd}\index{PlayerListItem@{PlayerListItem}!SetPlayerValues@{SetPlayerValues}}
+\index{SetPlayerValues@{SetPlayerValues}!PlayerListItem@{PlayerListItem}}
+\doxysubsubsection{\texorpdfstring{SetPlayerValues()}{SetPlayerValues()}}
+{\footnotesize\ttfamily \label{class_player_list_item_a738c369d9049224ac61e82e4ee98bfbd} 
+void Player\+List\+Item.\+Set\+Player\+Values (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Sets the player values for display in the UI, including name and avatar. 
+
+\Hypertarget{class_player_list_item_a312f6336d9bb9ca613d1f1ca09f56dd1}\index{PlayerListItem@{PlayerListItem}!Start@{Start}}
+\index{Start@{Start}!PlayerListItem@{PlayerListItem}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily \label{class_player_list_item_a312f6336d9bb9ca613d1f1ca09f56dd1} 
+void Player\+List\+Item.\+Start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initializes the player list item, setting up the callback for avatar image loading. 
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_player_list_item_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_player_list_item_a24be9d4c209fe381d8488233417ae1b7}\index{PlayerListItem@{PlayerListItem}!AvatarReceived@{AvatarReceived}}
+\index{AvatarReceived@{AvatarReceived}!PlayerListItem@{PlayerListItem}}
+\doxysubsubsection{\texorpdfstring{AvatarReceived}{AvatarReceived}}
+{\footnotesize\ttfamily \label{class_player_list_item_a24be9d4c209fe381d8488233417ae1b7} 
+bool Player\+List\+Item.\+Avatar\+Received\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_list_item_aca249cbb4cdd4ba8429707623d45353b}\index{PlayerListItem@{PlayerListItem}!ConnectionID@{ConnectionID}}
+\index{ConnectionID@{ConnectionID}!PlayerListItem@{PlayerListItem}}
+\doxysubsubsection{\texorpdfstring{ConnectionID}{ConnectionID}}
+{\footnotesize\ttfamily \label{class_player_list_item_aca249cbb4cdd4ba8429707623d45353b} 
+int Player\+List\+Item.\+Connection\+ID}
+
+\Hypertarget{class_player_list_item_afbc71809909a841cdf2f62e64872ce70}\index{PlayerListItem@{PlayerListItem}!ImageLoaded@{ImageLoaded}}
+\index{ImageLoaded@{ImageLoaded}!PlayerListItem@{PlayerListItem}}
+\doxysubsubsection{\texorpdfstring{ImageLoaded}{ImageLoaded}}
+{\footnotesize\ttfamily \label{class_player_list_item_afbc71809909a841cdf2f62e64872ce70} 
+Callback$<$Avatar\+Image\+Loaded\+\_\+t$>$ Player\+List\+Item.\+Image\+Loaded\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_player_list_item_ae201c2d62dfc3c8a09bd3af8eb9e52b8}\index{PlayerListItem@{PlayerListItem}!isReady@{isReady}}
+\index{isReady@{isReady}!PlayerListItem@{PlayerListItem}}
+\doxysubsubsection{\texorpdfstring{isReady}{isReady}}
+{\footnotesize\ttfamily \label{class_player_list_item_ae201c2d62dfc3c8a09bd3af8eb9e52b8} 
+bool Player\+List\+Item.\+is\+Ready}
+
+\Hypertarget{class_player_list_item_ac4da2c748b4a201b61c935ee460df21e}\index{PlayerListItem@{PlayerListItem}!PlayerIcon@{PlayerIcon}}
+\index{PlayerIcon@{PlayerIcon}!PlayerListItem@{PlayerListItem}}
+\doxysubsubsection{\texorpdfstring{PlayerIcon}{PlayerIcon}}
+{\footnotesize\ttfamily \label{class_player_list_item_ac4da2c748b4a201b61c935ee460df21e} 
+Raw\+Image Player\+List\+Item.\+Player\+Icon}
+
+\Hypertarget{class_player_list_item_ac6e45c5d06662ecef908d767f0fb4106}\index{PlayerListItem@{PlayerListItem}!PlayerName@{PlayerName}}
+\index{PlayerName@{PlayerName}!PlayerListItem@{PlayerListItem}}
+\doxysubsubsection{\texorpdfstring{PlayerName}{PlayerName}}
+{\footnotesize\ttfamily \label{class_player_list_item_ac6e45c5d06662ecef908d767f0fb4106} 
+string Player\+List\+Item.\+Player\+Name}
+
+\Hypertarget{class_player_list_item_a2a3e552692662555b16177b453a090fb}\index{PlayerListItem@{PlayerListItem}!playerNameText@{playerNameText}}
+\index{playerNameText@{playerNameText}!PlayerListItem@{PlayerListItem}}
+\doxysubsubsection{\texorpdfstring{playerNameText}{playerNameText}}
+{\footnotesize\ttfamily \label{class_player_list_item_a2a3e552692662555b16177b453a090fb} 
+TMP\+\_\+\+Text Player\+List\+Item.\+player\+Name\+Text}
+
+\Hypertarget{class_player_list_item_a3300932320ef8bc77a2da1dc83159b69}\index{PlayerListItem@{PlayerListItem}!playerReadyText@{playerReadyText}}
+\index{playerReadyText@{playerReadyText}!PlayerListItem@{PlayerListItem}}
+\doxysubsubsection{\texorpdfstring{playerReadyText}{playerReadyText}}
+{\footnotesize\ttfamily \label{class_player_list_item_a3300932320ef8bc77a2da1dc83159b69} 
+TMP\+\_\+\+Text Player\+List\+Item.\+player\+Ready\+Text}
+
+\Hypertarget{class_player_list_item_a09cef26f6c04e64fb1188ce801d26b09}\index{PlayerListItem@{PlayerListItem}!PlayerSteamID@{PlayerSteamID}}
+\index{PlayerSteamID@{PlayerSteamID}!PlayerListItem@{PlayerListItem}}
+\doxysubsubsection{\texorpdfstring{PlayerSteamID}{PlayerSteamID}}
+{\footnotesize\ttfamily \label{class_player_list_item_a09cef26f6c04e64fb1188ce801d26b09} 
+ulong Player\+List\+Item.\+Player\+Steam\+ID}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Steam\+And\+Lobby\+Scripts/\mbox{\hyperlink{_player_list_item_8cs}{Player\+List\+Item.\+cs}}\end{DoxyCompactItemize}

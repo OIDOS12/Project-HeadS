@@ -1,0 +1,172 @@
+\doxysection{Local\+Game\+UI Class Reference}
+\hypertarget{class_local_game_u_i}{}\label{class_local_game_u_i}\index{LocalGameUI@{LocalGameUI}}
+
+
+Handles displaying score, goal messages, and game-\/over UI in a networked game.  
+
+
+Inheritance diagram for Local\+Game\+UI\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_local_game_u_i}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_local_game_u_i_a8b8804e37fef0febce7521b8f8c96c08}{Update\+Scoreboard\+Text}} (string text)
+\begin{DoxyCompactList}\small\item\em Updates the scoreboard with the latest goal counts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_local_game_u_i_a792475014774e0c279092c530f5f7b48}{Show\+Winner}} (string winner)
+\begin{DoxyCompactList}\small\item\em Displays the winning message on game over. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_local_game_u_i_a81d27ee39de57e04ff592ac3908cedcd}{Resume\+Button}} ()
+\item 
+void \mbox{\hyperlink{class_local_game_u_i_a81d7bfad68331c0f958796f740b52cb7}{Main\+Menu\+Button}} ()
+\item 
+void \mbox{\hyperlink{class_local_game_u_i_aaaf587888020448638cfa8c82afbd80f}{Quit\+Button}} ()
+\item 
+void \mbox{\hyperlink{class_local_game_u_i_a340dafc0ebb6fc605d5dc7d047d2d654}{Dont\+Quit\+Button}} ()
+\item 
+void \mbox{\hyperlink{class_local_game_u_i_afb082e8d60ba9d2a8def607359bcb5f6}{Pause\+Setup}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_local_game_u_i_a49acebed26ea281e8378fb2a6bcc9bb4}{Start}} ()
+\item 
+void \mbox{\hyperlink{class_local_game_u_i_a41a0ee6886e01a650614093ad12dc2dd}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Called once per frame. Checks for input to toggle the pause menu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_local_game_u_i_a48d89ea9fc2f45cb4856c97692cf768b}{Pause\+Menu}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Game\+Object \mbox{\hyperlink{class_local_game_u_i_a69e68dff1e30eda9b0cf17428164cc54}{pause\+Menu}}
+\item 
+Game\+Object \mbox{\hyperlink{class_local_game_u_i_a66fb2c2d1782e69f634f270c6b7a1984}{confirm\+Quit}}
+\item 
+Game\+Object \mbox{\hyperlink{class_local_game_u_i_aff9d810592d3ef8ef739c3d8a728fc92}{winner\+Text\+Game\+Object}}
+\item 
+Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_local_game_u_i_a1b19b73e3ac7c8f83e2c29a3286497f1}{winner\+Text}}
+\item 
+Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_local_game_u_i_a072145b1b54698e0b0f3d4841c65c9c8}{Scoreboard\+Text}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles displaying score, goal messages, and game-\/over UI in a networked game. 
+
+\label{doc-func-members}
+\Hypertarget{class_local_game_u_i_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_local_game_u_i_a340dafc0ebb6fc605d5dc7d047d2d654}\index{LocalGameUI@{LocalGameUI}!DontQuitButton@{DontQuitButton}}
+\index{DontQuitButton@{DontQuitButton}!LocalGameUI@{LocalGameUI}}
+\doxysubsubsection{\texorpdfstring{DontQuitButton()}{DontQuitButton()}}
+{\footnotesize\ttfamily \label{class_local_game_u_i_a340dafc0ebb6fc605d5dc7d047d2d654} 
+void Local\+Game\+UI.\+Dont\+Quit\+Button (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_local_game_u_i_a81d7bfad68331c0f958796f740b52cb7}\index{LocalGameUI@{LocalGameUI}!MainMenuButton@{MainMenuButton}}
+\index{MainMenuButton@{MainMenuButton}!LocalGameUI@{LocalGameUI}}
+\doxysubsubsection{\texorpdfstring{MainMenuButton()}{MainMenuButton()}}
+{\footnotesize\ttfamily \label{class_local_game_u_i_a81d7bfad68331c0f958796f740b52cb7} 
+void Local\+Game\+UI.\+Main\+Menu\+Button (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_local_game_u_i_a48d89ea9fc2f45cb4856c97692cf768b}\index{LocalGameUI@{LocalGameUI}!PauseMenu@{PauseMenu}}
+\index{PauseMenu@{PauseMenu}!LocalGameUI@{LocalGameUI}}
+\doxysubsubsection{\texorpdfstring{PauseMenu()}{PauseMenu()}}
+{\footnotesize\ttfamily \label{class_local_game_u_i_a48d89ea9fc2f45cb4856c97692cf768b} 
+void Local\+Game\+UI.\+Pause\+Menu (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_local_game_u_i_afb082e8d60ba9d2a8def607359bcb5f6}\index{LocalGameUI@{LocalGameUI}!PauseSetup@{PauseSetup}}
+\index{PauseSetup@{PauseSetup}!LocalGameUI@{LocalGameUI}}
+\doxysubsubsection{\texorpdfstring{PauseSetup()}{PauseSetup()}}
+{\footnotesize\ttfamily \label{class_local_game_u_i_afb082e8d60ba9d2a8def607359bcb5f6} 
+void Local\+Game\+UI.\+Pause\+Setup (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_local_game_u_i_aaaf587888020448638cfa8c82afbd80f}\index{LocalGameUI@{LocalGameUI}!QuitButton@{QuitButton}}
+\index{QuitButton@{QuitButton}!LocalGameUI@{LocalGameUI}}
+\doxysubsubsection{\texorpdfstring{QuitButton()}{QuitButton()}}
+{\footnotesize\ttfamily \label{class_local_game_u_i_aaaf587888020448638cfa8c82afbd80f} 
+void Local\+Game\+UI.\+Quit\+Button (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_local_game_u_i_a81d27ee39de57e04ff592ac3908cedcd}\index{LocalGameUI@{LocalGameUI}!ResumeButton@{ResumeButton}}
+\index{ResumeButton@{ResumeButton}!LocalGameUI@{LocalGameUI}}
+\doxysubsubsection{\texorpdfstring{ResumeButton()}{ResumeButton()}}
+{\footnotesize\ttfamily \label{class_local_game_u_i_a81d27ee39de57e04ff592ac3908cedcd} 
+void Local\+Game\+UI.\+Resume\+Button (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_local_game_u_i_a792475014774e0c279092c530f5f7b48}\index{LocalGameUI@{LocalGameUI}!ShowWinner@{ShowWinner}}
+\index{ShowWinner@{ShowWinner}!LocalGameUI@{LocalGameUI}}
+\doxysubsubsection{\texorpdfstring{ShowWinner()}{ShowWinner()}}
+{\footnotesize\ttfamily \label{class_local_game_u_i_a792475014774e0c279092c530f5f7b48} 
+void Local\+Game\+UI.\+Show\+Winner (\begin{DoxyParamCaption}\item[{string}]{winner}{}\end{DoxyParamCaption})}
+
+
+
+Displays the winning message on game over. 
+
+\Hypertarget{class_local_game_u_i_a49acebed26ea281e8378fb2a6bcc9bb4}\index{LocalGameUI@{LocalGameUI}!Start@{Start}}
+\index{Start@{Start}!LocalGameUI@{LocalGameUI}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily \label{class_local_game_u_i_a49acebed26ea281e8378fb2a6bcc9bb4} 
+void Local\+Game\+UI.\+Start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_local_game_u_i_a41a0ee6886e01a650614093ad12dc2dd}\index{LocalGameUI@{LocalGameUI}!Update@{Update}}
+\index{Update@{Update}!LocalGameUI@{LocalGameUI}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_local_game_u_i_a41a0ee6886e01a650614093ad12dc2dd} 
+void Local\+Game\+UI.\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Called once per frame. Checks for input to toggle the pause menu. 
+
+\Hypertarget{class_local_game_u_i_a8b8804e37fef0febce7521b8f8c96c08}\index{LocalGameUI@{LocalGameUI}!UpdateScoreboardText@{UpdateScoreboardText}}
+\index{UpdateScoreboardText@{UpdateScoreboardText}!LocalGameUI@{LocalGameUI}}
+\doxysubsubsection{\texorpdfstring{UpdateScoreboardText()}{UpdateScoreboardText()}}
+{\footnotesize\ttfamily \label{class_local_game_u_i_a8b8804e37fef0febce7521b8f8c96c08} 
+void Local\+Game\+UI.\+Update\+Scoreboard\+Text (\begin{DoxyParamCaption}\item[{string}]{text}{}\end{DoxyParamCaption})}
+
+
+
+Updates the scoreboard with the latest goal counts. 
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_local_game_u_i_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_local_game_u_i_a66fb2c2d1782e69f634f270c6b7a1984}\index{LocalGameUI@{LocalGameUI}!confirmQuit@{confirmQuit}}
+\index{confirmQuit@{confirmQuit}!LocalGameUI@{LocalGameUI}}
+\doxysubsubsection{\texorpdfstring{confirmQuit}{confirmQuit}}
+{\footnotesize\ttfamily \label{class_local_game_u_i_a66fb2c2d1782e69f634f270c6b7a1984} 
+Game\+Object Local\+Game\+UI.\+confirm\+Quit\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_local_game_u_i_a69e68dff1e30eda9b0cf17428164cc54}\index{LocalGameUI@{LocalGameUI}!pauseMenu@{pauseMenu}}
+\index{pauseMenu@{pauseMenu}!LocalGameUI@{LocalGameUI}}
+\doxysubsubsection{\texorpdfstring{pauseMenu}{pauseMenu}}
+{\footnotesize\ttfamily \label{class_local_game_u_i_a69e68dff1e30eda9b0cf17428164cc54} 
+Game\+Object Local\+Game\+UI.\+pause\+Menu\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_local_game_u_i_a072145b1b54698e0b0f3d4841c65c9c8}\index{LocalGameUI@{LocalGameUI}!ScoreboardText@{ScoreboardText}}
+\index{ScoreboardText@{ScoreboardText}!LocalGameUI@{LocalGameUI}}
+\doxysubsubsection{\texorpdfstring{ScoreboardText}{ScoreboardText}}
+{\footnotesize\ttfamily \label{class_local_game_u_i_a072145b1b54698e0b0f3d4841c65c9c8} 
+Text\+Mesh\+Pro\+UGUI Local\+Game\+UI.\+Scoreboard\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_local_game_u_i_a1b19b73e3ac7c8f83e2c29a3286497f1}\index{LocalGameUI@{LocalGameUI}!winnerText@{winnerText}}
+\index{winnerText@{winnerText}!LocalGameUI@{LocalGameUI}}
+\doxysubsubsection{\texorpdfstring{winnerText}{winnerText}}
+{\footnotesize\ttfamily \label{class_local_game_u_i_a1b19b73e3ac7c8f83e2c29a3286497f1} 
+Text\+Mesh\+Pro\+UGUI Local\+Game\+UI.\+winner\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_local_game_u_i_aff9d810592d3ef8ef739c3d8a728fc92}\index{LocalGameUI@{LocalGameUI}!winnerTextGameObject@{winnerTextGameObject}}
+\index{winnerTextGameObject@{winnerTextGameObject}!LocalGameUI@{LocalGameUI}}
+\doxysubsubsection{\texorpdfstring{winnerTextGameObject}{winnerTextGameObject}}
+{\footnotesize\ttfamily \label{class_local_game_u_i_aff9d810592d3ef8ef739c3d8a728fc92} 
+Game\+Object Local\+Game\+UI.\+winner\+Text\+Game\+Object\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Local\+Player/\mbox{\hyperlink{_local_u_i_8cs}{Local\+UI.\+cs}}\end{DoxyCompactItemize}

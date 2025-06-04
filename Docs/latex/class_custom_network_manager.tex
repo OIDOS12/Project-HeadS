@@ -1,0 +1,103 @@
+\doxysection{Custom\+Network\+Manager Class Reference}
+\hypertarget{class_custom_network_manager}{}\label{class_custom_network_manager}\index{CustomNetworkManager@{CustomNetworkManager}}
+
+
+Custom Network Manager for handling player connections.  
+
+
+Inheritance diagram for Custom\+Network\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_custom_network_manager}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_custom_network_manager_a4ef509a1227f772c8f2fe8ed544bfda4}{On\+Server\+Add\+Player}} (Network\+Connection\+To\+Client conn)
+\begin{DoxyCompactList}\small\item\em When players are added to the server, this method is called. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_custom_network_manager_a6d8a0bb255e640da8f9c0ac26c716d69}{Start\+Game}} (string scene\+Name)
+\begin{DoxyCompactList}\small\item\em Starts the game by changing the scene to the specified scene name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_custom_network_manager}{Custom\+Network\+Manager}} \mbox{\hyperlink{class_custom_network_manager_a5e461d0d760f9e3a3bcfb8bdcf722f89}{Instance}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, private set\mbox{]}}
+\item 
+List$<$ \mbox{\hyperlink{class_player_object_controller}{Player\+Object\+Controller}} $>$ \mbox{\hyperlink{class_custom_network_manager_a0be8cdb0468fd9b373641e0bba4d3f2d}{Player\+List}} = new List$<$\mbox{\hyperlink{class_player_object_controller}{Player\+Object\+Controller}}$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_player_object_controller}{Player\+Object\+Controller}} \mbox{\hyperlink{class_custom_network_manager_a0132381ba3ba3f641137f492fe8981d3}{Game\+Player\+Prefab}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Custom Network Manager for handling player connections. 
+
+\label{doc-func-members}
+\Hypertarget{class_custom_network_manager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_custom_network_manager_a4ef509a1227f772c8f2fe8ed544bfda4}\index{CustomNetworkManager@{CustomNetworkManager}!OnServerAddPlayer@{OnServerAddPlayer}}
+\index{OnServerAddPlayer@{OnServerAddPlayer}!CustomNetworkManager@{CustomNetworkManager}}
+\doxysubsubsection{\texorpdfstring{OnServerAddPlayer()}{OnServerAddPlayer()}}
+{\footnotesize\ttfamily \label{class_custom_network_manager_a4ef509a1227f772c8f2fe8ed544bfda4} 
+override void Custom\+Network\+Manager.\+On\+Server\+Add\+Player (\begin{DoxyParamCaption}\item[{Network\+Connection\+To\+Client}]{conn}{}\end{DoxyParamCaption})}
+
+
+
+When players are added to the server, this method is called. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em conn} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_custom_network_manager_a6d8a0bb255e640da8f9c0ac26c716d69}\index{CustomNetworkManager@{CustomNetworkManager}!StartGame@{StartGame}}
+\index{StartGame@{StartGame}!CustomNetworkManager@{CustomNetworkManager}}
+\doxysubsubsection{\texorpdfstring{StartGame()}{StartGame()}}
+{\footnotesize\ttfamily \label{class_custom_network_manager_a6d8a0bb255e640da8f9c0ac26c716d69} 
+void Custom\+Network\+Manager.\+Start\+Game (\begin{DoxyParamCaption}\item[{string}]{scene\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Starts the game by changing the scene to the specified scene name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene\+Name} & \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_custom_network_manager_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_custom_network_manager_a0132381ba3ba3f641137f492fe8981d3}\index{CustomNetworkManager@{CustomNetworkManager}!GamePlayerPrefab@{GamePlayerPrefab}}
+\index{GamePlayerPrefab@{GamePlayerPrefab}!CustomNetworkManager@{CustomNetworkManager}}
+\doxysubsubsection{\texorpdfstring{GamePlayerPrefab}{GamePlayerPrefab}}
+{\footnotesize\ttfamily \label{class_custom_network_manager_a0132381ba3ba3f641137f492fe8981d3} 
+\mbox{\hyperlink{class_player_object_controller}{Player\+Object\+Controller}} Custom\+Network\+Manager.\+Game\+Player\+Prefab\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_custom_network_manager_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_custom_network_manager_a5e461d0d760f9e3a3bcfb8bdcf722f89}\index{CustomNetworkManager@{CustomNetworkManager}!Instance@{Instance}}
+\index{Instance@{Instance}!CustomNetworkManager@{CustomNetworkManager}}
+\doxysubsubsection{\texorpdfstring{Instance}{Instance}}
+{\footnotesize\ttfamily \label{class_custom_network_manager_a5e461d0d760f9e3a3bcfb8bdcf722f89} 
+\mbox{\hyperlink{class_custom_network_manager}{Custom\+Network\+Manager}} Custom\+Network\+Manager.\+Instance\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}, {\ttfamily [private set]}}
+
+\Hypertarget{class_custom_network_manager_a0be8cdb0468fd9b373641e0bba4d3f2d}\index{CustomNetworkManager@{CustomNetworkManager}!PlayerList@{PlayerList}}
+\index{PlayerList@{PlayerList}!CustomNetworkManager@{CustomNetworkManager}}
+\doxysubsubsection{\texorpdfstring{PlayerList}{PlayerList}}
+{\footnotesize\ttfamily \label{class_custom_network_manager_a0be8cdb0468fd9b373641e0bba4d3f2d} 
+List$<$\mbox{\hyperlink{class_player_object_controller}{Player\+Object\+Controller}}$>$ Custom\+Network\+Manager.\+Player\+List = new List$<$\mbox{\hyperlink{class_player_object_controller}{Player\+Object\+Controller}}$>$()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Steam\+And\+Lobby\+Scripts/\mbox{\hyperlink{_custom_network_manager_8cs}{Custom\+Network\+Manager.\+cs}}\end{DoxyCompactItemize}

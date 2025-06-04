@@ -1,0 +1,131 @@
+\doxysection{Settings\+Menu Class Reference}
+\hypertarget{class_settings_menu}{}\label{class_settings_menu}\index{SettingsMenu@{SettingsMenu}}
+
+
+\doxylink{class_settings_menu}{Settings\+Menu} class handles the settings menu functionality of the game. It allows players to change the screen resolution and toggle fullscreen mode.  
+
+
+Inheritance diagram for Settings\+Menu\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_settings_menu}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_settings_menu_ae1a101f20fa5dd16dc00b881c112ac14}{Set\+Resolution}} (int resolution\+Index)
+\begin{DoxyCompactList}\small\item\em Sets the resolution based on the selected index from the dropdown. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_settings_menu_ac4b16fdfe934136a376f665c389090b5}{Set\+Fullscreen}} (bool is\+Fullscreen)
+\begin{DoxyCompactList}\small\item\em Toggles fullscreen mode based on the toggle state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_settings_menu_a5a94b8b758b5e78c676d8453f26849bc}{Back\+To\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em Returns to the main menu scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+TMPro.\+TMP\+\_\+\+Dropdown \mbox{\hyperlink{class_settings_menu_af8c8e790d2c0edaf1dd357ccf80ae9d5}{resolution\+Dropdown}}
+\item 
+Toggle \mbox{\hyperlink{class_settings_menu_a7f0a513ab6bca161f7f7a8e8c9368d92}{toggle}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_settings_menu_a3bb74a2b5ce0f01aaa998883a9268cbe}{Awake}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the settings menu by filtering available resolutions and setting up the dropdown options. It also sets the current resolution and fullscreen toggle based on player preferences. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Resolution\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_settings_menu_a210d41a46c4293e55b5366b1437bd7f3}{resolutions}}
+\item 
+Resolution\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_settings_menu_aa8bf1abd2b4ee1459364f2984cc89acf}{filtred\+Resolutions\+Array}}
+\item 
+string \mbox{\hyperlink{class_settings_menu_ae9a6be8806c5960899b0cce136b7c29f}{toggle\+Fullscreen\+Key}} = "{}toggle\+Fullscreen\+Key"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_settings_menu}{Settings\+Menu} class handles the settings menu functionality of the game. It allows players to change the screen resolution and toggle fullscreen mode. 
+
+\label{doc-func-members}
+\Hypertarget{class_settings_menu_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_settings_menu_a3bb74a2b5ce0f01aaa998883a9268cbe}\index{SettingsMenu@{SettingsMenu}!Awake@{Awake}}
+\index{Awake@{Awake}!SettingsMenu@{SettingsMenu}}
+\doxysubsubsection{\texorpdfstring{Awake()}{Awake()}}
+{\footnotesize\ttfamily \label{class_settings_menu_a3bb74a2b5ce0f01aaa998883a9268cbe} 
+void Settings\+Menu.\+Awake (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initializes the settings menu by filtering available resolutions and setting up the dropdown options. It also sets the current resolution and fullscreen toggle based on player preferences. 
+
+\Hypertarget{class_settings_menu_a5a94b8b758b5e78c676d8453f26849bc}\index{SettingsMenu@{SettingsMenu}!BackToMenu@{BackToMenu}}
+\index{BackToMenu@{BackToMenu}!SettingsMenu@{SettingsMenu}}
+\doxysubsubsection{\texorpdfstring{BackToMenu()}{BackToMenu()}}
+{\footnotesize\ttfamily \label{class_settings_menu_a5a94b8b758b5e78c676d8453f26849bc} 
+void Settings\+Menu.\+Back\+To\+Menu (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns to the main menu scene. 
+
+\Hypertarget{class_settings_menu_ac4b16fdfe934136a376f665c389090b5}\index{SettingsMenu@{SettingsMenu}!SetFullscreen@{SetFullscreen}}
+\index{SetFullscreen@{SetFullscreen}!SettingsMenu@{SettingsMenu}}
+\doxysubsubsection{\texorpdfstring{SetFullscreen()}{SetFullscreen()}}
+{\footnotesize\ttfamily \label{class_settings_menu_ac4b16fdfe934136a376f665c389090b5} 
+void Settings\+Menu.\+Set\+Fullscreen (\begin{DoxyParamCaption}\item[{bool}]{is\+Fullscreen}{}\end{DoxyParamCaption})}
+
+
+
+Toggles fullscreen mode based on the toggle state. 
+
+\Hypertarget{class_settings_menu_ae1a101f20fa5dd16dc00b881c112ac14}\index{SettingsMenu@{SettingsMenu}!SetResolution@{SetResolution}}
+\index{SetResolution@{SetResolution}!SettingsMenu@{SettingsMenu}}
+\doxysubsubsection{\texorpdfstring{SetResolution()}{SetResolution()}}
+{\footnotesize\ttfamily \label{class_settings_menu_ae1a101f20fa5dd16dc00b881c112ac14} 
+void Settings\+Menu.\+Set\+Resolution (\begin{DoxyParamCaption}\item[{int}]{resolution\+Index}{}\end{DoxyParamCaption})}
+
+
+
+Sets the resolution based on the selected index from the dropdown. 
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_settings_menu_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_settings_menu_aa8bf1abd2b4ee1459364f2984cc89acf}\index{SettingsMenu@{SettingsMenu}!filtredResolutionsArray@{filtredResolutionsArray}}
+\index{filtredResolutionsArray@{filtredResolutionsArray}!SettingsMenu@{SettingsMenu}}
+\doxysubsubsection{\texorpdfstring{filtredResolutionsArray}{filtredResolutionsArray}}
+{\footnotesize\ttfamily \label{class_settings_menu_aa8bf1abd2b4ee1459364f2984cc89acf} 
+Resolution \mbox{[}$\,$\mbox{]} Settings\+Menu.\+filtred\+Resolutions\+Array\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_settings_menu_af8c8e790d2c0edaf1dd357ccf80ae9d5}\index{SettingsMenu@{SettingsMenu}!resolutionDropdown@{resolutionDropdown}}
+\index{resolutionDropdown@{resolutionDropdown}!SettingsMenu@{SettingsMenu}}
+\doxysubsubsection{\texorpdfstring{resolutionDropdown}{resolutionDropdown}}
+{\footnotesize\ttfamily \label{class_settings_menu_af8c8e790d2c0edaf1dd357ccf80ae9d5} 
+TMPro.\+TMP\+\_\+\+Dropdown Settings\+Menu.\+resolution\+Dropdown}
+
+\Hypertarget{class_settings_menu_a210d41a46c4293e55b5366b1437bd7f3}\index{SettingsMenu@{SettingsMenu}!resolutions@{resolutions}}
+\index{resolutions@{resolutions}!SettingsMenu@{SettingsMenu}}
+\doxysubsubsection{\texorpdfstring{resolutions}{resolutions}}
+{\footnotesize\ttfamily \label{class_settings_menu_a210d41a46c4293e55b5366b1437bd7f3} 
+Resolution \mbox{[}$\,$\mbox{]} Settings\+Menu.\+resolutions\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_settings_menu_a7f0a513ab6bca161f7f7a8e8c9368d92}\index{SettingsMenu@{SettingsMenu}!toggle@{toggle}}
+\index{toggle@{toggle}!SettingsMenu@{SettingsMenu}}
+\doxysubsubsection{\texorpdfstring{toggle}{toggle}}
+{\footnotesize\ttfamily \label{class_settings_menu_a7f0a513ab6bca161f7f7a8e8c9368d92} 
+Toggle Settings\+Menu.\+toggle}
+
+\Hypertarget{class_settings_menu_ae9a6be8806c5960899b0cce136b7c29f}\index{SettingsMenu@{SettingsMenu}!toggleFullscreenKey@{toggleFullscreenKey}}
+\index{toggleFullscreenKey@{toggleFullscreenKey}!SettingsMenu@{SettingsMenu}}
+\doxysubsubsection{\texorpdfstring{toggleFullscreenKey}{toggleFullscreenKey}}
+{\footnotesize\ttfamily \label{class_settings_menu_ae9a6be8806c5960899b0cce136b7c29f} 
+string Settings\+Menu.\+toggle\+Fullscreen\+Key = "{}toggle\+Fullscreen\+Key"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Settings/\mbox{\hyperlink{_settings_menu_8cs}{Settings\+Menu.\+cs}}\end{DoxyCompactItemize}

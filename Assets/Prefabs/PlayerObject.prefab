@@ -73,9 +73,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 888ceafe1c8695a47b97bb2485bc91be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncDirection: 0
-  syncMode: 0
-  syncInterval: 0
   horizontalAxis: Horizontal
   jumpKey: Jump
   kickKey: Kick
@@ -103,7 +100,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 601
-  boxCollider: {fileID: 682977573399367797}
+  groundCheckCollider: {fileID: 5427548756013123119}
   animator: {fileID: 5742343290424649334}
   networkAnimator: {fileID: 9105946857962539163}
   kickSoundClip: {fileID: 8300000, guid: 1893efc16e8581e40b6f39b63d250a1d, type: 3}
@@ -228,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ff3ba0becae47b8b9381191598957c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncDirection: 1
+  syncDirection: 0
   syncMode: 0
   syncInterval: 0
   target: {fileID: 7411375784560147106}
@@ -246,7 +243,7 @@ MonoBehaviour:
   showOverlay: 0
   overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
   onlySyncOnChangeCorrectionMultiplier: 2
-  useFixedUpdate: 0
+  useFixedUpdate: 1
   rotationSensitivity: 0.01
   positionPrecision: 0.01
   scalePrecision: 0.01
@@ -262,7 +259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ec4f7556ca1e4b55a3381fc6a02b1bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncDirection: 1
+  syncDirection: 0
   syncMode: 0
   syncInterval: 0
   target: {fileID: 7411375784560147106}
@@ -280,7 +277,7 @@ MonoBehaviour:
   showOverlay: 0
   overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
   onlySyncOnChangeCorrectionMultiplier: 2
-  useFixedUpdate: 0
+  useFixedUpdate: 1
   rotationSensitivity: 0.01
   positionPrecision: 0.01
   scalePrecision: 0.01
@@ -391,7 +388,61 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1641429855396177727, guid: b25beca1c0d0dad468bad62c179b4766, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4909631897059805304}
+    - targetCorrespondingSourceObject: {fileID: 8587918365622023895, guid: b25beca1c0d0dad468bad62c179b4766, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5427548756013123119}
   m_SourcePrefab: {fileID: 100100000, guid: b25beca1c0d0dad468bad62c179b4766, type: 3}
+--- !u!1 &1732402785448171593 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8587918365622023895, guid: b25beca1c0d0dad468bad62c179b4766, type: 3}
+  m_PrefabInstance: {fileID: 8008756278429822622}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &5427548756013123119
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1732402785448171593}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.06, y: -0.05}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 2.5, y: 0.08}
+  m_EdgeRadius: 0
 --- !u!95 &5742343290424649334 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 2347562514560501992, guid: b25beca1c0d0dad468bad62c179b4766, type: 3}

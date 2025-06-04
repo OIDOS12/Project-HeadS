@@ -1,0 +1,331 @@
+\doxysection{Lobby\+Controller Class Reference}
+\hypertarget{class_lobby_controller}{}\label{class_lobby_controller}\index{LobbyController@{LobbyController}}
+
+
+Handles the lobby functionality, including player management and lobby state.  
+
+
+Inheritance diagram for Lobby\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_lobby_controller}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_lobby_controller_a95cf439313fc4dcfdfbe9523c8ff719e}{Ready\+Player}} ()
+\begin{DoxyCompactList}\small\item\em Calls @\+Change\+Ready\+State on the Local\+Player\+Object\+Controller to toggle the ready state of the player. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_lobby_controller_a774207a97e8ddc69e5cb3ee15dd03f71}{Update\+Button}} ()
+\begin{DoxyCompactList}\small\item\em Updates the text of the Ready button based on the player\textquotesingle{}s ready state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_lobby_controller_a593c7e1a0d357b69883ef4fe81c32c6d}{Check\+If\+All\+Ready}} ()
+\begin{DoxyCompactList}\small\item\em Checks if all players in the lobby are ready and updates the Start\+Game\+Button interactability accordingly. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_lobby_controller_a851894ba0b73c8aae0b6c7ea4184c41d}{Update\+Lobby\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Updates the lobby name text based on the current lobby ID. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_lobby_controller_aec5ca906b5dac75da8b11b4748eac890}{Update\+Player\+List}} ()
+\begin{DoxyCompactList}\small\item\em Updates the player list by checking the current player list against the existing items. If the player item has not been created, it creates the host player item. If there are more players in the current list than in the existing items, it creates new client player items. If there are fewer players in the current list than in the existing items, it removes the excess player items. If the number of players matches, it updates the existing player items. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_lobby_controller_adcdc61d12e381b56d13d30f23411550a}{Find\+Local\+Player}} ()
+\begin{DoxyCompactList}\small\item\em Finds the local player object and its controller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_lobby_controller_ad1abeb59c7f8f39eac44c9a184c48e33}{Create\+Host\+Player\+Item}} ()
+\begin{DoxyCompactList}\small\item\em Creates player items for each player in the lobby when hosting. This method instantiates a new player item prefab for each player in the player list, sets the player name, connection ID, Steam ID, and ready state, and adds the item to the player list view content. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_lobby_controller_a21430b36b6c230ad6c245cdd8f957fe8}{Create\+Client\+Player\+Item}} ()
+\begin{DoxyCompactList}\small\item\em Simmilary to @\+Create\+Host\+Player\+Item, this method creates player items for each client player in the lobby. It checks if the player already exists in the player list items before creating a new item. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_lobby_controller_a875b736f24e4fc10424c8c977dcab697}{Update\+Player\+Item}} ()
+\begin{DoxyCompactList}\small\item\em Updates the player items in the lobby by iterating through the player list and updating the corresponding player list items with the current player information. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_lobby_controller_a5aba29d524f94d2e1162e2774a749fec}{Remove\+Player\+Item}} ()
+\begin{DoxyCompactList}\small\item\em Removes player items from the lobby that no longer exist in the current player list. It checks each player list item against the current player list and removes any items. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_lobby_controller_aca7b645c94fe67f5aa330755117ca132}{Update\+Ready\+State}} ()
+\begin{DoxyCompactList}\small\item\em Updates the ready state of all player list items in the lobby. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_lobby_controller_aede307bc457535484b9a8ad0174823fd}{Start\+Game}} (string scene\+Name)
+\begin{DoxyCompactList}\small\item\em Starts the game by calling the Local\+Player\+Object\+Controller\textquotesingle{}s Can\+Start\+Game method with the scene name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_lobby_controller_ac950058636578664a2280d2d162f9860}{Leave\+Lobby}} ()
+\begin{DoxyCompactList}\small\item\em Leaves the current Steam lobby. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+TMP\+\_\+\+Text \mbox{\hyperlink{class_lobby_controller_ab866481f42bcf2c85496cc3f1fe0ba51}{lobby\+Name\+Text}}
+\item 
+Game\+Object \mbox{\hyperlink{class_lobby_controller_a1ad2ae55cfdb5170718d300e54a164ce}{Player\+List\+View\+Content}}
+\item 
+Game\+Object \mbox{\hyperlink{class_lobby_controller_a84b055c9381c826fb2a08432a416420e}{Player\+List\+Item\+Prefab}}
+\item 
+Game\+Object \mbox{\hyperlink{class_lobby_controller_a836ea6f67d93933bd1f0d3aeaa514892}{Local\+Player\+Object}}
+\item 
+ulong \mbox{\hyperlink{class_lobby_controller_ac91539ae78bd9b1e79465f5346b7e22b}{Current\+Lobby\+ID}}
+\item 
+bool \mbox{\hyperlink{class_lobby_controller_a1d4abd2a7799625d75a0bef11c5369ff}{Player\+Item\+Created}} = false
+\item 
+\mbox{\hyperlink{class_player_object_controller}{Player\+Object\+Controller}} \mbox{\hyperlink{class_lobby_controller_a9c6f8fdd759fe3a67036051f07b752ad}{Local\+Player\+Object\+Controller}}
+\item 
+TMP\+\_\+\+Text \mbox{\hyperlink{class_lobby_controller_acdf0d22b221e938d2c94219e89784f68}{Ready\+Button\+Text}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_lobby_controller}{Lobby\+Controller}} \mbox{\hyperlink{class_lobby_controller_a8676136d581ca9e850226d7de15ff781}{Instance}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_custom_network_manager}{Custom\+Network\+Manager}} \mbox{\hyperlink{class_lobby_controller_a24e2cde8c372176cefc2d7efb9768ead}{Manager}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_lobby_controller_ac5ac51c08b982e84f649e68641a8cf8b}{Awake}} ()
+\begin{DoxyCompactList}\small\item\em Ensures that this is a singleton instance and initializes the Local\+Player\+Object\+Controller reference. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{class_player_list_item}{Player\+List\+Item}} $>$ \mbox{\hyperlink{class_lobby_controller_a450c4369ea339d71000624edf4f485ee}{player\+List\+Items}} = new List$<$\mbox{\hyperlink{class_player_list_item}{Player\+List\+Item}}$>$()
+\item 
+\mbox{\hyperlink{class_custom_network_manager}{Custom\+Network\+Manager}} \mbox{\hyperlink{class_lobby_controller_a331d296fe20be709309a6934870d9a9b}{network\+Manager}}
+\item 
+Button \mbox{\hyperlink{class_lobby_controller_a55b15f8e92b5d60ff9ff1d59c8965f84}{Start\+Game\+Button}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles the lobby functionality, including player management and lobby state. 
+
+\label{doc-func-members}
+\Hypertarget{class_lobby_controller_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_lobby_controller_ac5ac51c08b982e84f649e68641a8cf8b}\index{LobbyController@{LobbyController}!Awake@{Awake}}
+\index{Awake@{Awake}!LobbyController@{LobbyController}}
+\doxysubsubsection{\texorpdfstring{Awake()}{Awake()}}
+{\footnotesize\ttfamily \label{class_lobby_controller_ac5ac51c08b982e84f649e68641a8cf8b} 
+void Lobby\+Controller.\+Awake (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Ensures that this is a singleton instance and initializes the Local\+Player\+Object\+Controller reference. 
+
+\Hypertarget{class_lobby_controller_a593c7e1a0d357b69883ef4fe81c32c6d}\index{LobbyController@{LobbyController}!CheckIfAllReady@{CheckIfAllReady}}
+\index{CheckIfAllReady@{CheckIfAllReady}!LobbyController@{LobbyController}}
+\doxysubsubsection{\texorpdfstring{CheckIfAllReady()}{CheckIfAllReady()}}
+{\footnotesize\ttfamily \label{class_lobby_controller_a593c7e1a0d357b69883ef4fe81c32c6d} 
+void Lobby\+Controller.\+Check\+If\+All\+Ready (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Checks if all players in the lobby are ready and updates the Start\+Game\+Button interactability accordingly. 
+
+\Hypertarget{class_lobby_controller_a21430b36b6c230ad6c245cdd8f957fe8}\index{LobbyController@{LobbyController}!CreateClientPlayerItem@{CreateClientPlayerItem}}
+\index{CreateClientPlayerItem@{CreateClientPlayerItem}!LobbyController@{LobbyController}}
+\doxysubsubsection{\texorpdfstring{CreateClientPlayerItem()}{CreateClientPlayerItem()}}
+{\footnotesize\ttfamily \label{class_lobby_controller_a21430b36b6c230ad6c245cdd8f957fe8} 
+void Lobby\+Controller.\+Create\+Client\+Player\+Item (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Simmilary to @\+Create\+Host\+Player\+Item, this method creates player items for each client player in the lobby. It checks if the player already exists in the player list items before creating a new item. 
+
+\Hypertarget{class_lobby_controller_ad1abeb59c7f8f39eac44c9a184c48e33}\index{LobbyController@{LobbyController}!CreateHostPlayerItem@{CreateHostPlayerItem}}
+\index{CreateHostPlayerItem@{CreateHostPlayerItem}!LobbyController@{LobbyController}}
+\doxysubsubsection{\texorpdfstring{CreateHostPlayerItem()}{CreateHostPlayerItem()}}
+{\footnotesize\ttfamily \label{class_lobby_controller_ad1abeb59c7f8f39eac44c9a184c48e33} 
+void Lobby\+Controller.\+Create\+Host\+Player\+Item (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Creates player items for each player in the lobby when hosting. This method instantiates a new player item prefab for each player in the player list, sets the player name, connection ID, Steam ID, and ready state, and adds the item to the player list view content. 
+
+\Hypertarget{class_lobby_controller_adcdc61d12e381b56d13d30f23411550a}\index{LobbyController@{LobbyController}!FindLocalPlayer@{FindLocalPlayer}}
+\index{FindLocalPlayer@{FindLocalPlayer}!LobbyController@{LobbyController}}
+\doxysubsubsection{\texorpdfstring{FindLocalPlayer()}{FindLocalPlayer()}}
+{\footnotesize\ttfamily \label{class_lobby_controller_adcdc61d12e381b56d13d30f23411550a} 
+void Lobby\+Controller.\+Find\+Local\+Player (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Finds the local player object and its controller. 
+
+\Hypertarget{class_lobby_controller_ac950058636578664a2280d2d162f9860}\index{LobbyController@{LobbyController}!LeaveLobby@{LeaveLobby}}
+\index{LeaveLobby@{LeaveLobby}!LobbyController@{LobbyController}}
+\doxysubsubsection{\texorpdfstring{LeaveLobby()}{LeaveLobby()}}
+{\footnotesize\ttfamily \label{class_lobby_controller_ac950058636578664a2280d2d162f9860} 
+void Lobby\+Controller.\+Leave\+Lobby (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Leaves the current Steam lobby. 
+
+\Hypertarget{class_lobby_controller_a95cf439313fc4dcfdfbe9523c8ff719e}\index{LobbyController@{LobbyController}!ReadyPlayer@{ReadyPlayer}}
+\index{ReadyPlayer@{ReadyPlayer}!LobbyController@{LobbyController}}
+\doxysubsubsection{\texorpdfstring{ReadyPlayer()}{ReadyPlayer()}}
+{\footnotesize\ttfamily \label{class_lobby_controller_a95cf439313fc4dcfdfbe9523c8ff719e} 
+void Lobby\+Controller.\+Ready\+Player (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Calls @\+Change\+Ready\+State on the Local\+Player\+Object\+Controller to toggle the ready state of the player. 
+
+\Hypertarget{class_lobby_controller_a5aba29d524f94d2e1162e2774a749fec}\index{LobbyController@{LobbyController}!RemovePlayerItem@{RemovePlayerItem}}
+\index{RemovePlayerItem@{RemovePlayerItem}!LobbyController@{LobbyController}}
+\doxysubsubsection{\texorpdfstring{RemovePlayerItem()}{RemovePlayerItem()}}
+{\footnotesize\ttfamily \label{class_lobby_controller_a5aba29d524f94d2e1162e2774a749fec} 
+void Lobby\+Controller.\+Remove\+Player\+Item (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Removes player items from the lobby that no longer exist in the current player list. It checks each player list item against the current player list and removes any items. 
+
+\Hypertarget{class_lobby_controller_aede307bc457535484b9a8ad0174823fd}\index{LobbyController@{LobbyController}!StartGame@{StartGame}}
+\index{StartGame@{StartGame}!LobbyController@{LobbyController}}
+\doxysubsubsection{\texorpdfstring{StartGame()}{StartGame()}}
+{\footnotesize\ttfamily \label{class_lobby_controller_aede307bc457535484b9a8ad0174823fd} 
+void Lobby\+Controller.\+Start\+Game (\begin{DoxyParamCaption}\item[{string}]{scene\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Starts the game by calling the Local\+Player\+Object\+Controller\textquotesingle{}s Can\+Start\+Game method with the scene name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene\+Name} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_lobby_controller_a774207a97e8ddc69e5cb3ee15dd03f71}\index{LobbyController@{LobbyController}!UpdateButton@{UpdateButton}}
+\index{UpdateButton@{UpdateButton}!LobbyController@{LobbyController}}
+\doxysubsubsection{\texorpdfstring{UpdateButton()}{UpdateButton()}}
+{\footnotesize\ttfamily \label{class_lobby_controller_a774207a97e8ddc69e5cb3ee15dd03f71} 
+void Lobby\+Controller.\+Update\+Button (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Updates the text of the Ready button based on the player\textquotesingle{}s ready state. 
+
+\Hypertarget{class_lobby_controller_a851894ba0b73c8aae0b6c7ea4184c41d}\index{LobbyController@{LobbyController}!UpdateLobbyName@{UpdateLobbyName}}
+\index{UpdateLobbyName@{UpdateLobbyName}!LobbyController@{LobbyController}}
+\doxysubsubsection{\texorpdfstring{UpdateLobbyName()}{UpdateLobbyName()}}
+{\footnotesize\ttfamily \label{class_lobby_controller_a851894ba0b73c8aae0b6c7ea4184c41d} 
+void Lobby\+Controller.\+Update\+Lobby\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Updates the lobby name text based on the current lobby ID. 
+
+\Hypertarget{class_lobby_controller_a875b736f24e4fc10424c8c977dcab697}\index{LobbyController@{LobbyController}!UpdatePlayerItem@{UpdatePlayerItem}}
+\index{UpdatePlayerItem@{UpdatePlayerItem}!LobbyController@{LobbyController}}
+\doxysubsubsection{\texorpdfstring{UpdatePlayerItem()}{UpdatePlayerItem()}}
+{\footnotesize\ttfamily \label{class_lobby_controller_a875b736f24e4fc10424c8c977dcab697} 
+void Lobby\+Controller.\+Update\+Player\+Item (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Updates the player items in the lobby by iterating through the player list and updating the corresponding player list items with the current player information. 
+
+\Hypertarget{class_lobby_controller_aec5ca906b5dac75da8b11b4748eac890}\index{LobbyController@{LobbyController}!UpdatePlayerList@{UpdatePlayerList}}
+\index{UpdatePlayerList@{UpdatePlayerList}!LobbyController@{LobbyController}}
+\doxysubsubsection{\texorpdfstring{UpdatePlayerList()}{UpdatePlayerList()}}
+{\footnotesize\ttfamily \label{class_lobby_controller_aec5ca906b5dac75da8b11b4748eac890} 
+void Lobby\+Controller.\+Update\+Player\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Updates the player list by checking the current player list against the existing items. If the player item has not been created, it creates the host player item. If there are more players in the current list than in the existing items, it creates new client player items. If there are fewer players in the current list than in the existing items, it removes the excess player items. If the number of players matches, it updates the existing player items. 
+
+\Hypertarget{class_lobby_controller_aca7b645c94fe67f5aa330755117ca132}\index{LobbyController@{LobbyController}!UpdateReadyState@{UpdateReadyState}}
+\index{UpdateReadyState@{UpdateReadyState}!LobbyController@{LobbyController}}
+\doxysubsubsection{\texorpdfstring{UpdateReadyState()}{UpdateReadyState()}}
+{\footnotesize\ttfamily \label{class_lobby_controller_aca7b645c94fe67f5aa330755117ca132} 
+void Lobby\+Controller.\+Update\+Ready\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Updates the ready state of all player list items in the lobby. 
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_lobby_controller_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_lobby_controller_ac91539ae78bd9b1e79465f5346b7e22b}\index{LobbyController@{LobbyController}!CurrentLobbyID@{CurrentLobbyID}}
+\index{CurrentLobbyID@{CurrentLobbyID}!LobbyController@{LobbyController}}
+\doxysubsubsection{\texorpdfstring{CurrentLobbyID}{CurrentLobbyID}}
+{\footnotesize\ttfamily \label{class_lobby_controller_ac91539ae78bd9b1e79465f5346b7e22b} 
+ulong Lobby\+Controller.\+Current\+Lobby\+ID}
+
+\Hypertarget{class_lobby_controller_a8676136d581ca9e850226d7de15ff781}\index{LobbyController@{LobbyController}!Instance@{Instance}}
+\index{Instance@{Instance}!LobbyController@{LobbyController}}
+\doxysubsubsection{\texorpdfstring{Instance}{Instance}}
+{\footnotesize\ttfamily \label{class_lobby_controller_a8676136d581ca9e850226d7de15ff781} 
+\mbox{\hyperlink{class_lobby_controller}{Lobby\+Controller}} Lobby\+Controller.\+Instance\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_lobby_controller_ab866481f42bcf2c85496cc3f1fe0ba51}\index{LobbyController@{LobbyController}!lobbyNameText@{lobbyNameText}}
+\index{lobbyNameText@{lobbyNameText}!LobbyController@{LobbyController}}
+\doxysubsubsection{\texorpdfstring{lobbyNameText}{lobbyNameText}}
+{\footnotesize\ttfamily \label{class_lobby_controller_ab866481f42bcf2c85496cc3f1fe0ba51} 
+TMP\+\_\+\+Text Lobby\+Controller.\+lobby\+Name\+Text}
+
+\Hypertarget{class_lobby_controller_a836ea6f67d93933bd1f0d3aeaa514892}\index{LobbyController@{LobbyController}!LocalPlayerObject@{LocalPlayerObject}}
+\index{LocalPlayerObject@{LocalPlayerObject}!LobbyController@{LobbyController}}
+\doxysubsubsection{\texorpdfstring{LocalPlayerObject}{LocalPlayerObject}}
+{\footnotesize\ttfamily \label{class_lobby_controller_a836ea6f67d93933bd1f0d3aeaa514892} 
+Game\+Object Lobby\+Controller.\+Local\+Player\+Object}
+
+\Hypertarget{class_lobby_controller_a9c6f8fdd759fe3a67036051f07b752ad}\index{LobbyController@{LobbyController}!LocalPlayerObjectController@{LocalPlayerObjectController}}
+\index{LocalPlayerObjectController@{LocalPlayerObjectController}!LobbyController@{LobbyController}}
+\doxysubsubsection{\texorpdfstring{LocalPlayerObjectController}{LocalPlayerObjectController}}
+{\footnotesize\ttfamily \label{class_lobby_controller_a9c6f8fdd759fe3a67036051f07b752ad} 
+\mbox{\hyperlink{class_player_object_controller}{Player\+Object\+Controller}} Lobby\+Controller.\+Local\+Player\+Object\+Controller}
+
+\Hypertarget{class_lobby_controller_a331d296fe20be709309a6934870d9a9b}\index{LobbyController@{LobbyController}!networkManager@{networkManager}}
+\index{networkManager@{networkManager}!LobbyController@{LobbyController}}
+\doxysubsubsection{\texorpdfstring{networkManager}{networkManager}}
+{\footnotesize\ttfamily \label{class_lobby_controller_a331d296fe20be709309a6934870d9a9b} 
+\mbox{\hyperlink{class_custom_network_manager}{Custom\+Network\+Manager}} Lobby\+Controller.\+network\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_lobby_controller_a1d4abd2a7799625d75a0bef11c5369ff}\index{LobbyController@{LobbyController}!PlayerItemCreated@{PlayerItemCreated}}
+\index{PlayerItemCreated@{PlayerItemCreated}!LobbyController@{LobbyController}}
+\doxysubsubsection{\texorpdfstring{PlayerItemCreated}{PlayerItemCreated}}
+{\footnotesize\ttfamily \label{class_lobby_controller_a1d4abd2a7799625d75a0bef11c5369ff} 
+bool Lobby\+Controller.\+Player\+Item\+Created = false}
+
+\Hypertarget{class_lobby_controller_a84b055c9381c826fb2a08432a416420e}\index{LobbyController@{LobbyController}!PlayerListItemPrefab@{PlayerListItemPrefab}}
+\index{PlayerListItemPrefab@{PlayerListItemPrefab}!LobbyController@{LobbyController}}
+\doxysubsubsection{\texorpdfstring{PlayerListItemPrefab}{PlayerListItemPrefab}}
+{\footnotesize\ttfamily \label{class_lobby_controller_a84b055c9381c826fb2a08432a416420e} 
+Game\+Object Lobby\+Controller.\+Player\+List\+Item\+Prefab}
+
+\Hypertarget{class_lobby_controller_a450c4369ea339d71000624edf4f485ee}\index{LobbyController@{LobbyController}!playerListItems@{playerListItems}}
+\index{playerListItems@{playerListItems}!LobbyController@{LobbyController}}
+\doxysubsubsection{\texorpdfstring{playerListItems}{playerListItems}}
+{\footnotesize\ttfamily \label{class_lobby_controller_a450c4369ea339d71000624edf4f485ee} 
+List$<$\mbox{\hyperlink{class_player_list_item}{Player\+List\+Item}}$>$ Lobby\+Controller.\+player\+List\+Items = new List$<$\mbox{\hyperlink{class_player_list_item}{Player\+List\+Item}}$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_lobby_controller_a1ad2ae55cfdb5170718d300e54a164ce}\index{LobbyController@{LobbyController}!PlayerListViewContent@{PlayerListViewContent}}
+\index{PlayerListViewContent@{PlayerListViewContent}!LobbyController@{LobbyController}}
+\doxysubsubsection{\texorpdfstring{PlayerListViewContent}{PlayerListViewContent}}
+{\footnotesize\ttfamily \label{class_lobby_controller_a1ad2ae55cfdb5170718d300e54a164ce} 
+Game\+Object Lobby\+Controller.\+Player\+List\+View\+Content}
+
+\Hypertarget{class_lobby_controller_acdf0d22b221e938d2c94219e89784f68}\index{LobbyController@{LobbyController}!ReadyButtonText@{ReadyButtonText}}
+\index{ReadyButtonText@{ReadyButtonText}!LobbyController@{LobbyController}}
+\doxysubsubsection{\texorpdfstring{ReadyButtonText}{ReadyButtonText}}
+{\footnotesize\ttfamily \label{class_lobby_controller_acdf0d22b221e938d2c94219e89784f68} 
+TMP\+\_\+\+Text Lobby\+Controller.\+Ready\+Button\+Text}
+
+\Hypertarget{class_lobby_controller_a55b15f8e92b5d60ff9ff1d59c8965f84}\index{LobbyController@{LobbyController}!StartGameButton@{StartGameButton}}
+\index{StartGameButton@{StartGameButton}!LobbyController@{LobbyController}}
+\doxysubsubsection{\texorpdfstring{StartGameButton}{StartGameButton}}
+{\footnotesize\ttfamily \label{class_lobby_controller_a55b15f8e92b5d60ff9ff1d59c8965f84} 
+Button Lobby\+Controller.\+Start\+Game\+Button\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_lobby_controller_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_lobby_controller_a24e2cde8c372176cefc2d7efb9768ead}\index{LobbyController@{LobbyController}!Manager@{Manager}}
+\index{Manager@{Manager}!LobbyController@{LobbyController}}
+\doxysubsubsection{\texorpdfstring{Manager}{Manager}}
+{\footnotesize\ttfamily \label{class_lobby_controller_a24e2cde8c372176cefc2d7efb9768ead} 
+\mbox{\hyperlink{class_custom_network_manager}{Custom\+Network\+Manager}} Lobby\+Controller.\+Manager\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Steam\+And\+Lobby\+Scripts/\mbox{\hyperlink{_lobby_controller_8cs}{Lobby\+Controller.\+cs}}\end{DoxyCompactItemize}

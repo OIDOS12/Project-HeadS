@@ -1,0 +1,209 @@
+\doxysection{Host\+Or\+Join\+Scene\+Manager Class Reference}
+\hypertarget{class_host_or_join_scene_manager}{}\label{class_host_or_join_scene_manager}\index{HostOrJoinSceneManager@{HostOrJoinSceneManager}}
+
+
+Manages the host or join lobby functionality.  
+
+
+Inheritance diagram for Host\+Or\+Join\+Scene\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_host_or_join_scene_manager}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_host_or_join_scene_manager_ad4ba270c67c0c70e419e600ca6104627}{Display\+Lobbies}} (List$<$ CSteam\+ID $>$ lobby\+Ids, Lobby\+Data\+Update\+\_\+t result)
+\begin{DoxyCompactList}\small\item\em Displays the list of lobbies in the UI. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_host_or_join_scene_manager_a4610849971a7c0e6a8c3bd763781929f}{Get\+List\+Of\+Lobbies}} ()
+\begin{DoxyCompactList}\small\item\em Initiates the process to get a list of lobbies. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_host_or_join_scene_manager_adcc8247a7173c408801772c2c6b84328}{Destroy\+Lobbies}} ()
+\begin{DoxyCompactList}\small\item\em Destroys all lobby entries in the UI and clears the list of lobbies. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_host_or_join_scene_manager_ac323891de67baf85db192dcdfa054adb}{Back\+Button}} ()
+\begin{DoxyCompactList}\small\item\em Handles the back button functionality to return to the previous menu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_host_or_join_scene_manager_ae46085da888fc97967bfd9c77fdfa97e}{Host\+Lobby}} ()
+\begin{DoxyCompactList}\small\item\em Hosts a new lobby using the \doxylink{class_steam_lobby}{Steam\+Lobby} instance. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_host_or_join_scene_manager_a375eee2703cf2618b921e93268c9cc07}{To\+Main\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em Returns to the main menu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Game\+Object \mbox{\hyperlink{class_host_or_join_scene_manager_ad46adc9c1db6d0276dfdeef2b1e5fea5}{Lobbies\+Menu}}
+\item 
+Game\+Object \mbox{\hyperlink{class_host_or_join_scene_manager_a49a2081c6b13349a318a8f00ac090cc4}{Lobby\+Data\+Item\+Prefab}}
+\item 
+Game\+Object \mbox{\hyperlink{class_host_or_join_scene_manager_ad17c0c7b27e7c4d522d9070616639980}{Lobbies\+List\+Content}}
+\item 
+Game\+Object \mbox{\hyperlink{class_host_or_join_scene_manager_aec18cbd97a7ce66582c9f65139ccfb72}{lobbies\+Button}}
+\item 
+Game\+Object \mbox{\hyperlink{class_host_or_join_scene_manager_abb85b24067be2cfa44dd707ceadb6331}{host\+Button}}
+\item 
+Game\+Object \mbox{\hyperlink{class_host_or_join_scene_manager_a0735cae3d5bc28e38fa3089f7b0b44f5}{Main\+Menu\+Button}}
+\item 
+List$<$ Game\+Object $>$ \mbox{\hyperlink{class_host_or_join_scene_manager_a04805b5c7450cccd3c1698e76d6620bf}{List\+Of\+Lobbies}} = new List$<$Game\+Object$>$()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_host_or_join_scene_manager}{Host\+Or\+Join\+Scene\+Manager}} \mbox{\hyperlink{class_host_or_join_scene_manager_a2e1f085ad192fcff65151b395a299685}{Instance}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_host_or_join_scene_manager_ab1901bc87ddfd3b0c82d12b54ed85889}{Awake}} ()
+\begin{DoxyCompactList}\small\item\em Ensures that this is a singleton instance and initializes the \doxylink{class_steam_lobby}{Steam\+Lobby} reference. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_steam_lobby}{Steam\+Lobby}} \mbox{\hyperlink{class_host_or_join_scene_manager_abdba6dbc9f14622d3330435ebf2c13e1}{steam\+Lobby}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the host or join lobby functionality. 
+
+\label{doc-func-members}
+\Hypertarget{class_host_or_join_scene_manager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_host_or_join_scene_manager_ab1901bc87ddfd3b0c82d12b54ed85889}\index{HostOrJoinSceneManager@{HostOrJoinSceneManager}!Awake@{Awake}}
+\index{Awake@{Awake}!HostOrJoinSceneManager@{HostOrJoinSceneManager}}
+\doxysubsubsection{\texorpdfstring{Awake()}{Awake()}}
+{\footnotesize\ttfamily \label{class_host_or_join_scene_manager_ab1901bc87ddfd3b0c82d12b54ed85889} 
+void Host\+Or\+Join\+Scene\+Manager.\+Awake (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Ensures that this is a singleton instance and initializes the \doxylink{class_steam_lobby}{Steam\+Lobby} reference. 
+
+\Hypertarget{class_host_or_join_scene_manager_ac323891de67baf85db192dcdfa054adb}\index{HostOrJoinSceneManager@{HostOrJoinSceneManager}!BackButton@{BackButton}}
+\index{BackButton@{BackButton}!HostOrJoinSceneManager@{HostOrJoinSceneManager}}
+\doxysubsubsection{\texorpdfstring{BackButton()}{BackButton()}}
+{\footnotesize\ttfamily \label{class_host_or_join_scene_manager_ac323891de67baf85db192dcdfa054adb} 
+void Host\+Or\+Join\+Scene\+Manager.\+Back\+Button (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Handles the back button functionality to return to the previous menu. 
+
+\Hypertarget{class_host_or_join_scene_manager_adcc8247a7173c408801772c2c6b84328}\index{HostOrJoinSceneManager@{HostOrJoinSceneManager}!DestroyLobbies@{DestroyLobbies}}
+\index{DestroyLobbies@{DestroyLobbies}!HostOrJoinSceneManager@{HostOrJoinSceneManager}}
+\doxysubsubsection{\texorpdfstring{DestroyLobbies()}{DestroyLobbies()}}
+{\footnotesize\ttfamily \label{class_host_or_join_scene_manager_adcc8247a7173c408801772c2c6b84328} 
+void Host\+Or\+Join\+Scene\+Manager.\+Destroy\+Lobbies (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destroys all lobby entries in the UI and clears the list of lobbies. 
+
+\Hypertarget{class_host_or_join_scene_manager_ad4ba270c67c0c70e419e600ca6104627}\index{HostOrJoinSceneManager@{HostOrJoinSceneManager}!DisplayLobbies@{DisplayLobbies}}
+\index{DisplayLobbies@{DisplayLobbies}!HostOrJoinSceneManager@{HostOrJoinSceneManager}}
+\doxysubsubsection{\texorpdfstring{DisplayLobbies()}{DisplayLobbies()}}
+{\footnotesize\ttfamily \label{class_host_or_join_scene_manager_ad4ba270c67c0c70e419e600ca6104627} 
+void Host\+Or\+Join\+Scene\+Manager.\+Display\+Lobbies (\begin{DoxyParamCaption}\item[{List$<$ CSteam\+ID $>$}]{lobby\+Ids}{, }\item[{Lobby\+Data\+Update\+\_\+t}]{result}{}\end{DoxyParamCaption})}
+
+
+
+Displays the list of lobbies in the UI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lobby\+Ids} & \\
+\hline
+{\em result} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_host_or_join_scene_manager_a4610849971a7c0e6a8c3bd763781929f}\index{HostOrJoinSceneManager@{HostOrJoinSceneManager}!GetListOfLobbies@{GetListOfLobbies}}
+\index{GetListOfLobbies@{GetListOfLobbies}!HostOrJoinSceneManager@{HostOrJoinSceneManager}}
+\doxysubsubsection{\texorpdfstring{GetListOfLobbies()}{GetListOfLobbies()}}
+{\footnotesize\ttfamily \label{class_host_or_join_scene_manager_a4610849971a7c0e6a8c3bd763781929f} 
+void Host\+Or\+Join\+Scene\+Manager.\+Get\+List\+Of\+Lobbies (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initiates the process to get a list of lobbies. 
+
+\Hypertarget{class_host_or_join_scene_manager_ae46085da888fc97967bfd9c77fdfa97e}\index{HostOrJoinSceneManager@{HostOrJoinSceneManager}!HostLobby@{HostLobby}}
+\index{HostLobby@{HostLobby}!HostOrJoinSceneManager@{HostOrJoinSceneManager}}
+\doxysubsubsection{\texorpdfstring{HostLobby()}{HostLobby()}}
+{\footnotesize\ttfamily \label{class_host_or_join_scene_manager_ae46085da888fc97967bfd9c77fdfa97e} 
+void Host\+Or\+Join\+Scene\+Manager.\+Host\+Lobby (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Hosts a new lobby using the \doxylink{class_steam_lobby}{Steam\+Lobby} instance. 
+
+\Hypertarget{class_host_or_join_scene_manager_a375eee2703cf2618b921e93268c9cc07}\index{HostOrJoinSceneManager@{HostOrJoinSceneManager}!ToMainMenu@{ToMainMenu}}
+\index{ToMainMenu@{ToMainMenu}!HostOrJoinSceneManager@{HostOrJoinSceneManager}}
+\doxysubsubsection{\texorpdfstring{ToMainMenu()}{ToMainMenu()}}
+{\footnotesize\ttfamily \label{class_host_or_join_scene_manager_a375eee2703cf2618b921e93268c9cc07} 
+void Host\+Or\+Join\+Scene\+Manager.\+To\+Main\+Menu (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns to the main menu. 
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_host_or_join_scene_manager_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_host_or_join_scene_manager_abb85b24067be2cfa44dd707ceadb6331}\index{HostOrJoinSceneManager@{HostOrJoinSceneManager}!hostButton@{hostButton}}
+\index{hostButton@{hostButton}!HostOrJoinSceneManager@{HostOrJoinSceneManager}}
+\doxysubsubsection{\texorpdfstring{hostButton}{hostButton}}
+{\footnotesize\ttfamily \label{class_host_or_join_scene_manager_abb85b24067be2cfa44dd707ceadb6331} 
+Game\+Object Host\+Or\+Join\+Scene\+Manager.\+host\+Button}
+
+\Hypertarget{class_host_or_join_scene_manager_a2e1f085ad192fcff65151b395a299685}\index{HostOrJoinSceneManager@{HostOrJoinSceneManager}!Instance@{Instance}}
+\index{Instance@{Instance}!HostOrJoinSceneManager@{HostOrJoinSceneManager}}
+\doxysubsubsection{\texorpdfstring{Instance}{Instance}}
+{\footnotesize\ttfamily \label{class_host_or_join_scene_manager_a2e1f085ad192fcff65151b395a299685} 
+\mbox{\hyperlink{class_host_or_join_scene_manager}{Host\+Or\+Join\+Scene\+Manager}} Host\+Or\+Join\+Scene\+Manager.\+Instance\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_host_or_join_scene_manager_a04805b5c7450cccd3c1698e76d6620bf}\index{HostOrJoinSceneManager@{HostOrJoinSceneManager}!ListOfLobbies@{ListOfLobbies}}
+\index{ListOfLobbies@{ListOfLobbies}!HostOrJoinSceneManager@{HostOrJoinSceneManager}}
+\doxysubsubsection{\texorpdfstring{ListOfLobbies}{ListOfLobbies}}
+{\footnotesize\ttfamily \label{class_host_or_join_scene_manager_a04805b5c7450cccd3c1698e76d6620bf} 
+List$<$Game\+Object$>$ Host\+Or\+Join\+Scene\+Manager.\+List\+Of\+Lobbies = new List$<$Game\+Object$>$()}
+
+\Hypertarget{class_host_or_join_scene_manager_aec18cbd97a7ce66582c9f65139ccfb72}\index{HostOrJoinSceneManager@{HostOrJoinSceneManager}!lobbiesButton@{lobbiesButton}}
+\index{lobbiesButton@{lobbiesButton}!HostOrJoinSceneManager@{HostOrJoinSceneManager}}
+\doxysubsubsection{\texorpdfstring{lobbiesButton}{lobbiesButton}}
+{\footnotesize\ttfamily \label{class_host_or_join_scene_manager_aec18cbd97a7ce66582c9f65139ccfb72} 
+Game\+Object Host\+Or\+Join\+Scene\+Manager.\+lobbies\+Button}
+
+\Hypertarget{class_host_or_join_scene_manager_ad17c0c7b27e7c4d522d9070616639980}\index{HostOrJoinSceneManager@{HostOrJoinSceneManager}!LobbiesListContent@{LobbiesListContent}}
+\index{LobbiesListContent@{LobbiesListContent}!HostOrJoinSceneManager@{HostOrJoinSceneManager}}
+\doxysubsubsection{\texorpdfstring{LobbiesListContent}{LobbiesListContent}}
+{\footnotesize\ttfamily \label{class_host_or_join_scene_manager_ad17c0c7b27e7c4d522d9070616639980} 
+Game\+Object Host\+Or\+Join\+Scene\+Manager.\+Lobbies\+List\+Content}
+
+\Hypertarget{class_host_or_join_scene_manager_ad46adc9c1db6d0276dfdeef2b1e5fea5}\index{HostOrJoinSceneManager@{HostOrJoinSceneManager}!LobbiesMenu@{LobbiesMenu}}
+\index{LobbiesMenu@{LobbiesMenu}!HostOrJoinSceneManager@{HostOrJoinSceneManager}}
+\doxysubsubsection{\texorpdfstring{LobbiesMenu}{LobbiesMenu}}
+{\footnotesize\ttfamily \label{class_host_or_join_scene_manager_ad46adc9c1db6d0276dfdeef2b1e5fea5} 
+Game\+Object Host\+Or\+Join\+Scene\+Manager.\+Lobbies\+Menu}
+
+\Hypertarget{class_host_or_join_scene_manager_a49a2081c6b13349a318a8f00ac090cc4}\index{HostOrJoinSceneManager@{HostOrJoinSceneManager}!LobbyDataItemPrefab@{LobbyDataItemPrefab}}
+\index{LobbyDataItemPrefab@{LobbyDataItemPrefab}!HostOrJoinSceneManager@{HostOrJoinSceneManager}}
+\doxysubsubsection{\texorpdfstring{LobbyDataItemPrefab}{LobbyDataItemPrefab}}
+{\footnotesize\ttfamily \label{class_host_or_join_scene_manager_a49a2081c6b13349a318a8f00ac090cc4} 
+Game\+Object Host\+Or\+Join\+Scene\+Manager.\+Lobby\+Data\+Item\+Prefab}
+
+\Hypertarget{class_host_or_join_scene_manager_a0735cae3d5bc28e38fa3089f7b0b44f5}\index{HostOrJoinSceneManager@{HostOrJoinSceneManager}!MainMenuButton@{MainMenuButton}}
+\index{MainMenuButton@{MainMenuButton}!HostOrJoinSceneManager@{HostOrJoinSceneManager}}
+\doxysubsubsection{\texorpdfstring{MainMenuButton}{MainMenuButton}}
+{\footnotesize\ttfamily \label{class_host_or_join_scene_manager_a0735cae3d5bc28e38fa3089f7b0b44f5} 
+Game\+Object Host\+Or\+Join\+Scene\+Manager.\+Main\+Menu\+Button}
+
+\Hypertarget{class_host_or_join_scene_manager_abdba6dbc9f14622d3330435ebf2c13e1}\index{HostOrJoinSceneManager@{HostOrJoinSceneManager}!steamLobby@{steamLobby}}
+\index{steamLobby@{steamLobby}!HostOrJoinSceneManager@{HostOrJoinSceneManager}}
+\doxysubsubsection{\texorpdfstring{steamLobby}{steamLobby}}
+{\footnotesize\ttfamily \label{class_host_or_join_scene_manager_abdba6dbc9f14622d3330435ebf2c13e1} 
+\mbox{\hyperlink{class_steam_lobby}{Steam\+Lobby}} Host\+Or\+Join\+Scene\+Manager.\+steam\+Lobby\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Steam\+And\+Lobby\+Scripts/\mbox{\hyperlink{_host_or_join_scene_manager_8cs}{Host\+Or\+Join\+Scene\+Manager.\+cs}}\end{DoxyCompactItemize}

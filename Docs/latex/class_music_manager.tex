@@ -1,0 +1,116 @@
+\doxysection{Music\+Manager Class Reference}
+\hypertarget{class_music_manager}{}\label{class_music_manager}\index{MusicManager@{MusicManager}}
+
+
+\doxylink{class_music_manager}{Music\+Manager} class handles the music functionality of the game. It manages the music volume, stops music when entering the game scene, and resumes it in other scenes.  
+
+
+Inheritance diagram for Music\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_music_manager}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_music_manager_aa8152329b68ebbac3fcf44dbf118ea9b}{Awake}} ()
+\begin{DoxyCompactList}\small\item\em Singleton instance of \doxylink{class_music_manager}{Music\+Manager} to ensure only one instance exists. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_music_manager_a52ca50db744643a0e25456ede5100215}{Start}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the music volume settings based on player preferences. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_music_manager_a2c83d1f03a3d51dd68dc93b5fa509fc2}{On\+Scene\+Loaded}} (Scene scene, Load\+Scene\+Mode mode)
+\begin{DoxyCompactList}\small\item\em Handles scene loading events to manage music playback. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Audio\+Mixer \mbox{\hyperlink{class_music_manager_af25417f039e9b890799101c48ffe13e4}{mixer}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_music_manager}{Music\+Manager}} \mbox{\hyperlink{class_music_manager_ac0568155a26e23e2624d19011baf2840}{Instance}}
+\item 
+const string \mbox{\hyperlink{class_music_manager_adfa9bacc124267cb4488695ed9a04382}{Master\+Volume\+Key}} = "{}Master\+Volume"{}
+\item 
+const string \mbox{\hyperlink{class_music_manager_ac123fa77eeae47c9362969816d257910}{Music\+Volume\+Key}} = "{}Music\+Volume"{}
+\item 
+const string \mbox{\hyperlink{class_music_manager_a3a33d4d4237dee702ec86a474e7bf097}{Sound\+FXVolume\+Key}} = "{}Sound\+FXVolume"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_music_manager}{Music\+Manager} class handles the music functionality of the game. It manages the music volume, stops music when entering the game scene, and resumes it in other scenes. 
+
+\label{doc-func-members}
+\Hypertarget{class_music_manager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_music_manager_aa8152329b68ebbac3fcf44dbf118ea9b}\index{MusicManager@{MusicManager}!Awake@{Awake}}
+\index{Awake@{Awake}!MusicManager@{MusicManager}}
+\doxysubsubsection{\texorpdfstring{Awake()}{Awake()}}
+{\footnotesize\ttfamily \label{class_music_manager_aa8152329b68ebbac3fcf44dbf118ea9b} 
+void Music\+Manager.\+Awake (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Singleton instance of \doxylink{class_music_manager}{Music\+Manager} to ensure only one instance exists. 
+
+\Hypertarget{class_music_manager_a2c83d1f03a3d51dd68dc93b5fa509fc2}\index{MusicManager@{MusicManager}!OnSceneLoaded@{OnSceneLoaded}}
+\index{OnSceneLoaded@{OnSceneLoaded}!MusicManager@{MusicManager}}
+\doxysubsubsection{\texorpdfstring{OnSceneLoaded()}{OnSceneLoaded()}}
+{\footnotesize\ttfamily \label{class_music_manager_a2c83d1f03a3d51dd68dc93b5fa509fc2} 
+void Music\+Manager.\+On\+Scene\+Loaded (\begin{DoxyParamCaption}\item[{Scene}]{scene}{, }\item[{Load\+Scene\+Mode}]{mode}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Handles scene loading events to manage music playback. 
+
+\Hypertarget{class_music_manager_a52ca50db744643a0e25456ede5100215}\index{MusicManager@{MusicManager}!Start@{Start}}
+\index{Start@{Start}!MusicManager@{MusicManager}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily \label{class_music_manager_a52ca50db744643a0e25456ede5100215} 
+void Music\+Manager.\+Start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initializes the music volume settings based on player preferences. 
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_music_manager_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_music_manager_ac0568155a26e23e2624d19011baf2840}\index{MusicManager@{MusicManager}!Instance@{Instance}}
+\index{Instance@{Instance}!MusicManager@{MusicManager}}
+\doxysubsubsection{\texorpdfstring{Instance}{Instance}}
+{\footnotesize\ttfamily \label{class_music_manager_ac0568155a26e23e2624d19011baf2840} 
+\mbox{\hyperlink{class_music_manager}{Music\+Manager}} Music\+Manager.\+Instance\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_music_manager_adfa9bacc124267cb4488695ed9a04382}\index{MusicManager@{MusicManager}!MasterVolumeKey@{MasterVolumeKey}}
+\index{MasterVolumeKey@{MasterVolumeKey}!MusicManager@{MusicManager}}
+\doxysubsubsection{\texorpdfstring{MasterVolumeKey}{MasterVolumeKey}}
+{\footnotesize\ttfamily \label{class_music_manager_adfa9bacc124267cb4488695ed9a04382} 
+const string Music\+Manager.\+Master\+Volume\+Key = "{}Master\+Volume"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_music_manager_af25417f039e9b890799101c48ffe13e4}\index{MusicManager@{MusicManager}!mixer@{mixer}}
+\index{mixer@{mixer}!MusicManager@{MusicManager}}
+\doxysubsubsection{\texorpdfstring{mixer}{mixer}}
+{\footnotesize\ttfamily \label{class_music_manager_af25417f039e9b890799101c48ffe13e4} 
+Audio\+Mixer Music\+Manager.\+mixer\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_music_manager_ac123fa77eeae47c9362969816d257910}\index{MusicManager@{MusicManager}!MusicVolumeKey@{MusicVolumeKey}}
+\index{MusicVolumeKey@{MusicVolumeKey}!MusicManager@{MusicManager}}
+\doxysubsubsection{\texorpdfstring{MusicVolumeKey}{MusicVolumeKey}}
+{\footnotesize\ttfamily \label{class_music_manager_ac123fa77eeae47c9362969816d257910} 
+const string Music\+Manager.\+Music\+Volume\+Key = "{}Music\+Volume"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_music_manager_a3a33d4d4237dee702ec86a474e7bf097}\index{MusicManager@{MusicManager}!SoundFXVolumeKey@{SoundFXVolumeKey}}
+\index{SoundFXVolumeKey@{SoundFXVolumeKey}!MusicManager@{MusicManager}}
+\doxysubsubsection{\texorpdfstring{SoundFXVolumeKey}{SoundFXVolumeKey}}
+{\footnotesize\ttfamily \label{class_music_manager_a3a33d4d4237dee702ec86a474e7bf097} 
+const string Music\+Manager.\+Sound\+FXVolume\+Key = "{}Sound\+FXVolume"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Sounds/\mbox{\hyperlink{_music_manager_8cs}{Music\+Manager.\+cs}}\end{DoxyCompactItemize}

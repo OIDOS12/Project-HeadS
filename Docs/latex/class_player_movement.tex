@@ -1,0 +1,152 @@
+\doxysection{Player\+Movement Class Reference}
+\hypertarget{class_player_movement}{}\label{class_player_movement}\index{PlayerMovement@{PlayerMovement}}
+Inheritance diagram for Player\+Movement\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_player_movement}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_player_movement_ad0f6d43b6a80a1001bdc5c01e6cb056c}{run\+Sp}} = 16f
+\item 
+Key\+Code \mbox{\hyperlink{class_player_movement_a4abd10ffe3b61bf3709be8422264d3cd}{kick\+Key}} = Key\+Code.\+Space
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Vector3 \mbox{\hyperlink{class_player_movement_a9c3c6381db7aeeb4466c06e332b9507d}{area\+Settings}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_player_movement_aaf9b77d7177d538be9c1447d08191322}{Update}} ()
+\item 
+void \mbox{\hyperlink{class_player_movement_a0caaa871b9ef680c9f02bd0e22c77db1}{Fixed\+Update}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_player_movement_a8a01bfbf958d89a2c204a747098a6f24}{horizontal\+Move}} = 0f
+\item 
+bool \mbox{\hyperlink{class_player_movement_af33cc9d4c2dc2e8a0ce69b42764b2f27}{jump}} = false
+\item 
+bool \mbox{\hyperlink{class_player_movement_a8564b7fe6a37841c6c194f859db5940a}{kick}} = false
+\item 
+\mbox{\hyperlink{class_local_player_controller2_d}{Local\+Player\+Controller2D}} \mbox{\hyperlink{class_player_movement_a4a78877baaf11c9892ff95ff5e376dbd}{controller}}
+\item 
+bool \mbox{\hyperlink{class_player_movement_a4a6c28f72499ac4f397f88cc49c986f2}{use\+Positive\+Area}}
+\item 
+string \mbox{\hyperlink{class_player_movement_a7cba20a1c8d7cd92282f44b7ad9c2665}{Horizontal\+Input}} = "{}Horizontal"{}
+\item 
+string \mbox{\hyperlink{class_player_movement_a687663b115e3f0023e48b97ff03508bf}{Jump\+Key\+Input}} = "{}Jump"{}
+\item 
+Vector3 \mbox{\hyperlink{class_player_movement_ab71d7675f8a52071eabf3542346c0902}{positive\+Area\+Settings}} = new Vector3(0.\+78f, -\/0.\+8f, 0)
+\item 
+Vector3 \mbox{\hyperlink{class_player_movement_a5e7f7f23697715d8ffd8e279baaa31e3}{negative\+Area\+Settings}} = new Vector3(-\/0.\+78f, -\/0.\+8f, 0)
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{class_player_movement_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_player_movement_a0caaa871b9ef680c9f02bd0e22c77db1}\index{PlayerMovement@{PlayerMovement}!FixedUpdate@{FixedUpdate}}
+\index{FixedUpdate@{FixedUpdate}!PlayerMovement@{PlayerMovement}}
+\doxysubsubsection{\texorpdfstring{FixedUpdate()}{FixedUpdate()}}
+{\footnotesize\ttfamily \label{class_player_movement_a0caaa871b9ef680c9f02bd0e22c77db1} 
+void Player\+Movement.\+Fixed\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_movement_aaf9b77d7177d538be9c1447d08191322}\index{PlayerMovement@{PlayerMovement}!Update@{Update}}
+\index{Update@{Update}!PlayerMovement@{PlayerMovement}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_player_movement_aaf9b77d7177d538be9c1447d08191322} 
+void Player\+Movement.\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_player_movement_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_player_movement_a4a78877baaf11c9892ff95ff5e376dbd}\index{PlayerMovement@{PlayerMovement}!controller@{controller}}
+\index{controller@{controller}!PlayerMovement@{PlayerMovement}}
+\doxysubsubsection{\texorpdfstring{controller}{controller}}
+{\footnotesize\ttfamily \label{class_player_movement_a4a78877baaf11c9892ff95ff5e376dbd} 
+\mbox{\hyperlink{class_local_player_controller2_d}{Local\+Player\+Controller2D}} Player\+Movement.\+controller\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_movement_a7cba20a1c8d7cd92282f44b7ad9c2665}\index{PlayerMovement@{PlayerMovement}!HorizontalInput@{HorizontalInput}}
+\index{HorizontalInput@{HorizontalInput}!PlayerMovement@{PlayerMovement}}
+\doxysubsubsection{\texorpdfstring{HorizontalInput}{HorizontalInput}}
+{\footnotesize\ttfamily \label{class_player_movement_a7cba20a1c8d7cd92282f44b7ad9c2665} 
+string Player\+Movement.\+Horizontal\+Input = "{}Horizontal"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_movement_a8a01bfbf958d89a2c204a747098a6f24}\index{PlayerMovement@{PlayerMovement}!horizontalMove@{horizontalMove}}
+\index{horizontalMove@{horizontalMove}!PlayerMovement@{PlayerMovement}}
+\doxysubsubsection{\texorpdfstring{horizontalMove}{horizontalMove}}
+{\footnotesize\ttfamily \label{class_player_movement_a8a01bfbf958d89a2c204a747098a6f24} 
+float Player\+Movement.\+horizontal\+Move = 0f\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_movement_af33cc9d4c2dc2e8a0ce69b42764b2f27}\index{PlayerMovement@{PlayerMovement}!jump@{jump}}
+\index{jump@{jump}!PlayerMovement@{PlayerMovement}}
+\doxysubsubsection{\texorpdfstring{jump}{jump}}
+{\footnotesize\ttfamily \label{class_player_movement_af33cc9d4c2dc2e8a0ce69b42764b2f27} 
+bool Player\+Movement.\+jump = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_movement_a687663b115e3f0023e48b97ff03508bf}\index{PlayerMovement@{PlayerMovement}!JumpKeyInput@{JumpKeyInput}}
+\index{JumpKeyInput@{JumpKeyInput}!PlayerMovement@{PlayerMovement}}
+\doxysubsubsection{\texorpdfstring{JumpKeyInput}{JumpKeyInput}}
+{\footnotesize\ttfamily \label{class_player_movement_a687663b115e3f0023e48b97ff03508bf} 
+string Player\+Movement.\+Jump\+Key\+Input = "{}Jump"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_movement_a8564b7fe6a37841c6c194f859db5940a}\index{PlayerMovement@{PlayerMovement}!kick@{kick}}
+\index{kick@{kick}!PlayerMovement@{PlayerMovement}}
+\doxysubsubsection{\texorpdfstring{kick}{kick}}
+{\footnotesize\ttfamily \label{class_player_movement_a8564b7fe6a37841c6c194f859db5940a} 
+bool Player\+Movement.\+kick = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_movement_a4abd10ffe3b61bf3709be8422264d3cd}\index{PlayerMovement@{PlayerMovement}!kickKey@{kickKey}}
+\index{kickKey@{kickKey}!PlayerMovement@{PlayerMovement}}
+\doxysubsubsection{\texorpdfstring{kickKey}{kickKey}}
+{\footnotesize\ttfamily \label{class_player_movement_a4abd10ffe3b61bf3709be8422264d3cd} 
+Key\+Code Player\+Movement.\+kick\+Key = Key\+Code.\+Space}
+
+\Hypertarget{class_player_movement_a5e7f7f23697715d8ffd8e279baaa31e3}\index{PlayerMovement@{PlayerMovement}!negativeAreaSettings@{negativeAreaSettings}}
+\index{negativeAreaSettings@{negativeAreaSettings}!PlayerMovement@{PlayerMovement}}
+\doxysubsubsection{\texorpdfstring{negativeAreaSettings}{negativeAreaSettings}}
+{\footnotesize\ttfamily \label{class_player_movement_a5e7f7f23697715d8ffd8e279baaa31e3} 
+Vector3 Player\+Movement.\+negative\+Area\+Settings = new Vector3(-\/0.\+78f, -\/0.\+8f, 0)\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_movement_ab71d7675f8a52071eabf3542346c0902}\index{PlayerMovement@{PlayerMovement}!positiveAreaSettings@{positiveAreaSettings}}
+\index{positiveAreaSettings@{positiveAreaSettings}!PlayerMovement@{PlayerMovement}}
+\doxysubsubsection{\texorpdfstring{positiveAreaSettings}{positiveAreaSettings}}
+{\footnotesize\ttfamily \label{class_player_movement_ab71d7675f8a52071eabf3542346c0902} 
+Vector3 Player\+Movement.\+positive\+Area\+Settings = new Vector3(0.\+78f, -\/0.\+8f, 0)\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_movement_ad0f6d43b6a80a1001bdc5c01e6cb056c}\index{PlayerMovement@{PlayerMovement}!runSp@{runSp}}
+\index{runSp@{runSp}!PlayerMovement@{PlayerMovement}}
+\doxysubsubsection{\texorpdfstring{runSp}{runSp}}
+{\footnotesize\ttfamily \label{class_player_movement_ad0f6d43b6a80a1001bdc5c01e6cb056c} 
+float Player\+Movement.\+run\+Sp = 16f}
+
+\Hypertarget{class_player_movement_a4a6c28f72499ac4f397f88cc49c986f2}\index{PlayerMovement@{PlayerMovement}!usePositiveArea@{usePositiveArea}}
+\index{usePositiveArea@{usePositiveArea}!PlayerMovement@{PlayerMovement}}
+\doxysubsubsection{\texorpdfstring{usePositiveArea}{usePositiveArea}}
+{\footnotesize\ttfamily \label{class_player_movement_a4a6c28f72499ac4f397f88cc49c986f2} 
+bool Player\+Movement.\+use\+Positive\+Area\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_player_movement_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_player_movement_a9c3c6381db7aeeb4466c06e332b9507d}\index{PlayerMovement@{PlayerMovement}!areaSettings@{areaSettings}}
+\index{areaSettings@{areaSettings}!PlayerMovement@{PlayerMovement}}
+\doxysubsubsection{\texorpdfstring{areaSettings}{areaSettings}}
+{\footnotesize\ttfamily \label{class_player_movement_a9c3c6381db7aeeb4466c06e332b9507d} 
+Vector3 Player\+Movement.\+area\+Settings\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Multiplayer\+Player/\+Old\+Movement/\mbox{\hyperlink{_player_movement_8cs}{Player\+Movement.\+cs}}\end{DoxyCompactItemize}
