@@ -49,3 +49,8 @@ This project is a 2D arcade-style football game built with Unity, supporting bot
 ### 2. Installation
 ```bash
 git clone https://github.com/OIDOS12/Project-HeadS.git
+```
+This GitHub repository is a backup of my game; the primary version is stored in Unity Version Control. 
+
+Here is a screenshot showing the commits on Unity Version Control:
+![Screenshot 2025-06-05 152409](https://github.com/user-attachments/assets/573d070c-908a-4e6e-ad67-18228d41dd8e)
