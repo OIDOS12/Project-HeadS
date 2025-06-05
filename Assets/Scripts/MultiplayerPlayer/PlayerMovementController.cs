@@ -116,17 +116,15 @@ public class PlayerMovementController : NetworkBehaviour
     /// </summary>
     private void Update()
     {
-        // Activate player model and set area settings when entering the game scene
-        // Assuming "OnlineGameScene" is the scene where active gameplay occurs
+
         if (SceneManager.GetActiveScene().name == "OnlineGameScene" && playerModel != null && !playerModel.activeSelf)
         {
             playerModel.SetActive(true);
-            rb.simulated = true; // Enable physics simulation for the local player
+            rb.simulated = true;
         }
 
         if (!isServer) return;
 
-        // Clamp player position if falling below threshold
         Vector3 position = transform.position;
         if (transform.position.y <= -3.704f) position.y = -3.705019f;
 
